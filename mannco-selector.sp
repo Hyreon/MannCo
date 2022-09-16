@@ -112,6 +112,8 @@ Action CmdWhat(int client, int args) {
     Metadata_Debug_Name(attribute_id, attribute_debug);
     
     PrintToChat(client, "BLU is fighting for: %s %s %.3f", item_debug, attribute_debug, attribute_value);
+	
+	return Plugin_Handled;
     
 }
 
@@ -121,11 +123,34 @@ Action CmdSpecs(int client, int args) {
     
     if (args == 0) {
         PrintToChat(client, "Unknown weapon. Please put in a weapon.");
+	    return Plugin_Handled;
     } else {
         GetCmdArg(1, arg1, sizeof(arg1));
         int itemId = Item_From_Name_Fragment(arg1);
-        PrintAttributes(client, itemId);
+        if (itemId == -1) {
+            PrintToChat(client, "Unknown weapon. Please put in a valid weapon.");
+	        return Plugin_Handled;
+        }
+        int attribute_dump[20];
+        float value_dump[20];
+        DumpAttributes(itemId, attribute_dump, value_dump, 20);
+        int i;
+        for (i = 0; i < 20; i++) {
+            if (attribute_dump[i] == 0) break;
+            char attrib_name[64];
+            Metadata_Debug_Name(attribute_dump[i], attrib_name);
+            PrintToConsole(client, "%s %.3f", attrib_name, value_dump[i]);
+        }
+        char item_name[64];
+        Item_Metadata_Debug_Name(itemId, item_name);
+        if (i == 0) {
+            PrintToChat(client, "%s is unmodified. For now.", item_name);
+        } else {
+            PrintToChat(client, "Modifications have been printed to console for: %s", item_name);
+        }
     }
+	
+	return Plugin_Handled;
     
 }
 
@@ -165,7 +190,7 @@ public void LoadPreviousMods(char filename[64]) {
             if (errorBuffer[0] == '\0') {
                 AddAttributeToConfig(item, attribute, value, mode, false);
             } else {
-                PrintToServer("%d: Refused to add broken modifier. %s%s (%d) %s (%d) %.3f", i, errorBuffer, itemName, item, attributeDesc, attribute, value);
+                PrintToServer("%d: PREVIOUS MOD REJECTED! %s%s (%d) %s (%d) %.3f", i, errorBuffer, itemName, item, attributeDesc, attribute, value);
             }
         } else if (StrEqual(action, "reject")) {
             if (errorBuffer[0] == '\0') {
@@ -175,6 +200,8 @@ public void LoadPreviousMods(char filename[64]) {
             if (errorBuffer[0] != '\0') {
                 PrintToServer("%d: Test failed, rejected valid mod. %s%s (%d) %s (%d) %.3f", i, errorBuffer, itemName, item, attributeDesc, attribute, value);
             }
+        } else if (StrEqual(action, "ignore")) {
+            //nothing.
         } else if (StrEqual(action, "test")) {
             PrintToServer("%d: %sTest result: %s (%d) %s (%d) %.3f", i, errorBuffer, itemName, item, attributeDesc, attribute, value);
         } else {    //test and apply; this does everything at once, except force.
@@ -219,15 +246,17 @@ public int Item_From_Name_Fragment(char fragment[64]) {
     
     char buffer[256];
     int finalId = -1;
+    char sectionName[64];
     if (KvGotoFirstSubKey(kv_items)) {
         do {
             KvGetString(kv_items, "name", buffer, 256, "");
             if (buffer[0] != '\0') {
-                if (StrContains(buffer, fragment, false)) {
-                    KvGetSectionSymbol(kv_items, finalId);
+                if (StrContains(buffer, fragment, false) != -1) {
+                    KvGetSectionName(kv_items, sectionName, 64);
+                    finalId = StringToInt(sectionName);
                 }
             }
-        } while (KvGotoNextKey(kv_items));
+        } while (KvGotoNextKey(kv_items) && finalId < 0);
         KvGoBack(kv_items);
     }
     return finalId;
@@ -367,10 +396,23 @@ public float Metadata_AttributeMaxIncrease(int id)
     IntToString(id, buffer, 64);
     bool result = KvJumpToKey(kv_attribs, buffer, false); //false if id is not here
     if (result) {
-        maxIncrease = KvGetFloat(kv_attribs, "max_increase", -1.0);
+        maxIncrease = KvGetFloat(kv_attribs, "maximum_increase", -1.0);
         KvGoBack(kv_attribs); //go back to root, or one level up
     }
     return maxIncrease;
+}
+
+public float Metadata_AttributeMaxDecrease(int id)
+{
+    float maxDecrease = 1.0;
+    char buffer[64];
+    IntToString(id, buffer, 64);
+    bool result = KvJumpToKey(kv_attribs, buffer, false); //false if id is not here
+    if (result) {
+        maxDecrease = KvGetFloat(kv_attribs, "maximum_decrease", 1.0);
+        KvGoBack(kv_attribs); //go back to root, or one level up
+    }
+    return maxDecrease;
 }
 
 public float Metadata_AttributeInterval(int id)
@@ -502,6 +544,7 @@ bool ValidateValue(int item, int attribute, float value, int mode, int attempts 
     float oldValue = QueryAttributeValue(item, attribute, attribute_type);
     float actualValue = QueryAttributeEffect(item, attribute, value, mode);
     float maxIncrease = Metadata_AttributeMaxIncrease(attribute);
+    float maxDecrease = Metadata_AttributeMaxDecrease(attribute);
     float maxValue = Metadata_AttributeMaximum(attribute);
     float minValue = Metadata_AttributeMinimum(attribute);
     // if (!(value == 0 || attempts >= 10)) {
@@ -511,6 +554,10 @@ bool ValidateValue(int item, int attribute, float value, int mode, int attempts 
     if (!(maxIncrease <= 0 || value <= maxIncrease || attempts >= 100)) {
         passing = false;
         if (verbose) PrintToServer("New value %.3f exceeds the maximum increase %.3f.", value, maxIncrease);
+    }
+    if (!(maxDecrease >= 0 || value >= maxDecrease || attempts >= 100)) {
+        passing = false;
+        if (verbose) PrintToServer("New value %.3f exceeds the maximum decrease %.3f.", value, maxIncrease);
     }
     if (!(actualValue != oldValue || attempts >= 100)) {
         passing = false;
@@ -567,6 +614,11 @@ public void Reroll() {
     	float maxIncrease = Metadata_AttributeMaxIncrease(attribute_id);
     	if (maxIncrease >= 0 && attribute_value > maxIncrease) {
     	    attribute_value = maxIncrease;
+    	}
+    	
+    	float maxDecrease = Metadata_AttributeMaxDecrease(attribute_id);
+    	if (maxDecrease >= 0 && attribute_value > maxDecrease) {
+    	    attribute_value = maxDecrease;
     	}
     	
     	if (attribute_type > 2) {
@@ -758,10 +810,14 @@ public Action CmdAutoApply(int args) {
 	AddAttributeToConfig(item_id, attribute_id, attribute_value, attribute_type, true);
 	Reroll();
 	
+	return Plugin_Handled;
+	
 }
 
 public Action CmdReroll(int args) {
 	
 	Reroll();
+	
+	return Plugin_Handled;
 	
 }
