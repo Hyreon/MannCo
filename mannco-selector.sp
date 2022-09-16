@@ -62,6 +62,8 @@ int attribute_id = 0; //the attribute to change
 float attribute_value = 0.0; //the final attribute
 int attribute_type = 0; //default
 
+ConVar g_hCvarEnabled;
+
 //TODO make a queue for future changes
 
 public Plugin myinfo = {
@@ -74,6 +76,8 @@ public Plugin myinfo = {
 
 public void OnPluginStart() {
 	LoadTranslations("menu_mannco.phrases");
+    
+    g_hCvarEnabled = CreateConVar("tf2items_manager", "1", "Enables/disables the manager (0 - Disabled / 1 - Enabled", FCVAR_REPLICATED|FCVAR_NOTIFY);
     
 	RegServerCmd("mannco_reroll", CmdReroll);
 	RegServerCmd("mannco_adminapply", CmdAdminApply);
@@ -211,7 +215,9 @@ public void OnMapStart()
 
 public Action Event_RoundStart(Event event, const char[] name, bool dontBroadcast)
 {
-	Reroll();
+    if (g_hCvarEnabled.IntValue == 1) {
+        Reroll();
+    }
     return Plugin_Continue;
 }
 
@@ -358,19 +364,21 @@ public void Reroll() {
 
 public Action Event_RoundEnd(Event event, const char[] name, bool dontBroadcast)
 {
-    //char winnerDisplay[12] = "Winner:";
-    //char buffer[12];
-    //IntToString(event.GetInt("team"), buffer, 12);
-    //StrCat(winnerDisplay, 12, buffer);
-	//PrintToServer(winnerDisplay);
-	
-    if (!conservative ^ (event.GetInt("team") == 2)) //2 is RED. Unless red wins or the match was conservative, do nothing.
-    {
-        CreateTimer(8.0, ConfirmMod);
-		ApplyItemModification(item_id, attribute_id, attribute_value, attribute_type, "apply");
-    } else {
-		CreateTimer(8.0, ConfirmDefense);
-	}
+    if (g_hCvarEnabled.IntValue == 1) {
+        //char winnerDisplay[12] = "Winner:";
+        //char buffer[12];
+        //IntToString(event.GetInt("team"), buffer, 12);
+        //StrCat(winnerDisplay, 12, buffer);
+        //PrintToServer(winnerDisplay);
+        
+        if (!conservative ^ (event.GetInt("team") == 2)) //2 is RED. Unless red wins or the match was conservative, do nothing.
+        {
+            CreateTimer(8.0, ConfirmMod);
+            ApplyItemModification(item_id, attribute_id, attribute_value, attribute_type, "apply");
+        } else {
+            CreateTimer(8.0, ConfirmDefense);
+        }
+    }
     return Plugin_Continue;
 }
 

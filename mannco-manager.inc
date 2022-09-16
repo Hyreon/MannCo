@@ -100,7 +100,7 @@ native int ItemFromNameFragment(char fragment[64]);
  * additive_percentage: 3 (addition with smaller default units)
  * inverted_percentage: 4 (multiplication with good/bad reversed)
  * */
- native float M_Attrib_GetDatatype(int attribId);
+ native int M_Attrib_GetDatatype(int attribId);
  
 /*
  *
