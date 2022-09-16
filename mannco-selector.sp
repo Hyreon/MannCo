@@ -15,9 +15,6 @@
 #define CHOICE2 "#choice2"
 #define CHOICE3 "#choice3"
 
-#define FLT_MAX 999999999999.9
-#define FLT_MIN -99999999999.9
-
 //flags need to work (flags2 now, also :\)
 
 //we want menus and SFX for 5 things:
@@ -59,12 +56,6 @@
 #define YourVoteLostSoundFile "ui/vote_failure.wav"
 #define YourVoteSoundFile "ui/vote_yes.wav"
 
-KeyValues kv_attribs;
-KeyValues kv_items;
-
-ConVar g_cvAssumedFlags;
-ConVar g_cvAssumedFlags2;
-
 bool conservative = false; //true if reverting back to vanilla behavior; this means RED applies the change
 int item_id = 0; //the item to change
 int attribute_id = 0; //the attribute to change
@@ -83,10 +74,9 @@ public Plugin myinfo = {
 
 public void OnPluginStart() {
 	LoadTranslations("menu_mannco.phrases");
-	
-	RegServerCmd("mannco_forcemod", CmdAppendModifier);
+    
 	RegServerCmd("mannco_reroll", CmdReroll);
-	RegServerCmd("mannco_autoapply", CmdAutoApply);
+	RegServerCmd("mannco_adminapply", CmdAdminApply);
 	
 	RegConsoleCmd("sm_menutest", Menu_Mannco1);
 	
@@ -96,20 +86,15 @@ public void OnPluginStart() {
 	HookEvent("teamplay_round_start", Event_RoundStart, EventHookMode_Pre);
 	HookEvent("teamplay_round_win", Event_RoundEnd, EventHookMode_Pre);
 	
-	g_cvAssumedFlags = CreateConVar("mannco_aflags", "0", "Which flags a new weapon is assumed to have. 0 for none, -1 for all.");
-	g_cvAssumedFlags2 = CreateConVar("mannco_aflags2", "0", "Which flags a new weapon is assumed to have. 0 for none, -1 for all.");
-	
-	LoadMetadata();
-	
-	LoadPreviousMods("mannco/mannco.command_history.cfg");
+	LoadPreviousMods("configs/mannco-history.cfg");
 }
 
 Action CmdWhat(int client, int args) {
     
     char item_debug[64], attribute_debug[64];
     
-    Item_Metadata_Debug_Name(item_id, item_debug);
-    Metadata_Debug_Name(attribute_id, attribute_debug);
+    M_Item_GetDebugName(item_id, item_debug);
+    M_Attrib_GetDebugName(attribute_id, attribute_debug);
     
     PrintToChat(client, "BLU is fighting for: %s %s %.3f", item_debug, attribute_debug, attribute_value);
     
@@ -140,7 +125,7 @@ public void LoadPreviousMods(char filename[64]) {
     int attribute;
     float value;
     int mode;
-    BuildPath(Path_SM, buffer, sizeof(buffer), "../../cfg/mannco/mannco.command_history.cfg");
+    BuildPath(Path_SM, buffer, sizeof(buffer), filename);
     File file = OpenFile(buffer, "r");
     int i = 0;
     while (file.ReadLine(buffer, 256)) {
@@ -150,9 +135,9 @@ public void LoadPreviousMods(char filename[64]) {
         item = StringToInt(arguments[1]);
         attribute = StringToInt(arguments[2]);
         value = StringToFloat(arguments[3]);
-        mode = Metadata_Datatype(attribute);
-        Item_Metadata_Debug_Name(item, itemName);
-        Metadata_Debug_Name(attribute, attributeDesc);
+        mode = M_Attrib_GetDatatype(attribute);
+        M_Item_GetDebugName(item, itemName);
+        M_Attrib_GetDebugName(attribute, attributeDesc);
         
         errorBuffer = "";
         if (!ValidateItem(item, 0, true)) StrCat(errorBuffer, 64, "Bad item. ");
@@ -160,10 +145,10 @@ public void LoadPreviousMods(char filename[64]) {
         else if (!ValidateValue(item, attribute, value, mode, 0, true)) StrCat(errorBuffer, 64, "Bad value. ");
                 
         if (StrEqual(action, "force")) {
-            AddAttributeToConfig(item, attribute, value, mode, false);
+            ApplyItemModification(item, attribute, value, mode, "");
         } else if (StrEqual(action, "apply")) {
             if (errorBuffer[0] == '\0') {
-                AddAttributeToConfig(item, attribute, value, mode, false);
+                ApplyItemModification(item, attribute, value, mode, "");
             } else {
                 PrintToServer("%d: Refused to add broken modifier. %s%s (%d) %s (%d) %.3f", i, errorBuffer, itemName, item, attributeDesc, attribute, value);
             }
@@ -179,7 +164,7 @@ public void LoadPreviousMods(char filename[64]) {
             PrintToServer("%d: %sTest result: %s (%d) %s (%d) %.3f", i, errorBuffer, itemName, item, attributeDesc, attribute, value);
         } else {    //test and apply; this does everything at once, except force.
             if (errorBuffer[0] == '\0') {
-                AddAttributeToConfig(item, attribute, value, mode, false);
+                ApplyItemModification(item, attribute, value, mode, "");
                 PrintToServer("%d: Accepted: %s (%d) %s (%d) %.3f", i, itemName, item, attributeDesc, attribute, value);
             } else {
                 PrintToServer("%d: Rejected: %s%s (%d) %s (%d) %.3f", i, errorBuffer, itemName, item, attributeDesc, attribute, value);
@@ -193,26 +178,6 @@ public void OnMapStart()
 {
     PrecacheSound(ItemPreservedSoundFile);
     PrecacheSound(ItemRevampedSoundFile);
-}
-
-public void WhineAboutUndefinedAttributes()
-{
-    char buffer[64];
-    int data;
-    if (KvGotoFirstSubKey(kv_attribs)) {
-        do {
-            data = -1;
-            data = KvGetNum(kv_attribs, "parent", -1);
-            if (data == -1) data = KvGetNum(kv_attribs, "flags", -1);
-            if (data == -1) data = KvGetNum(kv_attribs, "flags2", -1);
-            if (data == -1) {
-                KvGetString(kv_attribs, "name", buffer, 64, "unnamed");
-                PrintToServer("Undefined attribute: %s", buffer);
-            }
-        } while (KvGotoNextKey(kv_attribs));
-        KvGoBack(kv_attribs);
-    }
-    
 }
 
 public int Item_From_Name_Fragment(char fragment[64]) {
@@ -233,245 +198,6 @@ public int Item_From_Name_Fragment(char fragment[64]) {
     return finalId;
 }
 
-public void LoadMetadata()
-{
-	char buffer[256];
-	
-	BuildPath(Path_SM, buffer, sizeof(buffer), "configs/mannco-attributes.cfg");
-	kv_attribs = CreateKeyValues("MannCoAttributes");
-	if (FileToKeyValues(kv_attribs, buffer) == false)
-		SetFailState("Error, can't read file containing the attribute metadata : %s", buffer);
-	
-	KvGetSectionName(kv_attribs, buffer, sizeof(buffer));
-	if (StrEqual("attributes", buffer) == false)
-		SetFailState("mannco-attributes.cfg structure corrupt, initial tag: \"%s\"", buffer);
-	
-	WhineAboutUndefinedAttributes();
-	
-	BuildPath(Path_SM, buffer, sizeof(buffer), "configs/mannco-items.cfg");
-	kv_items = CreateKeyValues("MannCoItems");
-	if (FileToKeyValues(kv_items, buffer) == false)
-		SetFailState("Error, can't read file containing the item metadata : %s", buffer);
-	
-	KvGetSectionName(kv_items, buffer, sizeof(buffer));
-	if (StrEqual("items", buffer) == false)
-		SetFailState("mannco-items.cfg structure corrupt, initial tag: \"%s\"", buffer);
-	
-}
-
-public bool Item_Metadata_Exists(int id)
-{
-    char buffer[64];
-    IntToString(id, buffer, 64);
-    bool result = KvJumpToKey(kv_items, buffer, false); //false if id is not here
-    if (result) {
-        KvGoBack(kv_items); //go back to root, or one level up
-    }
-    return result;
-}
-
-public void Item_Metadata_Debug_Name(int id, char buffer[64])
-{
-    char buffer2[64];
-    IntToString(id, buffer2, 64);
-    bool result = KvJumpToKey(kv_items, buffer2, false); //false if id is not here
-    if (result) {
-        KvGetString(kv_items, "name", buffer, 64, "stinky unknown item");
-        KvGoBack(kv_items); //go back to root, or one level up
-    } else {
-        buffer = "nonexistent item";
-    }
-}
-
-public void Item_Metadata_Slot(int id, char buffer[64])
-{
-    char buffer2[64];
-    IntToString(id, buffer2, 64);
-    bool result = KvJumpToKey(kv_items, buffer2, false); //false if id is not here
-    if (result) {
-        KvGetString(kv_items, "item_slot", buffer, 64, "melee");
-        KvGoBack(kv_items); //go back to root, or one level up
-    }
-}
-
-public bool Metadata_Exists(int id)
-{
-    char buffer[64];
-    IntToString(id, buffer, 64);
-    bool result = KvJumpToKey(kv_attribs, buffer, false); //false if id is not here
-    if (result) {
-        KvGoBack(kv_attribs); //go back to root, or one level up
-    }
-    return result;
-}
-
-public void Metadata_Debug_Name(int id, char buffer[64])
-{
-    char buffer2[64];
-    IntToString(id, buffer2, 64);
-    bool result = KvJumpToKey(kv_attribs, buffer2, false); //false if id is not here
-    if (result) {
-        KvGetString(kv_attribs, "name", buffer, 64, "stinky unknown attribute");
-        KvGoBack(kv_attribs); //go back to root, or one level up
-    } else {
-        buffer = "nonexistent attribute";
-    }
-}
-
-public int Metadata_Datatype(int id)
-{
-    char buffer[64], buffer2[64];
-    IntToString(id, buffer2, 64);
-    bool result = KvJumpToKey(kv_attribs, buffer2, false); //false if id is not here
-    if (result) {
-        KvGetString(kv_attribs, "description_format", buffer, 64, "value_is_percentage");
-        KvGoBack(kv_attribs); //go back to root, or one level up
-        if (StrEqual(buffer, "value_is_percentage")) {
-            return 2;
-        } else if (StrEqual(buffer, "value_is_inverted_percentage")) {
-            return 4; //still percentage, just good and bad are reversed
-        } else if (StrEqual(buffer, "value_is_additive")) {
-            return 1;
-        } else if (StrEqual(buffer, "value_is_additive_percentage")) {
-            return 3; //still additive, just smaller unit
-        } else if (StrEqual(buffer, "value_is_or")) {
-            return -1; //override
-        } else {
-            return 0; //default
-        }
-    } else {
-        return 0; //default
-    }
-}
-
-public int Metadata_ItemParent(int item)
-{
-    char buffer[64];
-    IntToString(item, buffer, 64);
-    bool result = KvJumpToKey(kv_items, buffer, false); //false if id is not here
-    if (result) {
-        int lastItem = -1;
-        while (lastItem != item) {
-            lastItem = item;
-            item = KvGetNum(kv_items, "parent", item);
-        }
-        KvGoBack(kv_items); //go back to root, or one level up
-    }
-    return item;
-}
-
-public float Metadata_AttributeMaxIncrease(int id)
-{
-    float maxIncrease = -1.0;
-    char buffer[64];
-    IntToString(id, buffer, 64);
-    bool result = KvJumpToKey(kv_attribs, buffer, false); //false if id is not here
-    if (result) {
-        maxIncrease = KvGetFloat(kv_attribs, "max_increase", -1.0);
-        KvGoBack(kv_attribs); //go back to root, or one level up
-    }
-    return maxIncrease;
-}
-
-public float Metadata_AttributeInterval(int id)
-{
-    float interval = 1.0;
-    char buffer[64];
-    IntToString(id, buffer, 64);
-    bool result = KvJumpToKey(kv_attribs, buffer, false); //false if id is not here
-    if (result) {
-        interval = KvGetFloat(kv_attribs, "interval", 1.0);
-        KvGoBack(kv_attribs); //go back to root, or one level up
-    }
-    return interval;
-}
-
-public float Metadata_AttributeMaximum(int id)
-{
-    float maximum = FLT_MAX;
-    char buffer[64];
-    IntToString(id, buffer, 64);
-    bool result = KvJumpToKey(kv_attribs, buffer, false); //false if id is not here
-    if (result) {
-        maximum = KvGetFloat(kv_attribs, "maximum", FLT_MAX);
-        KvGoBack(kv_attribs); //go back to root, or one level up
-    }
-    return maximum;
-}
-
-public float Metadata_AttributeMinimum(int id)
-{
-    float minimum = FLT_MIN;
-    char buffer[64];
-    IntToString(id, buffer, 64);
-    bool result = KvJumpToKey(kv_attribs, buffer, false); //false if id is not here
-    if (result) {
-        minimum = KvGetFloat(kv_attribs, "minimum", FLT_MIN);
-        KvGoBack(kv_attribs); //go back to root, or one level up
-    }
-    return minimum;
-}
-
-public int Metadata_AttributeParent(int attribute)
-{
-    char buffer[64];
-    IntToString(attribute, buffer, 64);
-    bool result = KvJumpToKey(kv_attribs, buffer, false); //false if id is not here
-    if (result) {
-        int lastAttribute = -1;
-        while (lastAttribute != attribute) {
-            lastAttribute = attribute;
-            attribute = KvGetNum(kv_attribs, "parent", attribute);
-        }
-        KvGoBack(kv_attribs); //go back to root, or one level up
-    }
-    return attribute;
-}
-
-public bool Flags_Agree(int item, int attribute)
-{
-    char buffer[64], buffer2[64];
-    bool result;
-    bool result2;
-    int attrib_flags = 0;
-    int attrib_flags2 = 0;
-    int item_flags = g_cvAssumedFlags.IntValue;
-    int item_flags2 = g_cvAssumedFlags2.IntValue;
-    IntToString(attribute, buffer, 64);
-    result = KvJumpToKey(kv_attribs, buffer, false);
-    if (result) {
-        attrib_flags = KvGetNum(kv_attribs, "flags", 0);
-        attrib_flags2 = KvGetNum(kv_attribs, "flags2", 0);
-        KvGoBack(kv_attribs);
-    }
-    IntToString(item, buffer2, 64);
-    result2 = KvJumpToKey(kv_items, buffer2, false);
-    if (result2) {
-        item_flags = KvGetNum(kv_items, "flags", g_cvAssumedFlags.IntValue);
-        item_flags2 = KvGetNum(kv_items, "flags2", g_cvAssumedFlags2.IntValue);
-        KvGoBack(kv_items);
-    }
-    //PrintToServer("Item: %d (%X %X), Attribute: %d (%X %X), Combined: %X %X", item, item_flags, item_flags2, attribute, attrib_flags, attrib_flags2, attrib_flags & ~item_flags, attrib_flags2 & ~item_flags2); //flags results
-    return ((attrib_flags & ~item_flags) == 0 && (attrib_flags2 & ~item_flags2) == 0); //true if not a single expected flag is missing
-}
-
-public void TryAttributeFlip()
-{
-    char buffer[64], buffer2[64];
-    IntToString(attribute_id, buffer, 64);
-    bool result = KvJumpToKey(kv_attribs, buffer, false);
-    if (result) {
-        int counterpart = KvGetNum(kv_attribs, "counterpart", attribute_id);
-        KvGetString(kv_attribs, "effect_type", buffer2, 64, "neutral");
-        if (StrEqual(buffer2, "negative") && ((attribute_type == 2 && attribute_value > 1) || (attribute_type != 2 && attribute_value > 0))) {
-            attribute_id = counterpart;
-        } else if (StrEqual(buffer2, "positive") && ((attribute_type == 2 && attribute_value < 1) || (attribute_type != 2 && attribute_value < 0))) {
-            attribute_id = counterpart;
-        }
-        KvGoBack(kv_attribs);
-    }
-}
-
 public Action Event_RoundStart(Event event, const char[] name, bool dontBroadcast)
 {
 	Reroll();
@@ -481,10 +207,10 @@ public Action Event_RoundStart(Event event, const char[] name, bool dontBroadcas
 bool ValidateItem(int item, int attempts = 0, bool verbose = false) {
     bool passing;
     char slot[64];
-    Item_Metadata_Slot(item, slot);
+    M_Item_GetSlot(item, slot);
     
-    passing = (item == Metadata_ItemParent(item) || attempts >= 10000);
-    passing = passing && (Item_Metadata_Exists(item) || attempts >= 1000);
+    passing = (item == M_Item_GetParent(item) || attempts >= 10000);
+    passing = passing && (M_Item_IsKnown(item) || attempts >= 1000);
     passing = passing && (!StrEqual(slot, "misc") || attempts >= 100);
     passing = passing && (!StrEqual(slot, "head") || attempts >= 100);
     return passing;
@@ -492,8 +218,8 @@ bool ValidateItem(int item, int attempts = 0, bool verbose = false) {
 
 bool ValidateAttribute(int item, int attribute, int attempts = 0, bool verbose = false) {
     bool passing = true;
-    passing = passing && (Metadata_Exists(attribute) || attempts >= 1000);
-    passing = passing && (Flags_Agree(item, attribute) || attempts >= 10000);
+    passing = passing && (M_Attrib_IsKnown(attribute) || attempts >= 1000);
+    passing = passing && (FlagsAgree(item, attribute) || attempts >= 10000);
     return passing;
 }
 
@@ -501,9 +227,9 @@ bool ValidateValue(int item, int attribute, float value, int mode, int attempts 
     bool passing = true;
     float oldValue = QueryAttributeValue(item, attribute, attribute_type);
     float actualValue = QueryAttributeEffect(item, attribute, value, mode);
-    float maxIncrease = Metadata_AttributeMaxIncrease(attribute);
-    float maxValue = Metadata_AttributeMaximum(attribute);
-    float minValue = Metadata_AttributeMinimum(attribute);
+    float maxIncrease = M_Attrib_GetMaxIncrease(attribute);
+    float maxValue = M_Attrib_GetMaximum(attribute);
+    float minValue = M_Attrib_GetMinimum(attribute);
     // if (!(value == 0 || attempts >= 10)) {
     //     passing = false;
     //     if (verbose) PrintToServer("Value %.3f exceeds the maximum interval %.3f.", value, maxIncrease);
@@ -539,7 +265,7 @@ public void Reroll() {
 	        //1181 is the hot hand, use when performance issues are resolved
 	        //30758 is the prinny machete, use this once skins can be distinguished
     	    item_id = GetURandomInt() % 300;
-    	    item_id = Metadata_ItemParent(item_id);
+    	    item_id = M_Item_GetParent(item_id);
     	    attempts++;
     	} while (!ValidateItem(item_id, attempts)); //allow pure cosmetics to change VERY rarely.
     	
@@ -547,16 +273,16 @@ public void Reroll() {
     	attempts = 0;
     	do {
     	    attribute_id = GetURandomInt() % 2067;
-    	    attribute_id = Metadata_AttributeParent(attribute_id);
+    	    attribute_id = M_Attrib_GetParent(attribute_id);
     	    attempts++;
     	} while (!ValidateAttribute(item_id, attribute_id, attempts));
     	
-    	attribute_type = Metadata_Datatype(attribute_id);
+    	attribute_type = M_Attrib_GetDatatype(attribute_id);
     	
     	if (attribute_type == -1) {
     	    attribute_value = 1.0; //always on
     	} else if (attribute_type == 1) {
-    	    float interval = Metadata_AttributeInterval(attribute_id);
+    	    float interval = M_Attrib_GetInterval(attribute_id);
     	    attribute_value = interval * float(RoundToNearest(30.0 * (GetURandomFloat() - 0.5)));
     	} else if (attribute_type == 3) {
     	    attribute_value = RoundToNearest(100.0 * (GetURandomFloat() - 0.5)) / 100.0;
@@ -564,7 +290,7 @@ public void Reroll() {
     	    attribute_value = RoundToNearest(100.0 * (GetURandomFloat() + 0.5)) / 100.0;
     	}
     	
-    	float maxIncrease = Metadata_AttributeMaxIncrease(attribute_id);
+    	float maxIncrease = M_Attrib_GetMaxIncrease(attribute_id);
     	if (maxIncrease >= 0 && attribute_value > maxIncrease) {
     	    attribute_value = maxIncrease;
     	}
@@ -579,12 +305,12 @@ public void Reroll() {
     	    lastIteratedValue = attribute_value;
     	    newValue = QueryAttributeEffect(item_id, attribute_id, attribute_value, attribute_type);
         	//TODO this does nothing, it needs to affect the attribute_value, not the newValue.
-        	float maxValue = Metadata_AttributeMaximum(attribute_id);
+        	float maxValue = M_Attrib_GetMaximum(attribute_id);
         	if (newValue > maxValue) {
         	    if (attribute_type == 2) attribute_value *= maxValue / newValue;
         	    else attribute_value += maxValue - newValue;
         	}
-        	float minValue = Metadata_AttributeMinimum(attribute_id);
+        	float minValue = M_Attrib_GetMinimum(attribute_id);
         	if (newValue < minValue) {
         	    if (attribute_type == 2) attribute_value *= minValue / newValue;
         	    else attribute_value += minValue - newValue;
@@ -599,10 +325,10 @@ public void Reroll() {
     TryAttributeFlip();
     
 	char item_debug[64];
-	Item_Metadata_Debug_Name(item_id, item_debug);
+	M_Item_GetDebugName(item_id, item_debug);
 	
 	char attribute_debug[64];
-	Metadata_Debug_Name(attribute_id, attribute_debug);
+	M_Attrib_GetDebugName(attribute_id, attribute_debug);
 	
 	PrintToChatAll("[ MannCo ] If BLU wins, the following item changes FOR GOOD:\n%s %s %.3f", item_debug, attribute_debug, attribute_value);
 	PrintToServer("[ MannCo ] Mod: %s (%d) %s (%d) %.3f", item_debug, item_id, attribute_debug, attribute_id, attribute_value);
@@ -619,7 +345,7 @@ public Action Event_RoundEnd(Event event, const char[] name, bool dontBroadcast)
     if (!conservative ^ (event.GetInt("team") == 2)) //2 is RED. Unless red wins or the match was conservative, do nothing.
     {
         CreateTimer(8.0, ConfirmMod);
-		AddAttributeToConfig(item_id, attribute_id, attribute_value, attribute_type, true);
+		ApplyItemModification(item_id, attribute_id, attribute_value, attribute_type, "apply");
     } else {
 		CreateTimer(8.0, ConfirmDefense);
 	}
@@ -728,34 +454,9 @@ public Action Menu_Mannco1(int client, int args)
   return Plugin_Handled;
 }
 
-public Action CmdAppendModifier(int args) {
+public Action CmdAdminApply(int args) {
 	
-	// Load the next 4 strings as arguments (the item, the attribute and the modifier; also the mode)
-	char arg1[32], arg2[32], arg3[32], arg4[32];
-    
-    GetCmdArg(1, arg1, sizeof(arg1));
-    GetCmdArg(2, arg2, sizeof(arg2));
-    GetCmdArg(3, arg3, sizeof(arg3));
-    GetCmdArg(4, arg4, sizeof(arg3));
-	
-	// Fire a message telling about the operation.
-    LogMessage("Appending change");
-	
-	int item = StringToInt(arg1);
-	int attribute = StringToInt(arg2);
-	float modifier = StringToFloat(arg3);
-	int mode = StringToInt(arg4);
-	
-	// Call the AddAttributeToConfig function.
-	AddAttributeToConfig(item, attribute, modifier, mode, true);
-	return Plugin_Handled;
-	
-	
-}
-
-public Action CmdAutoApply(int args) {
-	
-	AddAttributeToConfig(item_id, attribute_id, attribute_value, attribute_type, true);
+	ApplyItemModification(item_id, attribute_id, attribute_value, attribute_type, "nag_admin_applied");
 	Reroll();
 	
 }

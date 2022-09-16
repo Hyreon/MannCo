@@ -15,6 +15,9 @@
 #define ARRAY_ITEM 0
 #define ARRAY_FLAGS 1
 
+#define FLT_MAX 999999999999.9
+#define FLT_MIN -99999999999.9
+
 //#define DEBUG
 
 // ====[ VARIABLES ]===================================================
@@ -23,6 +26,13 @@ Handle g_hPlayerArray;
 Handle g_hGlobalSettings;
 ConVar g_hCvarEnabled;
 ConVar g_hCvarPlayerControlEnabled;
+
+ConVar g_cvAssumedFlags;
+ConVar g_cvAssumedFlags2;
+
+KeyValues kv_attribs;
+KeyValues kv_items;
+
 bool g_bPlayerEnabled[MAXPLAYERS + 1] =  { true, ... };
 
 // ====[ PLUGIN ]======================================================
@@ -46,22 +56,347 @@ public void OnPluginStart() {
 	g_hCvarEnabled = CreateConVar("tf2items_manager", "1", "Enables/disables the manager (0 - Disabled / 1 - Enabled", FCVAR_REPLICATED|FCVAR_NOTIFY);
 	g_hCvarPlayerControlEnabled = CreateConVar("tf2items_manager_playercontrol", "1", "Enables/disables the player's ability to control the manager (0 - Disabled / 1 - Enabled");
 	
+	g_cvAssumedFlags = CreateConVar("mannco_aflags", "0", "Which flags a new weapon is assumed to have. 0 for none, -1 for all.");
+	g_cvAssumedFlags2 = CreateConVar("mannco_aflags2", "0", "Which flags a new weapon is assumed to have. 0 for none, -1 for all.");
+	
 	// Register console commands
 	RegAdminCmd("tf2items_manager_reload", CmdReload, ADMFLAG_GENERIC);
 	
 	RegConsoleCmd("tf2items_enable", CmdEnable);
 	RegConsoleCmd("tf2items_disable", CmdDisable);
 	
+	RegServerCmd("mannco_forcemod", CmdAppendModifier);
+	
 	// Parse the items list
 	ParseItems();
+	
+	LoadMetadata();
+}
+
+public void LoadMetadata()
+{
+	char buffer[256];
+	
+	BuildPath(Path_SM, buffer, sizeof(buffer), "configs/mannco-attributes.cfg");
+	kv_attribs = CreateKeyValues("MannCoAttributes");
+	if (FileToKeyValues(kv_attribs, buffer) == false)
+		SetFailState("Error, can't read file containing the attribute metadata : %s", buffer);
+	
+	KvGetSectionName(kv_attribs, buffer, sizeof(buffer));
+	if (StrEqual("attributes", buffer) == false)
+		SetFailState("mannco-attributes.cfg structure corrupt, initial tag: \"%s\"", buffer);
+	
+	WhineAboutUndefinedAttributes();
+	
+	BuildPath(Path_SM, buffer, sizeof(buffer), "configs/mannco-items.cfg");
+	kv_items = CreateKeyValues("MannCoItems");
+	if (FileToKeyValues(kv_items, buffer) == false)
+		SetFailState("Error, can't read file containing the item metadata : %s", buffer);
+	
+	KvGetSectionName(kv_items, buffer, sizeof(buffer));
+	if (StrEqual("items", buffer) == false)
+		SetFailState("mannco-items.cfg structure corrupt, initial tag: \"%s\"", buffer);
+	
+}
+
+public void WhineAboutUndefinedAttributes()
+{
+    char buffer[64];
+    int data;
+    if (KvGotoFirstSubKey(kv_attribs)) {
+        do {
+            data = -1;
+            data = KvGetNum(kv_attribs, "parent", -1);
+            if (data == -1) data = KvGetNum(kv_attribs, "flags", -1);
+            if (data == -1) data = KvGetNum(kv_attribs, "flags2", -1);
+            if (data == -1) {
+                KvGetString(kv_attribs, "name", buffer, 64, "unnamed");
+                PrintToServer("Undefined attribute: %s", buffer);
+            }
+        } while (KvGotoNextKey(kv_attribs));
+        KvGoBack(kv_attribs);
+    }
+    
+}
+
+bool Native_M_Item_IsKnown(Handle plugin, int numParams)
+{
+    int id = GetNativeCell(1);
+    
+    char buffer[64];
+    IntToString(id, buffer, 64);
+    bool result = KvJumpToKey(kv_items, buffer, false); //false if id is not here
+    if (result) {
+        KvGoBack(kv_items); //go back to root, or one level up
+    }
+    return result;
+}
+
+void Native_M_Item_GetDebugName(Handle plugin, int numParams)
+{
+    int id = GetNativeCell(1);
+    char buffer[64];
+    GetNativeArray(2, buffer, 64);
+    char buffer2[64];
+    IntToString(id, buffer2, 64);
+    bool result = KvJumpToKey(kv_items, buffer2, false); //false if id is not here
+    if (result) {
+        KvGetString(kv_items, "name", buffer, 64, "stinky unknown item");
+        KvGoBack(kv_items); //go back to root, or one level up
+    } else {
+        buffer = "nonexistent item";
+    }
+    SetNativeArray(2, buffer, 64);
+}
+
+int Native_M_Item_GetParent(Handle plugin, int numParams)
+{
+    int id = GetNativeCell(1);
+    char buffer[64];
+    IntToString(id, buffer, 64);
+    bool result = KvJumpToKey(kv_items, buffer, false); //false if id is not here
+    if (result) {
+        int lastItem = -1;
+        while (lastItem != id) {
+            lastItem = id;
+            id = KvGetNum(kv_items, "parent", id);
+        }
+        KvGoBack(kv_items); //go back to root, or one level up
+    }
+    return id;
+}
+
+void Native_M_Item_GetSlot(Handle plugin, int numParams)
+{
+    int id = GetNativeCell(1);
+    char buffer[64];
+    GetNativeArray(2, buffer, 64);
+    char buffer2[64];
+    IntToString(id, buffer2, 64);
+    bool result = KvJumpToKey(kv_items, buffer2, false); //false if id is not here
+    if (result) {
+        KvGetString(kv_items, "item_slot", buffer, 64, "melee");
+        KvGoBack(kv_items); //go back to root, or one level up
+    }
+    SetNativeArray(2, buffer, 64);
+}
+
+bool Native_M_Attrib_IsKnown(Handle plugin, int numParams)
+{
+    int id = GetNativeCell(1);
+    char buffer[64];
+    IntToString(id, buffer, 64);
+    bool result = KvJumpToKey(kv_attribs, buffer, false); //false if id is not here
+    if (result) {
+        KvGoBack(kv_attribs); //go back to root, or one level up
+    }
+    return result;
+}
+
+void Native_M_Attrib_GetDebugName(Handle plugin, int numParams)
+{
+    int id = GetNativeCell(1);
+    char buffer[64];
+    GetNativeArray(2, buffer, 64);
+    char buffer2[64];
+    IntToString(id, buffer2, 64);
+    bool result = KvJumpToKey(kv_attribs, buffer2, false); //false if id is not here
+    if (result) {
+        KvGetString(kv_attribs, "name", buffer, 64, "stinky unknown attribute");
+        KvGoBack(kv_attribs); //go back to root, or one level up
+    } else {
+        buffer = "nonexistent attribute";
+    }
+    SetNativeArray(2, buffer, 64);
+}
+
+int Native_M_Attrib_GetParent(Handle plugin, int numParams)
+{
+    int id = GetNativeCell(1);
+    char buffer[64];
+    IntToString(id, buffer, 64);
+    bool result = KvJumpToKey(kv_attribs, buffer, false); //false if id is not here
+    if (result) {
+        int lastAttribute = -1;
+        while (lastAttribute != id) {
+            lastAttribute = id;
+            id = KvGetNum(kv_attribs, "parent", id);
+        }
+        KvGoBack(kv_attribs); //go back to root, or one level up
+    }
+    return id;
+}
+
+int Native_M_Attrib_GetDatatype(Handle plugin, int numParams)
+{
+    int id = GetNativeCell(1);
+    char buffer[64], buffer2[64];
+    IntToString(id, buffer2, 64);
+    bool result = KvJumpToKey(kv_attribs, buffer2, false); //false if id is not here
+    if (result) {
+        KvGetString(kv_attribs, "description_format", buffer, 64, "value_is_percentage");
+        KvGoBack(kv_attribs); //go back to root, or one level up
+        if (StrEqual(buffer, "value_is_percentage")) {
+            return 2;
+        } else if (StrEqual(buffer, "value_is_inverted_percentage")) {
+            return 4; //still percentage, just good and bad are reversed
+        } else if (StrEqual(buffer, "value_is_additive")) {
+            return 1;
+        } else if (StrEqual(buffer, "value_is_additive_percentage")) {
+            return 3; //still additive, just smaller unit
+        } else if (StrEqual(buffer, "value_is_or")) {
+            return -1; //override
+        } else {
+            return 0; //default
+        }
+    } else {
+        return 0; //default
+    }
+}
+
+float Native_M_Attrib_GetMaxIncrease(Handle plugin, int numParams)
+{
+    int id = GetNativeCell(1);
+    float maxIncrease = -1.0;
+    char buffer[64];
+    IntToString(id, buffer, 64);
+    bool result = KvJumpToKey(kv_attribs, buffer, false); //false if id is not here
+    if (result) {
+        maxIncrease = KvGetFloat(kv_attribs, "max_increase", -1.0);
+        KvGoBack(kv_attribs); //go back to root, or one level up
+    }
+    return maxIncrease;
+}
+
+float Native_M_Attrib_GetMaxDecrease(Handle plugin, int numParams)
+{
+    int id = GetNativeCell(1);
+    float maxDecrease = 1.0;
+    char buffer[64];
+    IntToString(id, buffer, 64);
+    bool result = KvJumpToKey(kv_attribs, buffer, false); //false if id is not here
+    if (result) {
+        maxDecrease = KvGetFloat(kv_attribs, "maximum_decrease", 1.0);
+        KvGoBack(kv_attribs); //go back to root, or one level up
+    }
+    return maxDecrease;
+}
+
+float Native_M_Attrib_GetInterval(Handle plugin, int numParams)
+{
+    int id = GetNativeCell(1);
+    float interval = 1.0;
+    char buffer[64];
+    IntToString(id, buffer, 64);
+    bool result = KvJumpToKey(kv_attribs, buffer, false); //false if id is not here
+    if (result) {
+        interval = KvGetFloat(kv_attribs, "interval", 1.0);
+        KvGoBack(kv_attribs); //go back to root, or one level up
+    }
+    return interval;
+}
+
+float Native_M_Attrib_GetMaximum(Handle plugin, int numParams)
+{
+    int id = GetNativeCell(1);
+    float maximum = FLT_MAX;
+    char buffer[64];
+    IntToString(id, buffer, 64);
+    bool result = KvJumpToKey(kv_attribs, buffer, false); //false if id is not here
+    if (result) {
+        maximum = KvGetFloat(kv_attribs, "maximum", FLT_MAX);
+        KvGoBack(kv_attribs); //go back to root, or one level up
+    }
+    return maximum;
+}
+
+float Native_M_Attrib_GetMinimum(Handle plugin, int numParams)
+{
+    int id = GetNativeCell(1);
+    float minimum = FLT_MIN;
+    char buffer[64];
+    IntToString(id, buffer, 64);
+    bool result = KvJumpToKey(kv_attribs, buffer, false); //false if id is not here
+    if (result) {
+        minimum = KvGetFloat(kv_attribs, "minimum", FLT_MIN);
+        KvGoBack(kv_attribs); //go back to root, or one level up
+    }
+    return minimum;
+}
+
+bool Native_M_FlagsAgree(Handle plugin, int numParams)
+{
+    int item = GetNativeCell(1);
+    int attribute = GetNativeCell(2);
+    char buffer[64], buffer2[64];
+    bool result;
+    bool result2;
+    int attrib_flags = 0;
+    int attrib_flags2 = 0;
+    int item_flags = g_cvAssumedFlags.IntValue;
+    int item_flags2 = g_cvAssumedFlags2.IntValue;
+    IntToString(attribute, buffer, 64);
+    result = KvJumpToKey(kv_attribs, buffer, false);
+    if (result) {
+        attrib_flags = KvGetNum(kv_attribs, "flags", 0);
+        attrib_flags2 = KvGetNum(kv_attribs, "flags2", 0);
+        KvGoBack(kv_attribs);
+    }
+    IntToString(item, buffer2, 64);
+    result2 = KvJumpToKey(kv_items, buffer2, false);
+    if (result2) {
+        item_flags = KvGetNum(kv_items, "flags", g_cvAssumedFlags.IntValue);
+        item_flags2 = KvGetNum(kv_items, "flags2", g_cvAssumedFlags2.IntValue);
+        KvGoBack(kv_items);
+    }
+    //PrintToServer("Item: %d (%X %X), Attribute: %d (%X %X), Combined: %X %X", item, item_flags, item_flags2, attribute, attrib_flags, attrib_flags2, attrib_flags & ~item_flags, attrib_flags2 & ~item_flags2); //flags results
+    return ((attrib_flags & ~item_flags) == 0 && (attrib_flags2 & ~item_flags2) == 0); //true if not a single expected flag is missing
+}
+
+int TryAttributeFlip(int attributeId, int attributeType, float attributeValue)
+{
+    char buffer[64], buffer2[64];
+    IntToString(attributeId, buffer, 64);
+    bool result = KvJumpToKey(kv_attribs, buffer, false);
+    if (result) {
+        int counterpart = KvGetNum(kv_attribs, "counterpart", attributeId);
+        KvGetString(kv_attribs, "effect_type", buffer2, 64, "neutral");
+        if (StrEqual(buffer2, "negative") && ((attribute_type == 2 && attribute_value > 1) || (attribute_type != 2 && attribute_value > 0))) {
+            attributeId = counterpart;
+        } else if (StrEqual(buffer2, "positive") && ((attribute_type == 2 && attribute_value < 1) || (attribute_type != 2 && attribute_value < 0))) {
+            attributeId = counterpart;
+        }
+        KvGoBack(kv_attribs);
+    }
 }
 
 public APLRes AskPluginLoad2(Handle myself, bool late, char[] error, int err_max)
 {
-	CreateNative("AddAttributeToConfig", Native_AddAttributeToConfig);
+	CreateNative("ApplyItemModification", Native_ApplyItemModification);
 	CreateNative("QueryAttributeValue", Native_QueryAttributeValue);
 	CreateNative("QueryAttributeEffect", Native_QueryAttributeEffect);
 	CreateNative("DumpAttributes", Native_DumpAttributes);
+    
+	CreateNative("M_Item_IsKnown", Native_M_Item_IsKnown);
+	CreateNative("M_Attrib_IsKnown", Native_M_Attrib_IsKnown);
+    
+	CreateNative("M_Item_GetParent", Native_M_Item_GetParent);
+	CreateNative("M_Attrib_GetParent", Native_M_Attrib_GetParent);
+    
+	CreateNative("M_Item_GetDebugName", Native_M_Item_GetDebugName);
+	CreateNative("M_Attrib_GetDebugName", Native_M_Attrib_GetDebugName);
+    
+	CreateNative("M_Item_GetSlot", Native_M_Item_GetSlot);
+	CreateNative("M_Attrib_GetDatatype", Native_M_Attrib_GetDatatype);
+    
+	CreateNative("M_Attrib_GetMaxIncrease", Native_M_Attrib_GetMaxIncrease);
+	CreateNative("M_Attrib_GetMaxDecrease", Native_M_Attrib_GetMaxDecrease);
+	CreateNative("M_Attrib_GetInterval", Native_M_Attrib_GetInterval);
+	CreateNative("M_Attrib_GetMaximum", Native_M_Attrib_GetMaximum);
+	CreateNative("M_Attrib_GetMinimum", Native_M_Attrib_GetMinimum);
+    
+	CreateNative("M_FlagsAgree", Native_M_FlagsAgree);
+    
 	return APLRes_Success;
 }
 
@@ -146,6 +481,31 @@ public Action CmdDisable(int client, int action) {
 	ReplyToCommand(client, "Disabling TF2Items for you.");
 	g_bPlayerEnabled[client] = false;
 	return Plugin_Handled;
+}
+
+public Action CmdAppendModifier(int args) {
+	
+	// Load the next 4 strings as arguments (the item, the attribute and the modifier; also the mode)
+	char arg1[32], arg2[32], arg3[32], arg4[32];
+    
+    GetCmdArg(1, arg1, sizeof(arg1));
+    GetCmdArg(2, arg2, sizeof(arg2));
+    GetCmdArg(3, arg3, sizeof(arg3));
+    GetCmdArg(4, arg4, sizeof(arg4));
+	
+	// Fire a message telling about the operation.
+    LogMessage("Appending change");
+	
+	int item = StringToInt(arg1);
+	int attribute = StringToInt(arg2);
+	float modifier = StringToFloat(arg3);
+	int mode = StringToInt(arg4);
+	
+	// Call the ApplyItemModification function.
+	ApplyItemModification(item, attribute, modifier, mode, "nag_forced");
+	return Plugin_Handled;
+	
+	
 }
 
 /*
@@ -297,13 +657,15 @@ int Native_DumpAttributes(Handle plugin, int numParams) {
  * if 1, add (additive, additive percentage)
  * if 2, multiply (percentage, inverted percentage)
  * */
-int Native_AddAttributeToConfig(Handle plugin, int numParams) {
+int Native_ApplyItemModification(Handle plugin, int numParams) {
     
     int itemId = GetNativeCell(1);
     int attribute = GetNativeCell(2);
     float modifier = view_as<float>(GetNativeCell(3));
     int mode = GetNativeCell(4);
-    bool addToConfig = view_as<bool>(GetNativeCell(5));
+    char logLabel[64];
+    
+    GetNativeArray(5, logLabel, 64);
 	
 	Handle item = FindItemSimple(itemId);
 	
@@ -316,13 +678,13 @@ int Native_AddAttributeToConfig(Handle plugin, int numParams) {
 	float newValue = InternalQueryAttributeEffect(previousValue, modifier, mode);
 	int attributeNum = SetAttribute(item, attribute, newValue);
 	
-    if (addToConfig) {
+    if (logLabel[0] != '/0') {
     
         char buffer[256];
         
-        BuildPath(Path_SM, buffer, sizeof(buffer), "../../cfg/mannco/mannco.command_history.cfg");
+        BuildPath(Path_SM, buffer, sizeof(buffer), "configs/mannco-history.cfg");
         File file = OpenFile(buffer, "a+");
-        file.WriteLine("mannco_forcemod %d %d %f", itemId, attribute, modifier);
+        file.WriteLine("%s %d %d %f", logLabel, itemId, attribute, modifier);
         file.Close();
     
     }
