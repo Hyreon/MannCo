@@ -16,7 +16,7 @@
  * if 2, multiply (percentage, inverted percentage)
  * addToConfig: whether or not to add the value to a configuration file, for use after a restart
  * */
-native int ApplyItemModification(int itemId, int attribute, float modifier, int mode, char[] logLabel);
+native int ApplyItemModification(int itemId, int attribute, float modifier, int mode, char[] logLabel = "");
 
 /*
  *
@@ -38,6 +38,11 @@ native float QueryAttributeValue(int itemId, int attribute, int mode);
  * if 2, multiply (percentage, inverted percentage)
  * */
 native float QueryAttributeEffect(int itemId, int attribute, float modifier, int mode);
+
+/*
+ * Gets the item 
+ * */
+native int ItemFromNameFragment(char fragment[64]);
 
 /*
  *

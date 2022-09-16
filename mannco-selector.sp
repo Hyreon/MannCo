@@ -78,6 +78,8 @@ public void OnPluginStart() {
 	RegServerCmd("mannco_reroll", CmdReroll);
 	RegServerCmd("mannco_adminapply", CmdAdminApply);
 	
+	RegServerCmd("mannco_forcemod", CmdAppendModifier);
+	
 	RegConsoleCmd("sm_menutest", Menu_Mannco1);
 	
 	RegConsoleCmd("sm_what", CmdWhat);
@@ -111,7 +113,7 @@ Action CmdSpecs(int client, int args) {
 	    return Plugin_Handled;
     } else {
         GetCmdArg(1, arg1, sizeof(arg1));
-        int itemId = Item_From_Name_Fragment(arg1);
+        int itemId = ItemFromNameFragment(arg1);
         if (itemId == -1) {
             PrintToChat(client, "Unknown weapon. Please put in a valid weapon.");
 	        return Plugin_Handled;
@@ -123,11 +125,11 @@ Action CmdSpecs(int client, int args) {
         for (i = 0; i < 20; i++) {
             if (attribute_dump[i] == 0) break;
             char attrib_name[64];
-            Metadata_Debug_Name(attribute_dump[i], attrib_name);
+            M_Attrib_GetDebugName(attribute_dump[i], attrib_name);
             PrintToConsole(client, "%s %.3f", attrib_name, value_dump[i]);
         }
         char item_name[64];
-        Item_Metadata_Debug_Name(itemId, item_name);
+        M_Item_GetDebugName(itemId, item_name);
         if (i == 0) {
             PrintToChat(client, "%s is unmodified. For now.", item_name);
         } else {
@@ -207,26 +209,6 @@ public void OnMapStart()
     PrecacheSound(ItemRevampedSoundFile);
 }
 
-public int Item_From_Name_Fragment(char fragment[64]) {
-    
-    char buffer[256];
-    int finalId = -1;
-    char sectionName[64];
-    if (KvGotoFirstSubKey(kv_items)) {
-        do {
-            KvGetString(kv_items, "name", buffer, 256, "");
-            if (buffer[0] != '\0') {
-                if (StrContains(buffer, fragment, false) != -1) {
-                    KvGetSectionName(kv_items, sectionName, 64);
-                    finalId = StringToInt(sectionName);
-                }
-            }
-        } while (KvGotoNextKey(kv_items) && finalId < 0);
-        KvGoBack(kv_items);
-    }
-    return finalId;
-}
-
 public Action Event_RoundStart(Event event, const char[] name, bool dontBroadcast)
 {
 	Reroll();
@@ -248,7 +230,7 @@ bool ValidateItem(int item, int attempts = 0, bool verbose = false) {
 bool ValidateAttribute(int item, int attribute, int attempts = 0, bool verbose = false) {
     bool passing = true;
     passing = passing && (M_Attrib_IsKnown(attribute) || attempts >= 1000);
-    passing = passing && (FlagsAgree(item, attribute) || attempts >= 10000);
+    passing = passing && (M_FlagsAgree(item, attribute) || attempts >= 10000);
     return passing;
 }
 
@@ -329,7 +311,7 @@ public void Reroll() {
     	    attribute_value = maxIncrease;
     	}
     	
-    	float maxDecrease = Metadata_AttributeMaxDecrease(attribute_id);
+    	float maxDecrease = M_Attrib_GetMaxDecrease(attribute_id);
     	if (maxDecrease >= 0 && attribute_value > maxDecrease) {
     	    attribute_value = maxDecrease;
     	}
@@ -361,7 +343,8 @@ public void Reroll() {
     	prevValue = QueryAttributeValue(item_id, attribute_id, attribute_type);
     } while (prevValue == newValue);
 	
-    TryAttributeFlip();
+    //TODO update the attribute sign to match what it ought for display purposes
+    //TryAttributeFlip();
     
 	char item_debug[64];
 	M_Item_GetDebugName(item_id, item_debug);
@@ -507,5 +490,30 @@ public Action CmdReroll(int args) {
 	Reroll();
 	
 	return Plugin_Handled;
+	
+}
+
+public Action CmdAppendModifier(int args) {
+	
+	// Load the next 4 strings as arguments (the item, the attribute and the modifier; also the mode)
+	char arg1[32], arg2[32], arg3[32], arg4[32];
+    
+    GetCmdArg(1, arg1, sizeof(arg1));
+    GetCmdArg(2, arg2, sizeof(arg2));
+    GetCmdArg(3, arg3, sizeof(arg3));
+    GetCmdArg(4, arg4, sizeof(arg4));
+	
+	// Fire a message telling about the operation.
+    LogMessage("Appending change");
+	
+	int item = StringToInt(arg1);
+	int attribute = StringToInt(arg2);
+	float modifier = StringToFloat(arg3);
+	int mode = StringToInt(arg4);
+	
+	// Call the ApplyItemModification function.
+	ApplyItemModification(item, attribute, modifier, mode, "nag_forced");
+	return Plugin_Handled;
+	
 	
 }
