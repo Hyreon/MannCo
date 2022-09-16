@@ -1,0 +1,12 @@
+"Phrases"
+{
+  "Choice 3"
+  {
+    "en"  "Choice Translated"
+  }
+
+  "Menu Title"
+  {
+    "en"  "Menu Title Translated"
+  }
+}
