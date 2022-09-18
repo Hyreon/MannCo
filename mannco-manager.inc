@@ -49,7 +49,7 @@ native int ItemFromNameFragment(char fragment[64]);
  * Prints out a list of attributes in console to the specified user, for the specified weapon.
  * If there are no changed attributes, the user will be told this instead.
  * */
- native void DumpAttributes(int itemId, int[] attributes, float[] values, int size);
+ native int DumpAttributes(int itemId, int[] attributes, float[] values, int size);
  
 /*
  *

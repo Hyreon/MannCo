@@ -77,7 +77,7 @@ public Plugin myinfo = {
 public void OnPluginStart() {
 	LoadTranslations("menu_mannco.phrases");
     
-    g_hCvarEnabled = CreateConVar("tf2items_manager", "1", "Enables/disables the manager (0 - Disabled / 1 - Enabled", FCVAR_REPLICATED|FCVAR_NOTIFY);
+    g_hCvarEnabled = CreateConVar("tf2items_manager", "1", "Enables/disables the manager (0 - Disabled / 1 - Enabled)", FCVAR_REPLICATED|FCVAR_NOTIFY);
     
 	RegServerCmd("mannco_reroll", CmdReroll);
 	RegServerCmd("mannco_adminapply", CmdAdminApply);
@@ -124,9 +124,9 @@ Action CmdSpecs(int client, int args) {
         }
         int attribute_dump[20];
         float value_dump[20];
-        DumpAttributes(itemId, attribute_dump, value_dump, 20);
-        int i;
-        for (i = 0; i < 20; i++) {
+        int numAttributes = DumpAttributes(itemId, attribute_dump, value_dump, 20);
+        int i = 0;
+        for (i = 0; i < numAttributes; i++) {
             if (attribute_dump[i] == 0) break;
             char attrib_name[64];
             M_Attrib_GetDebugName(attribute_dump[i], attrib_name);
@@ -308,15 +308,17 @@ public void Reroll() {
     	    float interval = M_Attrib_GetInterval(attribute_id);
             do {
                 attribute_value = interval * float(RoundToNearest(30.0 * (GetURandomFloat() - 0.5)));
-    	    while (attribute_value == 0.0);
+    	    } while (attribute_value < interval && attribute_value > -interval);
     	} else if (attribute_type == 3) {
+            float epsilon = 0.001;
             do {
                 attribute_value = RoundToNearest(100.0 * (GetURandomFloat() - 0.5)) / 100.0;
-    	    while (attribute_value == 0.0);
+    	    } while (attribute_value < epsilon && attribute_value > -epsilon);
     	} else {
+            float epsilon = 0.001;
             do {
                 attribute_value = RoundToNearest(100.0 * (GetURandomFloat() + 0.5)) / 100.0;
-    	    while (attribute_value == 1.0);
+    	    } while (attribute_value - 1.0 < epsilon && attribute_value > -epsilon);
     	}
     	
     	float maxIncrease = M_Attrib_GetMaxIncrease(attribute_id);

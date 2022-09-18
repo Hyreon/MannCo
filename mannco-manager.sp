@@ -53,7 +53,7 @@ public Plugin myinfo = {
 public void OnPluginStart() {
 	// Create convars
 	CreateConVar("tf2items_manager_version", PLUGIN_VERSION, PLUGIN_NAME, FCVAR_SPONLY|FCVAR_REPLICATED|FCVAR_NOTIFY);
-	g_hCvarEnabled = CreateConVar("tf2items_manager", "1", "Enables/disables the manager (0 - Disabled / 1 - Enabled", FCVAR_REPLICATED|FCVAR_NOTIFY);
+	g_hCvarEnabled = CreateConVar("tf2items_manager", "1", "Enables/disables the manager (0 - Disabled / 1 - Enabled)", FCVAR_REPLICATED|FCVAR_NOTIFY);
 	g_hCvarPlayerControlEnabled = CreateConVar("tf2items_manager_playercontrol", "1", "Enables/disables the player's ability to control the manager (0 - Disabled / 1 - Enabled");
 	
 	g_cvAssumedFlags = CreateConVar("mannco_aflags", "0", "Which flags a new weapon is assumed to have. 0 for none, -1 for all.");
@@ -635,8 +635,8 @@ int Native_DumpAttributes(Handle plugin, int numParams) {
     		attributes[i] = currentAttributeId;
     		values[i] = currentAttributeValue;
     	}
-    	GetNativeArray(2, attributes, size);
-    	GetNativeArray(3, values, size);
+    	SetNativeArray(2, attributes, size);
+    	SetNativeArray(3, values, size);
     	return numAttributes;
     }
     
