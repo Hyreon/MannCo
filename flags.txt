@@ -1,0 +1,69 @@
+
+
+
+
+
+
+
+
+
+1           Does damage (even if that damage is indirect, ie mantreads)
+2           Has clip
+4           Item can be fired (even if it does no damage, ie rocket jumper)
+8           Can be used by Medic (has medigun, has ubercharges)
+16          Item is medigun (certain medigun properties)
+32          Item cloaks (invis watches)
+64          Can be used by Spy (affects cloak, disguise, backstabs, or sapping)
+128         Can be used by Sniper (affects Sniper Rifle, such as cozy camper's no flinch)
+256         Has reserve ammo (for reloading, as opposed to fire rate)
+512         Is explosive (blast radius, etc)
+1024        Is incendiary (afterburn duration, etc)
+2048        Not passive (can be holstered)
+4096        Can be used by classes other than Spy (and therefore, has a primary weapon, which can have a reduced ammo capacity)
+8192        Can be used by Engineer (builds buildings, and metal displays correctly to user)
+16384       Can be used by Heavy (minigun, sandviches)
+32768       Can be used by Demoman (stickybombs, shields, grenades)
+65536       Creates projectile (projectile speed, override, etc.)
+131072      Creates fire particles (so, so many properties to affect these)
+262144      Item is not melee or demo (something with firing speed???)
+524288      Item is melee or demo (something with firing speed???)
+1048576     Has a clip, AND is not a flamethrower (flamethrower's clip is unusual and is not affected by clip per shot)
+2097152     Can headshot (all sniper rifles, inc. sydney sleeper and huntsman) [revolvers in set_weapon_mode 1]
+4194304     Can be used by Scout (hype, scattergun mods; bonus airjumps are, unfortunately, scout only)
+8388608     Is hitscan
+16777216    Reloads individual rounds (beggar's bazooka effect)
+33554432    Consumable assist tool (sandvich, sandman; increase their supply; what else???)
+67108864    Rocket launcher only (rocket jumping effects)
+134217728   Melee only
+268435456   Shield only
+536870912   Class has explosives (includes pyro! and engineer! needs testing: does it really work???)
+1073741824  Item has charged shots (sniper rifles; unsure if huntsman is included here???)
+2147483648  Stickybomb launcher only (charge rate)
+
+
+
+
+
+
+
+
+1           Grenade launcher only (bounce and roll)
+2           Jarate or Mad Milk only (extinguish reduces cooldown; does not work on gas passer. Terrible!)
+4           Manmelter only (turn of crits on extinguish)
+8           Thermal thruster only (various turning mods; cannot apply its effect to other items)
+16          Eureka Effect only (teleport to spawn only works on it)
+32          Class has buff (something with buff duration??? seems to affect soldier banners, heavy rage, medic shield. only applying this to soldier banners for now)
+64          Pyro melee only (Set DamageType Ignite is LITERALLY only used on PYRO MELEE. Otherwise the afterburn is 0 seconds long and purely visual. Terrible!)
+128         Multiple pellets per shot (Fixed shot pattern; bullet per shot penalties)
+256         Gas passer only (various damage and timing requirements; unable to apply these to other throwables. Terrible!)
+512         Class has rage (mod on rage hit???)
+1024        Class is soldier (air jump on attack; untested effect.)
+2048        Weapon is Widowmaker only (mod on hit add ammo. No weapon can properly use this mod to get back any clip, ammo or metal.)
+4096        Safe for passive weapon use (dangerous flag with server-crashing potential, only tested items can get this mod. Which ones are tested???)
+8192        Air strike only (maximum clip is air strike exclusive)
+16384       Diamondback only (crits on stab & sap is bugged on other revolvers)
+32768       Hitman's heatmaker only (rage values; is this the same as 512???)
+65536       Crit-a-Cola only (the mark on death after-effect)
+131072      Scattergun with knockback (scattergun knockback force multipliers)
+262144      Cleaner's Carbine only (crikey modifiers)
+524288      Airblast (split from 131072 'creates fire particles', thanks to the phlog and dragon's fury having each respectively)

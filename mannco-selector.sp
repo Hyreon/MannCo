@@ -230,6 +230,7 @@ bool ValidateItem(int item, int attempts = 0, bool verbose = false) {
     passing = passing && (M_Item_IsKnown(item) || attempts >= 1000);
     passing = passing && (!StrEqual(slot, "misc") || attempts >= 100);
     passing = passing && (!StrEqual(slot, "head") || attempts >= 100);
+    passing = passing && (!StrEqual(slot, "action") || attempts >= 100);
     return passing;
 }
 
@@ -305,11 +306,17 @@ public void Reroll() {
     	    attribute_value = 1.0; //always on
     	} else if (attribute_type == 1) {
     	    float interval = M_Attrib_GetInterval(attribute_id);
-    	    attribute_value = interval * float(RoundToNearest(30.0 * (GetURandomFloat() - 0.5)));
+            do {
+                attribute_value = interval * float(RoundToNearest(30.0 * (GetURandomFloat() - 0.5)));
+    	    while (attribute_value == 0.0);
     	} else if (attribute_type == 3) {
-    	    attribute_value = RoundToNearest(100.0 * (GetURandomFloat() - 0.5)) / 100.0;
+            do {
+                attribute_value = RoundToNearest(100.0 * (GetURandomFloat() - 0.5)) / 100.0;
+    	    while (attribute_value == 0.0);
     	} else {
-    	    attribute_value = RoundToNearest(100.0 * (GetURandomFloat() + 0.5)) / 100.0;
+            do {
+                attribute_value = RoundToNearest(100.0 * (GetURandomFloat() + 0.5)) / 100.0;
+    	    while (attribute_value == 1.0);
     	}
     	
     	float maxIncrease = M_Attrib_GetMaxIncrease(attribute_id);
@@ -318,7 +325,7 @@ public void Reroll() {
     	}
     	
     	float maxDecrease = M_Attrib_GetMaxDecrease(attribute_id);
-    	if (maxDecrease >= 0 && attribute_value > maxDecrease) {
+    	if (maxDecrease <= 0 && attribute_value > maxDecrease) {
     	    attribute_value = maxDecrease;
     	}
     	
@@ -518,6 +525,10 @@ public Action CmdAppendModifier(int args) {
 	int attribute = StringToInt(arg2);
 	float modifier = StringToFloat(arg3);
 	int mode = StringToInt(arg4);
+    
+    if (mode == 0) {
+        mode = M_Attrib_GetDatatype(attribute);
+    }
 	
 	// Call the ApplyItemModification function.
 	ApplyItemModification(item, attribute, modifier, mode, "nag_forced");
