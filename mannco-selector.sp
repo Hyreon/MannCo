@@ -259,7 +259,7 @@ bool ValidateValue(int item, int attribute, float value, int mode, int attempts 
     }
     if (!(maxDecrease >= 0 || value >= maxDecrease || attempts >= 100)) {
         passing = false;
-        if (verbose) PrintToServer("New value %.3f exceeds the maximum decrease %.3f.", value, maxIncrease);
+        if (verbose) PrintToServer("New value %.3f exceeds the maximum decrease %.3f.", value, maxDecrease);
     }
     if (!(actualValue != oldValue || attempts >= 100)) {
         passing = false;

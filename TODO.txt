@@ -1,0 +1,6 @@
+/specs is not working. it does not work for your items, items with multiple spaces, or at all?
+Mods with inverted percentage seem to have no effect.
+Cosmetic or action mods will not be reloaded.
+Attribute 108 is not being loaded. Specifically 108. It's as valid as the rest of them, by all accounts.
+
+Bots don't update their team when a player switches team.
