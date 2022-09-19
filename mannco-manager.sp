@@ -173,6 +173,14 @@ int Native_M_Item_GetDebugName(Handle plugin, int numParams)
 int Native_M_Item_GetParent(Handle plugin, int numParams)
 {
     int id = GetNativeCell(1);
+    
+    id = Internal_M_Item_GetParent(id);
+    
+    return id;
+}
+
+int Internal_M_Item_GetParent(int id) {
+    
     char buffer[64];
     IntToString(id, buffer, 64);
     bool result = KvJumpToKey(kv_items, buffer, false); //false if id is not here
@@ -184,7 +192,9 @@ int Native_M_Item_GetParent(Handle plugin, int numParams)
         }
         KvGoBack(kv_items); //go back to root, or one level up
     }
+    
     return id;
+    
 }
 
 int Native_M_Item_GetSlot(Handle plugin, int numParams)
@@ -196,7 +206,17 @@ int Native_M_Item_GetSlot(Handle plugin, int numParams)
     IntToString(id, buffer2, 64);
     bool result = KvJumpToKey(kv_items, buffer2, false); //false if id is not here
     if (result) {
-        KvGetString(kv_items, "item_slot", buffer, 64, "melee");
+        KvGetString(kv_items, "item_slot", buffer, 64, "unknown");
+        
+        //catch taunts
+        if (StrEqual(buffer, "unknown")) {
+            bool isTaunt = KvJumpToKey(kv_items, "taunt", false);
+            if (isTaunt) {
+                buffer = "taunt";
+                KvGoBack(kv_items);
+            }
+        }
+        
         KvGoBack(kv_items); //go back to root, or one level up
     }
     SetNativeString(2, buffer, 64);
@@ -435,6 +455,9 @@ public Action TF2Items_OnGiveNamedItem(int client, char[] classname, int itemDef
 	if (override != null)
 		return Plugin_Continue; // Plugin_Changed
 	
+    //use the most recent, valid item.
+    itemDefIndex = Internal_M_Item_GetParent(itemDefIndex);
+    
 	// Find item. If any is found, override the attributes with these.
 	Handle item = FindItem(client, itemDefIndex);
 	if (item != null) {
@@ -747,7 +770,7 @@ float QueryAttribute(Handle item, int attribute, int mode) {
 		}
 	}
 	
-	if (mode == 2) return 1.0; //multiplicative identity
+	if (mode == 2 || mode == 4) return 1.0; //multiplicative identity
 	
 	return 0.0;
 	

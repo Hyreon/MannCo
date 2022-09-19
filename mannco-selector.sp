@@ -77,7 +77,7 @@ public Plugin myinfo = {
 public void OnPluginStart() {
 	LoadTranslations("menu_mannco.phrases");
     
-    g_hCvarEnabled = CreateConVar("tf2items_manager", "1", "Enables/disables the manager (0 - Disabled / 1 - Enabled)", FCVAR_REPLICATED|FCVAR_NOTIFY);
+    g_hCvarEnabled = FindConVar("tf2items_manager");
     
 	RegServerCmd("mannco_reroll", CmdReroll);
 	RegServerCmd("mannco_adminapply", CmdAdminApply);
@@ -231,6 +231,7 @@ bool ValidateItem(int item, int attempts = 0, bool verbose = false) {
     passing = passing && (!StrEqual(slot, "misc") || attempts >= 100);
     passing = passing && (!StrEqual(slot, "head") || attempts >= 100);
     passing = passing && (!StrEqual(slot, "action") || attempts >= 100);
+    passing = passing && (!StrEqual(slot, "taunt") || attempts >= 100);
     return passing;
 }
 
