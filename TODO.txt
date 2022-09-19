@@ -1,6 +1,9 @@
-/specs is not complete. it does not work for your items, items with multiple spaces.
-Mods with inverted percentage seem to have no effect.
-Cosmetic or action mods will not be reloaded.
+Attribute descriptions are lacking.
+Attributes are often of the wrong polarity.
+Attributes do not read the opposite polarity.
+/specs is not complete. it does not work for your items (primary, secondary, melee), held item, or items with spaces.
+Voting is entirely unimplemented.
+
 Attribute 108 is not being loaded. Specifically 108. It's as valid as the rest of them, by all accounts.
 
 Bots don't update their team when a player switches team.

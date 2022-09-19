@@ -128,9 +128,9 @@ Action CmdSpecs(int client, int args) {
         int i = 0;
         for (i = 0; i < numAttributes; i++) {
             if (attribute_dump[i] == 0) break;
-            char attrib_name[64];
-            M_Attrib_GetDebugName(attribute_dump[i], attrib_name);
-            PrintToConsole(client, "%s %.3f", attrib_name, value_dump[i]);
+            char attrib_desc[256];
+            M_Attrib_GetDesc(attribute_dump[i], value_dump[i], 0, attrib_desc, client);
+            PrintToConsole(client, "%s", attrib_name, value_dump[i]);
         }
         char item_name[64];
         M_Item_GetDebugName(itemId, item_name);

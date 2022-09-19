@@ -86,6 +86,12 @@ native int ItemFromNameFragment(char fragment[64]);
  * Get the debug name of an attribute. Usually, this is the internal debug name, but these can be changed for mannco's uses.
  * */
  native void M_Attrib_GetDebugName(int attribId, char[] name);
+
+/*
+ *
+ * Get the description of an attribute. A client is provided to determine the language; english is the default, if the client is invalid.
+ * */
+ native void M_Attrib_GetDesc(int attribId, float attribValue, int attribMode, char[] desc, int client);
  
 /*
  *

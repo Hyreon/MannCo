@@ -1,1041 +1,3981 @@
+Phrases
+{
 // Attribute descriptions
-"Attrib_ClipSize_Positive"					"+%s1% clip size"
-"Attrib_ClipSize_Negative"					"%s1% clip size"
-"Attrib_UberchargeRate_Positive"			"+%s1% ÜberCharge rate"
-"Attrib_UberchargeRate_Negative"			"%s1% ÜberCharge rate"
-"Attrib_OverhealUberchargeRate_Negative"	"%s1% ÜberCharge rate on Overhealed patients"
-"Attrib_DamageDone_Positive"				"+%s1% damage bonus"
-"Attrib_DamageDone_Negative"				"%s1% damage penalty"
-"Attrib_HealRate_Positive"					"+%s1% heal rate"
-"Attrib_HealRate_Negative"					"%s1% heal rate"
-"Attrib_FireRate_Positive"					"+%s1% faster firing speed"
-"Attrib_FireRate_Negative"					"%s1% slower firing speed"
-"Attrib_OverhealAmount_Positive"			"+%s1% max overheal"
-"Attrib_OverhealDecay_Disabled"				"Overheal bonus doesn't decay"
-"Attrib_OverhealDecay_Positive"				"+%s1% longer overheal time"
-"Attrib_OverhealDecay_Negative"				"%s1% shorter overheal time"
-"Attrib_HealOnHit_Positive"					"On Hit: Gain up to +%s1 health"
-"Attrib_HealOnHit_Negative"					"On Hit: %s1 health"
-"Attrib_HealthOnRadiusDamage"				"On Hit: Gain up to +%s1 health per attack"
-"Attrib_CritChance_Positive"				"+%s1 critical hit chance"
-"Attrib_CritChance_Negative"				"%s1 critical hit chance"
-"Attrib_CritChance_Disabled"				"No random critical hits"
-"Attrib_AddUber_OnHit_Positive"				"On Hit: %s1% ÜberCharge added"
-"Attrib_Medigun_CritBoost"					"ÜberCharge grants 100% critical chance"
-"Attrib_DamageDoneBonus_Positive"			"On Hit: +%s1% damage bonus"
-"Attrib_CritVsBurning"						"100% critical hit vs burning players"
-"Attrib_AxtinguisherProperties"				"100% critical hits burning players from behind\nMini-crits burning players from the front"
-"Attrib_DmgPenaltyVsNonBurning"				"%s1% damage vs non-burning players"
-"Attrib_NoCritVsNonBurning"					"No critical hits vs non-burning players"
-"Attrib_ModFlamethrowerPush"				"No compression blast"
-"Attrib_ModFlamethrower_BackCrits"			"100% critical hits from behind"
-"Attrib_MaxHealth_Positive"					"+%s1 max health on wearer"
-"Attrib_MaxHealth_Negative"					"%s1 max health on wearer"
-"Attrib_FistsHaveRadialBuff"				"On Kill: +50 health on nearby teammates\nOn Kill: +10% Crit Chance on nearby teammates"
-"Attrib_CritBoost_OnKill"					"On Kill: %s1 seconds of 100% critical chance"
-"Attrib_Slow_Enemy_OnHit"					"On Hit: %s1% chance to slow target"
-"Attrib_CloakMeterConsumeRate"				"+%s1% cloak drain rate"
-"Attrib_CloakMeterRegenRate"				"+%s1% cloak regen rate"
-"Attrib_Spread_Negative"					"%s1% less accurate"
-"Attrib_Spread_Positive"					"%s1% more accurate"
-"Attrib_BatLaunchesBalls"					"Alt-Fire: Launches a ball that slows opponents"
-"Attrib_DmgPenaltyVsNonStunned"				"%s1% damage vs non-stunned players"
-"Attrib_ZoomSpeedMod_Disabled"				"No move speed penalty from zoom"
-"Attrib_SniperCharge_Per_Sec"				"+%s1% charge rate"
-"Attrib_SniperNoHeadshots"					"No headshots"
-"Attrib_Scattergun_HasKnockback"			"Knockback on the target and shooter"
-"Attrib_BulletsPerShot_Bonus"				"+%s1% bullets per shot"
-"Attrib_SniperZoom_Penalty"					"%s1% zoom reduction"
-"Attrib_SniperNoCharge"						"No zoom or damage charge"
-"Attrib_CloakIsFeignDeath"					"Cloak Type: Feign Death.\nLeave a fake corpse on taking damage\nand temporarily gain invisibility, speed and damage resistance."
-"Attrib_CloakIsMovementBased"				"Cloak Type: Motion Sensitive.\nAlt-Fire: Turn invisible.  Cannot attack while invisible.  Bumping in to enemies will make you slightly visible to enemies.\nCloak drain rate based on movement speed."
-"Attrib_NoDoubleJump"						"Disables double jump"
-"Attrib_AbsorbDmgWhileCloaked"				"Absorbs %s1% damage while cloaked"
-"Attrib_RevolverUseHitLocations"			"Crits on headshot"
-"Attrib_FireRetardant"						"Wearer cannot ignite"
-"Attrib_BackstabShield"						"Blocks a single backstab attempt"
-"Attrib_MoveSpeed_Penalty"					"%s1% slower move speed on wearer"
-"Attrib_Jarate_Description"					"Coated enemies take mini-crits\nCan be used to extinguish fires"
-"Attrib_HealthRegen"						"+%s1 health regenerated per second on wearer"
-"Attrib_HealthDrain"						"%s1 health drained per second on wearer"
-"Attrib_HealthDrainMedic"					"%s1 health regenerated per second on wearer"
-"Attrib_SelfDmgPush_Increased"				"+%s1% self damage force"
-"Attrib_SelfDmgPush_Decreased"				"%s1% self damage force"
-"Attrib_DmgTaken_From_Fire_Reduced"			"+%s1% fire damage resistance on wearer"
-"Attrib_DmgTaken_From_Fire_ReducedActive"	"+%s1% fire damage resistance while deployed"
-"Attrib_DmgTaken_From_Fire_Increased"		"%s1% fire damage vulnerability on wearer"
-"Attrib_DmgTaken_From_Crit_Reduced"			"+%s1% critical hit damage resistance on wearer"
-"Attrib_DmgTaken_From_Crit_Increased"		"%s1% critical hit damage vulnerability on wearer"
-"Attrib_DmgTaken_From_Blast_Reduced"		"+%s1% explosive damage resistance on wearer"
-"Attrib_DmgTaken_From_Blast_Increased"		"%s1% explosive damage vulnerability on wearer"
-"Attrib_DmgTaken_From_Bullets_Reduced"		"+%s1% bullet damage resistance on wearer"
-"Attrib_DmgTaken_From_Bullets_Increased"	"%s1% bullet damage vulnerability on wearer"
-"Attrib_DmgTaken_Increased"					"%s1% damage vulnerability on wearer"
-"Attrib_CaptureValue_Increased"				"+%s1 capture rate on wearer"
-"Attrib_HealthFromHealers_Reduced"			"%s1% health from healers on wearer"
-"Attrib_HealthFromHealers_Increased"		"+%s1% health from healers on wearer"
-"Attrib_WpnBurnDmg_Increased"				"+%s1% afterburn damage bonus"
-"Attrib_WpnBurnDmg_Reduced"					"%s1% afterburn damage penalty"
-"Attrib_WpnBurnTime_Increased"				"+%s1% afterburn duration"
-"Attrib_WpnBurnTime_Reduced"				"%s1% afterburn duration"
-"Attrib_GestureSpeed_Increase"				"+%s1% faster taunt speed on wearer"
-"Attrib_AimingMoveSpeed_Increased"			"+%s1% faster move speed while deployed"
-"Attrib_AimingMoveSpeed_Decreased"			"%s1% slower move speed while deployed"
-"Attrib_MaxammoPrimary_Increased"			"+%s1% max primary ammo on wearer"
-"Attrib_MaxammoPrimary_Reduced"				"%s1% max primary ammo on wearer"
-"Attrib_MaxammoSecondary_Increased"			"+%s1% max secondary ammo on wearer"
-"Attrib_MaxammoSecondary_Reduced"			"%s1% max secondary ammo on wearer"
-"Attrib_MaxammoMetal_Increased"				"+%s1% max metal on wearer"
-"Attrib_MaxammoMetal_Reduced"				"%s1% max metal on wearer"
-"Attrib_CloakConsumeRate_Increased"			"-%s1% cloak duration"
-"Attrib_CloakConsumeRate_Decreased"			"+%s1% cloak duration"
-"Attrib_CloakRegenRate_Increased"			"+%s1% cloak regeneration rate"
-"Attrib_CloakRegenRate_Decreased"			"%s1% cloak regeneration rate"
-"Attrib_MinigunSpinup_Increased"			"%s1% slower spin up time"
-"Attrib_MinigunSpinup_Decreased"			"%s1% faster spin up time"
-"Attrib_MaxPipebombs_Increased"				"+%s1 max pipebombs out"
-"Attrib_MaxPipebombs_Decreased"				"%s1 max pipebombs out"
-"Attrib_SRifleChargeRate_Increased"			"%s1% faster power charge"
-"Attrib_SRifleChargeRate_Decreased"			"%s1% slower power charge"
-"Attrib_ConstructionRate_Increased"			"Construction hit speed boost increased by %s1%"
-"Attrib_ConstructionRate_Decreased"			"Construction hit speed boost decreased by %s1%"
-"Attrib_RepairRate_Increased"				"%s1% faster repair rate"
-"Attrib_RepairRate_Decreased"				"%s1% slower repair rate"
-"Attrib_UpgradeRate_Decreased"				"%s1% slower upgrade rate"
-"Attrib_metal_pickup_decreased"				"%s1% less metal from pickups and dispensers"
-"Attrib_ReloadTime_Increased"				"%s1% slower reload time"
-"Attrib_ReloadTime_Decreased"				"%s1% faster reload time"
-"Attrib_BlastRadius_Increased"				"+%s1% explosion radius"
-"Attrib_BlastRadius_Decreased"				"%s1% explosion radius"
-"Attrib_ProjectileRange_Increased"			"+%s1% projectile range"
-"Attrib_ProjectileRange_Decreased"			"%s1% projectile range"
-"Attrib_ProjectileSpeed_Increased"			"+%s1% projectile speed"
-"Attrib_ProjectileSpeed_Decreased"			"%s1% projectile speed"
-"Attrib_OverhealAmount_Negative"			"%s1% max overheal"
-"Attrib_MoveSpeed_Bonus"					"+%s1% faster move speed on wearer"
-"Attrib_MoveSpeed_Bonus_ShieldRequired"		"+%s1% faster move speed on wearer (shield required)"
-"Attrib_HealthFromPacks_Increased"			"+%s1% health from packs on wearer"
-"Attrib_HealthFromPacks_Decreased"			"%s1% health from packs on wearer"
-"Attrib_AmmoRegen"							"+%s1% ammo regenerated every 5 seconds on wearer"
-"Attrib_MetalRegen"							"+%s1 metal regenerated every 5 seconds on wearer"
-"Attrib_RocketLauncherSeeker"				"Fires laser guided rockets"
-"Attrib_ShovelDamageBoost"					"Damage increases as the user becomes injured"
-"Attrib_ShovelSpeedBoost"					"Move speed increases as the user becomes injured"
-"Attrib_WeaponBlocksHealing"				"Blocks healing while in use"
-"Attrib_Dmg_Falloff_Decreased"				"%s1% splash damage fall off"
-"Attrib_Dmg_Falloff_Increase"				"+%s1% splash damage fall off"
-"Attrib_StickyDetonateMode"					"Detonates stickybombs near the crosshair and directly under your feet"
-"Attrib_StickyAirBurstMode"					"Launched bombs shatter on surfaces"
-"Attrib_StickyArmTimePenalty"				"%s1 sec slower bomb arm time"
-"Attrib_StickyArmTimeBonus"					"%s1 sec faster bomb arm time"
-"Attrib_MiniCritAirborneEnemies"			"Mini-crits targets launched airborne by explosions, grapple hooks or rocket packs"
-"Attrib_MiniCritAirborneEnemiesDeploy"		""
-"Attrib_CritWhileAirborne"					"Deals crits while the wielder is rocket jumping"
-"Attrib_StickiesDetonateStickies"			"Able to destroy enemy stickybombs"
-"Attrib_SpeedBoostWhenActive"				"%s1% speed boost while active weapon"
-"Attrib_WrenchBuildsMiniSentry"				"Replaces the Sentry with a Mini-Sentry"
-"Attrib_GunslingerPunchCombo"				"Third successful punch in a row always crits"
-"Attrib_ProvideOnActive"					"When weapon is active:"
-"Attrib_MedicRegenBonus"					"+%s1% natural regen rate"
-"Attrib_MedicRegenPenalty"					"-%s1% natural regen rate"
-"Attrib_Community_Description"				"Given to valuable Community Contributors"
-"Attrib_MedalIndex_Description"				"Medal no. %s1"
-"Attrib_RocketJumpDmgReduction"				"%s1% blast damage from rocket jumps"
-"Attrib_Selfmade_Description"				"I made this!"
-"Attrib_SetItemTintRGB"						"Item tint color code: %s1"
-"Attrib_SentryKilledRevenge"				"Gain 2 revenge crits for each sentry kill and\n1 for each sentry assist when your sentry is destroyed"
-"Attrib_LoseRevengeCritsOnDeath"			"Revenge crits are lost on death"
-"Attrib_ExtinguishRevenge"					"Alt-Fire: Extinguish teammates to gain guaranteed critical hits"
-"Attrib_BurnDamageEarnsRage"				"Build 'Mmmph' by dealing damage.\nAlt-Fire on full 'Mmmph': Taunt to gain crit for several seconds.\nInvulnerable while 'Mmmph' taunting."
-"Attrib_DmgVsBuilding_Increased"			"+%s1% damage vs buildings"
-"Attrib_DmgVsBuilding_decreased"			"%s1% damage penalty vs buildings"
-"Attrib_DmgVsPlayer_Decreased"				"%s1% damage vs players"
-"Attrib_LunchboxAddsMaxHealth"				"Adds +50 max health for 30 seconds"
-"Attrib_LunchboxAddsMinicrits"				"Sets weapon mode #%s1"
-"Attrib_EmployeeNumber"						"Hire Date: %s1"
-"Attrib_WrenchNumber"						"Wrench no. %s1"
-"Attrib_DmgAppliesToSappers"				"Damage removes Sappers"
-"Attrib_BuildingCostReduction"				"%s1 metal reduction in building cost"
-"Attrib_BleedingDuration"					"On Hit: Bleed for %s1 seconds"
-"Attrib_TurnToGold"							"Imbued with an ancient power"
-"Attrib_CustomTexture"						"Custom Texture"
-"Attrib_NoiseMaker"							"Noise Maker"
-"Attrib_Always_Tradable"					"Always Tradable"
-"Attrib_CannotTrade"						"Not Tradable or Marketable"
-"Attrib_CannotTradeOrCraft"					"Not Tradable, Marketable, or Usable in Crafting"
-"Attrib_NonEconomyItem"						"Not Tradable, Marketable, Usable in Crafting, or Gift Wrappable"
-"Attrib_DisguiseOnBackstab"					"Upon a successful backstab against a human target, you rapidly disguise as your victim"
-"Attrib_CannotDisguise"						"Wearer cannot disguise"
-"Attrib_SilentKiller"						"Silent Killer: No attack noise from backstabs"
-"Attrib_DisguiseSpeedPenalty"				"%s1 sec slower disguise speed"
-"Attrib_DisguiseNoBurn"						"Immune to fire damage while disguised"
-"Attrib_AddCloakOnKill"						"+%s1% cloak on kill"
-"Attrib_AddCloakOnHit"						"+%s1% cloak on hit"
-"Attrib_CloakBlinkTimePenalty"				"%s1 sec longer cloak blink time"
-"Attrib_QuietUnstealth"						"Reduced decloak sound volume"
-"Attrib_FlameSize_Negative"					"%s1% less flame spread area"
-"Attrib_FlameSize_Positive"					"+%s1% more flame spread area"
-"Attrib_FlameLife_Negative"					"%s1% less flame distance"
-"Attrib_FlameLife_Positive"					"+%s1% more flame distance"
-"Attrib_ChargedAirblast"					"Airblast can now be charged, which will push enemies further"
-"Attrib_AirblastDisabled"					"No airblast"
-"Attrib_DmgFromSentryReduced"				"+%s1% sentry damage resistance on wearer"
-"Attrib_AirblastCost_Increased"				"+%s1% airblast cost"
-"Attrib_AirblastCost_Decreased"				"%s1% airblast cost"
-"Attrib_ExtinguishRestoresHealth"			"Extinguishing teammates restores %s1 health"
-"Attrib_ExtinguishReducesCooldown"			"Extinguishing teammates reduces cooldown by %s1%"
-"Attrib_Purchased"							"Purchased: Not Tradable, Marketable, or Usable in Crafting"
-"Attrib_Promotion"							"Store Promotion Item: Not Tradable or Marketable"
-"Attrib_InUse"								"Currently In Use"
-"Attrib_SpecialItem"						"Not Tradable, Marketable, or Usable in Crafting"
-"Attrib_FlameAmmoPerSec_Increased"			"+%s1% flamethrower ammo consumed per second"
-"Attrib_FlameAmmoPerSec_Decreased"			"%s1% flamethrower ammo consumed per second"
-"Attrib_JarateDuration"						"On Scoped Hit: Apply Jarate for 2 to %s1 seconds based on charge level.\nNature's Call: Scoped headshots always mini-crit and reduce the remaining cooldown of Jarate by 1 second."
-"Attrib_NoDeathFromHeadshots"				"The wearer cannot be killed by headshots"
-"Attrib_AchievementItem"					"Achievement Item: Not Tradable or Marketable"
-"Attrib_UntradableFreeContractReward"		"Free Contract Reward: Not Tradable or Marketable"
-"Attrib_CannotCraft"						"Not Usable in Crafting"
-"Attrib_CannotCraftWeapons"					"Weapons Are Not Usable in Crafting"
-"Attrib_DeployTime_Increased"				"%s1% longer weapon switch"
-"Attrib_DeployTime_Decreased"				"%s1% faster weapon switch"
-"Attrib_SingleWepDeployBonus"				"This weapon deploys %s1% faster"
-"Attrib_SingleWepHolsterBonus"				"This weapon holsters %s1% faster"
-"Attrib_SingleWepDeployPenalty"				"This weapon deploys %s1% slower"
-"Attrib_SingleWepHolsterPenalty"			"This weapon holsters %s1% slower"
-"Attrib_RocketJump_DeployTime_DecreasedSingle"	"Deploys %s1% faster while rocket jumping"
-"Attrib_MinicritsBecomeCrits"				"Crits whenever it would normally mini-crit"
-"Attrib_CritsBecomeMinicrits"				"Minicrits whenever it would normally crit"
-"Attrib_HealOnKill"							"+%s1 health restored on kill"
-"Attrib_NoSelfBlastDmg"						"No self inflicted blast damage taken"
-"Attrib_Slow_Enemy_OnHit_Major"				"On Hit: Slow target movement by 40% for %s1s"
-"Attrib_LimitedUse"							"This is a limited use item. Uses: %s1"
-"Attrib_EventDate"							"Date Received: %s1"
-"Attrib_GifterAccountID"					"\nGift from: %s1"
-"Attrib_MvMLootReceiverAccountID"			"Awarded to %s1"
-"Attrib_AttachedParticle"					"★ Unusual Effect: %s1"
-"Attrib_SupplyCrateSeries"					"Crate Series #%s1"
-"Attrib_PreserveUbercharge"					"On death up to %s1% of your stored\nÜberCharge is retained"
-"Attrib_ReferencedItem"						"Contains: %s1"
-"Attrib_Renamed"							"This item has been renamed.\nOriginal name: \"%s1\""
-"Attrib_CustomDesc"							"This item has a user written description:"
-"Attrib_Halloween_Item"						"This is a special Halloween %s1 item"
-"Attrib_MapDonation"						"%s1-%s2"
-"Attrib_NewUsersHelped"						"New Users Helped: %s1"
-"Attrib_FiresHealingBolts"					"Fires special bolts that heal teammates and deal damage based on distance traveled"
-"Attrib_EnablesAOEHeal"						"Alt-Fire: Applies a healing effect to all nearby teammates"
-"Attrib_ChargeTime_Increase"				"%s1 sec increase in charge duration"
-"Attrib_ChargeTime_Decrease"				"%s1 sec decrease in charge duration"
-"Attrib_DropHealthPackOnKill"				"On Kill: A small health pack is dropped"
-"Attrib_HitSelfOnMiss"						"On Miss: Hit yourself. Idiot."
-"Attrib_DmgFromRanged_Reduced"				"%s1% damage from ranged sources while active"
-"Attrib_DmgFromMelee_Increased"				"+%s1% damage from melee sources while active"
-"Attrib_BlastDamageToSelf_Increased"		"+%s1% damage to self"
-"Attrib_SetDamageType_Ignite"				"On Hit: target is engulfed in flames"
-"Attrib_Minicrit_Vs_Burning_Player"			"100% mini-crits vs burning players"
-"Attrib_TradableAfterDate"					"\nTradable After: %s1"
-"Attrib_ToolEscrowUntilDate"				"Usable After: %s1"
-"Attrib_Store_TradableAfterDate"			"Becomes Tradable After a Few Days"
-"Attrib_Store_ToolEscrowUntilDate"			"Becomes Usable After a Few Days"
-"Attrib_Store_IncludesSteamGiftPackage"		"( Includes Steam Gift Copy of \"%s1\" )"
-"Attrib_Store_Purchased"					"Will Not Be Tradable, Marketable, or Usable in Crafting"
-"Attrib_Sanguisuge"							"On Backstab: Absorbs the health from your victim"
-"Attrib_Honorbound"							"Honorbound: Once drawn sheathing deals 50 damage to yourself unless it kills"
-"Attrib_MarkForDeath"						"On Hit: One target at a time is Marked-For-Death, causing all damage taken to be mini-crits"
-"Attrib_RestoreHealthOnKill"				"Gain %s1% of base health on kill"
-"Attrib_MultSniperChargeAfterBodyshot"		"On Scoped Bodyshot: Rifle charge rate increased by %s1%"
-"Attrib_MultSniperChargeAfterMiss"			"On Scoped Miss: Rifle charge rate decreased by %s1%"
-"Attrib_MultSniperChargeAfterHeadshot"		"On Scoped Headshot: Rifle charge rate increased by %s1%"
-"Attrib_MultSniperChargePenalty"			"Base charge rate decreased by %s1%"
-"Attrib_MultDmgBonusWhileHalfDead"			"%s1% increase in damage when health <50% of max"
-"Attrib_MultDmgPenaltyWhileHalfAlive"		"%s1% decrease in damage when health >50% of max"
-"Attrib_Medigun_MegaHeal"					"ÜberCharge increases healing to 300% and grants immunity to movement-impairing effects"
-"Attrib_Medigun_Resists"					"Press your reload key to cycle through resist types.\nWhile healing, provides you and your target with a constant 10% resistance to the selected damage type."
-"Attrib_MedicKilledRevenge"					"When the medic healing you is killed you\ngain 2 revenge crits"
-"Attrib_MedicKilledMiniCritBoost"			"When the medic healing you is killed\nyou gain mini-crit boost for %s1 seconds"
-"Attrib_MedicHealedDamageBonus"				"While a medic is healing you,\nthis weapon's damage is increased by %s1%"
-"Attrib_MedicHealedDeployTimePenalty"		"While not being healed by a medic,\nyour weapon switch time is %s1% longer"
-"Attrib_MakersMark"							"Crafted by %s1"
-"Attrib_MinigunNoSpinSounds"				"Silent Killer: No barrel spin sound"
-"Attrib_UberchargeRate_ForHealer"			"+%s1% ÜberCharge rate for the medic healing you\nThis effect does not work in the respawn room"
-"Attrib_ReloadTime_Decreased_While_Healed"	"%s1% faster reload time while being healed"
-"Attrib_MedicKilledMarkedForDeath"			"When the medic healing you is killed\nthe killer becomes Marked-For-Death"
-"Attrib_RageOnHitPenalty"					"%s1% rage lost on hit"
-"Attrib_RageOnHitBonus"						"%s1% rage gained on hit"
-"Attrib_RageDamageBoost"					"Gains a damage bonus as rage increases, up to %s1%"
-"Attrib_RageOnDamage"						"Generate Rage by dealing damage. When fully charged, press the Special-Attack key to activate knockback."
-"Attrib_ChargeTurnControl"					"+%s1% increase in turning control while charging"
-"Attrib_ChargeTurnControlFull"				"Full turning control while charging"
-"Attrib_NoChargeImpactRange"				"Can deal charge impact damage at any range"
-"Attrib_ChargeImpactDamageIncreased"		"+%s1% increase in charge impact damage"
-"Attrib_ChargeImpactDamageDecreased"		"%s1% decrease in charge impact damage"
-"Attrib_ChargeRechargeRateIncreased"		"+%s1% increase in charge recharge rate"
-"Attrib_AirDashCountIncreased"				"Grants Triple Jump while deployed.\nMelee attacks mini-crit while airborne."
-"Attrib_SpeedBuffAlly"						"On Hit Teammate: Boosts both players' speed for several seconds"
-"Attrib_DamageForceReduction"				"%s1% reduction in push force taken from damage"
-"Attrib_DamageForceIncrease"				"%s1% increase in push force taken from damage"
-"Attrib_DamageForceIncreaseString"			"Increase in push force taken from damage and airblast"
-"Attrib_CloakRate"							"%s1 sec increase in time to cloak"
-"Attrib_NoCloakWhenCloaked"					"No cloak meter from ammo boxes when invisible"
-"Attrib_ReducedCloakFromAmmo"				"%s1% cloak meter from ammo boxes"
-"Attrib_AmmoBecomesHealth"					"Ammo collected from ammo boxes becomes health"
-"Attrib_BootsFallingStomp"					"Deals 3x falling damage to the player you land on"
-"Attrib_SaxxyAward"							"Winner: %s1 %s2\n"
-"Attrib_MemoryMakerAward"					"Saxxy Nominee: %s1 %s2\n"
-"Attrib_SeeEnemyHealth"						"Allows you to see enemy health"
-"Attrib_HideEnemyHealth"					"Unable to see enemy health"
-"Attrib_PowerupCharges"						"Currently holds %s1 charges"
-"Attrib_PowerupMaxCharges"					"Holds a maximum of %s1 charges"
-"Attrib_PowerupDuration"					"Each charge lasts %s1 seconds"
-"Attrib_CritBoost"							"Consumable: Become Crit Boosted for 5 seconds\n(and double your sentry's firing speed)"
-"Attrib_Ubercharge"							"Consumable: Become Übercharged for 5 seconds\n(and shield your sentry from damage)"
-"Attrib_CancelFallingDamage"				"Wearer never takes falling damage"
-"Attrib_EffectBarRechargeRateIncreased"		"+%s1% increase in recharge rate"
-"Attrib_MaxammoGrenades1_Increased"			"+%s1% max misc ammo on wearer"
-"Attrib_EnergyWeaponNoAmmo"					"Does not require ammo"
-"Attrib_EnergyWeaponNoHurtBuilding"			"Deals only 20% damage to buildings"
-"Attrib_EnergyWeaponChargedShot" 			"Alt-Fire: A charged shot that\nmini-crits players, sets them on fire\nand disables buildings for 4 sec"
-"Attrib_EnergyWeaponPenetration" 			"Projectile penetrates enemy targets"
-"Attrib_EnergyWeaponNoDeflect"				"Projectile cannot be deflected"
-"Attrib_EngyBuildingHealthBonus"			"+%s1% max building health"
-"Attrib_EngyBuildingHealthPenalty"			"%s1% max building health"
-"Attrib_EngySentryDamageBonus"				"+%s1% Sentry Gun damage bonus"
-"Attrib_NoCritBoost"						"Cannot be crit boosted"
-"Attrib_SniperOnlyFireZoomed"			"Cannot fire unless zoomed"
-"Attrib_Penetration"					"Projectiles penetrate enemy players"
-"Attrib_AmmoPerShot"					"Per Shot: -%s1 ammo"
-"Attrib_OnHit_AddAmmo"					"On Hit: damage dealt is returned as ammo"
-"Attrib_UseMetalAmmoType"				"Uses metal for ammo"
-"Attrib_ExpirationDate"					"This item will expire on %s1."
-"Attrib_LoanerItemExpirationDate"		"This item will be removed when the associated contract is completed or deactivated."
-"Attrib_DropPeriodComing"				"This item stops dropping on %s1."
-"Attrib_DropPeriodPast"					"This item stopped dropping on %s1."
-"Attrib_PreviewItem"					"Test Run - Cannot be traded, marketed, crafted, or modified"
-"Attrib_LoanerItem"						"Loaner - Cannot be traded, marketed, crafted, or modified"
-"Attrib_Sniper_FullChargeBonus"			"On Full Charge: +%s1% damage per shot"
-"Attrib_Sniper_NoHeadShot"				"No headshots when not fully charged"
-"Attrib_NoReload"						"No reload necessary"
-"Attrib_SniperFullChargePenetration"	"On Full Charge: Projectiles penetrate players"
-"Attrib_DrawBeamWhenScoped"				"Uses laser sight"
-"Attrib_Recall"							"Consumable: Instantly teleport to spawn"
-"Attrib_SapperKillsCollectCrits"		"Gives one guaranteed critical hit for each\nbuilding destroyed with your sapper attached\nor backstab kill"
-"Attrib_Sniper_FiresTracer"				"Fires tracer rounds"
-"Attrib_ElectricalAirblast"				"Alt-Fire: Launches a projectile-consuming energy ball.  Costs 65 metal."
-"Attrib_Unlimited"						"Unlimited use"
-"Attrib_UberDurationBonus"				"Über duration increased %s1 seconds"
-"Attrib_RefillAmmo"						"Consumable: Instantly refill all weapon clips and ammo"
-"Attrib_FastReload"						"+%s1% faster reload time"
-"Attrib_BuffTime_Increased"				"+%s1% buff duration"
-"Attrib_BuildRateBonus"					"+%s1% faster build speed"
-"Attrib_AttackProjectiles"				"Bullets destroy rockets and grenades in-flight. Increased accuracy and frequency per-level."
-"Attrib_AccurScalesDmg"					"Accuracy scales damage"
-"Attrib_CurrencyBonus"					"+%s1% bonus currency from packs"
-"Attrib_RoboSapper"						"Increased robot Sapper radius and duration"
-"Attrib_JumpHeightBonus"				"+%s1% greater jump height when active"
-"Attrib_AppliesSnareEffect"				"%s1% movement speed on targets"
-"Attrib_BuildingInstaUpgrade"			"Consumable: Instantly upgrade all buildings to max level"
-"Attrib_BiDirectionalTP"				"Teleporters can be used in both directions"
-"Attrib_AirBlastPushScale"				"+%s1% airblast push force"
-"Attrib_AirBlastVulnerabilityMultipier"	"%s1% reduction in airblast vulnerability"
-"Attrib_BombinomiconEffectOnDeath"		"Explode spectacularly on death"
-"Attrib_CritKillWillGib"				"Killing an enemy with a critical hit will dismember your victim. Painfully."
-"Attrib_SubtractVictimCloakOnHit"		"On Hit: Victim loses up to %s1% cloak"
-"Attrib_SubtractVictimMedigunChargeOnHit"	"On Hit: Victim loses up to %s1% Medigun charge"
-"Attrib_RevealCloakedVictimOnHit"		"On Hit Spy: Reveal cloaked Spy"
-"Attrib_RevealDisguisedVictimOnHit"		"On Hit Spy: Reveal disguised Spy"
-"Attrib_JarateBackstabber"				"When backstabbed: Jarate attacker"
-"Attrib_SentryFireRate_Increased"		"+%s1% sentry firing speed"
-"Attrib_SentryRadius_Increased"			"+%s1% sentry range"
-"Attrib_DispenserRadius_Increased"		"+%s1% dispenser range"
-"Attrib_BatLaunchesOrnaments"			"Alt-Fire: Launches a festive ornament that shatters causing bleed"
-"Attrib_FreezeBackstabVictim"			"Backstab turns victim to ice"
-"Attrib_VictimsBecomeAsh"				"Victims turn to ash!"
-"Attrib_EngyDisposableSentries"			"Build +%s1 additional disposable-sentry"
-"Attrib_AltFireTeleportToSpawn"			"Press your reload key to choose to teleport to spawn or your exit teleporter"
-"Attrib_CannotPickUpBuildings"			"Cannot carry buildings"
-"Attrib_StunEnemiesWieldingSameWeapon"	"Stuns enemies who are also wielding this weapon"
-"Attrib_TickleEnemiesWieldingSameWeapon"	"On Hit: Force enemies to laugh who are also wearing this item"
-"Attrib_CritForcesLaugh"				"Critical hit forces victim to laugh"
-"Attrib_MeltsInFire"					"Melts in fire, regenerates in %s1 seconds and by picking up ammo"
-"Attrib_BecomeFireproofOnHitByFire"		"On Hit by Fire: Fireproof for 1 second and Afterburn immunity for %s1 seconds"
-"Attrib_CritFromBehind"					"Always critical hit from behind"
-"Attrib_CritDoesNoDamage"				"Critical hits do no damage"
-"Attrib_AddJingleToFootsteps"			"Jingle all the way"
-"Attrib_StunWaistHighAirborne"			"On Hit: If enemy's belt is at or above eye level,\nstun them for %s1 seconds"
-"Attrib_DamageAllConnected"				"All players connected via Medigun beams are hit"
-"Attrib_AimingNoFlinch"					"No flinching when aiming and fully charged"
-"Attrib_AimingKnockbackResistance"		"Knockback reduced by %s1% when aiming"
-"Attrib_SniperAimingMoveSpeed_Decreased"	"%s1% slower move speed when aiming"
-"Attrib_RageGainOnKill"					"Gain Focus on kills and assists"	// Text is made for sniper only, fix this
+
+	"Attrib_ClipSize_Positive"
+	{
+		"en"	"+%s% clip size"
+	}
+	"Attrib_ClipSize_Negative"
+	{
+		"en"	"%s% clip size"
+	}
+	"Attrib_UberchargeRate_Positive"
+	{
+		"en"	"+%s% ÜberCharge rate"
+	}
+	"Attrib_UberchargeRate_Negative"
+	{
+		"en"	"%s% ÜberCharge rate"
+	}
+	"Attrib_OverhealUberchargeRate_Negative"
+	{
+		"en"	"%s% ÜberCharge rate on Overhealed patients"
+	}
+	"Attrib_DamageDone_Positive"
+	{
+		"en"	"+%s% damage bonus"
+	}
+	"Attrib_DamageDone_Negative"
+	{
+		"en"	"%s% damage penalty"
+	}
+	"Attrib_HealRate_Positive"
+	{
+		"en"	"+%s% heal rate"
+	}
+	"Attrib_HealRate_Negative"
+	{
+		"en"	"%s% heal rate"
+	}
+	"Attrib_FireRate_Positive"
+	{
+		"en"	"+%s% faster firing speed"
+	}
+	"Attrib_FireRate_Negative"
+	{
+		"en"	"%s% slower firing speed"
+	}
+	"Attrib_OverhealAmount_Positive"
+	{
+		"en"	"+%s% max overheal"
+	}
+	"Attrib_OverhealDecay_Disabled"
+	{
+		"en"	"Overheal bonus doesn't decay"
+	}
+	"Attrib_OverhealDecay_Positive"
+	{
+		"en"	"+%s% longer overheal time"
+	}
+	"Attrib_OverhealDecay_Negative"
+	{
+		"en"	"%s% shorter overheal time"
+	}
+	"Attrib_HealOnHit_Positive"
+	{
+		"en"	"On Hit: Gain up to +%s health"
+	}
+	"Attrib_HealOnHit_Negative"
+	{
+		"en"	"On Hit: %s health"
+	}
+	"Attrib_HealthOnRadiusDamage"
+	{
+		"en"	"On Hit: Gain up to +%s health per attack"
+	}
+	"Attrib_CritChance_Positive"
+	{
+		"en"	"+%s critical hit chance"
+	}
+	"Attrib_CritChance_Negative"
+	{
+		"en"	"%s critical hit chance"
+	}
+	"Attrib_CritChance_Disabled"
+	{
+		"en"	"No random critical hits"
+	}
+	"Attrib_AddUber_OnHit_Positive"
+	{
+		"en"	"On Hit: %s% ÜberCharge added"
+	}
+	"Attrib_Medigun_CritBoost"
+	{
+		"en"	"ÜberCharge grants 100% critical chance"
+	}
+	"Attrib_DamageDoneBonus_Positive"
+	{
+		"en"	"On Hit: +%s% damage bonus"
+	}
+	"Attrib_CritVsBurning"
+	{
+		"en"	"100% critical hit vs burning players"
+	}
+	"Attrib_AxtinguisherProperties"
+	{
+		"en"	"100% critical hits burning players from behind\nMini-crits burning players from the front"
+	}
+	"Attrib_DmgPenaltyVsNonBurning"
+	{
+		"en"	"%s% damage vs non-burning players"
+	}
+	"Attrib_NoCritVsNonBurning"
+	{
+		"en"	"No critical hits vs non-burning players"
+	}
+	"Attrib_ModFlamethrowerPush"
+	{
+		"en"	"No compression blast"
+	}
+	"Attrib_ModFlamethrower_BackCrits"
+	{
+		"en"	"100% critical hits from behind"
+	}
+	"Attrib_MaxHealth_Positive"
+	{
+		"en"	"+%s max health on wearer"
+	}
+	"Attrib_MaxHealth_Negative"
+	{
+		"en"	"%s max health on wearer"
+	}
+	"Attrib_FistsHaveRadialBuff"
+	{
+		"en"	"On Kill: +50 health on nearby teammates\nOn Kill: +10% Crit Chance on nearby teammates"
+	}
+	"Attrib_CritBoost_OnKill"
+	{
+		"en"	"On Kill: %s seconds of 100% critical chance"
+	}
+	"Attrib_Slow_Enemy_OnHit"
+	{
+		"en"	"On Hit: %s% chance to slow target"
+	}
+	"Attrib_CloakMeterConsumeRate"
+	{
+		"en"	"+%s% cloak drain rate"
+	}
+	"Attrib_CloakMeterRegenRate"
+	{
+		"en"	"+%s% cloak regen rate"
+	}
+	"Attrib_Spread_Negative"
+	{
+		"en"	"%s% less accurate"
+	}
+	"Attrib_Spread_Positive"
+	{
+		"en"	"%s% more accurate"
+	}
+	"Attrib_BatLaunchesBalls"
+	{
+		"en"	"Alt-Fire: Launches a ball that slows opponents"
+	}
+	"Attrib_DmgPenaltyVsNonStunned"
+	{
+		"en"	"%s% damage vs non-stunned players"
+	}
+	"Attrib_ZoomSpeedMod_Disabled"
+	{
+		"en"	"No move speed penalty from zoom"
+	}
+	"Attrib_SniperCharge_Per_Sec"
+	{
+		"en"	"+%s% charge rate"
+	}
+	"Attrib_SniperNoHeadshots"
+	{
+		"en"	"No headshots"
+	}
+	"Attrib_Scattergun_HasKnockback"
+	{
+		"en"	"Knockback on the target and shooter"
+	}
+	"Attrib_BulletsPerShot_Bonus"
+	{
+		"en"	"+%s% bullets per shot"
+	}
+	"Attrib_SniperZoom_Penalty"
+	{
+		"en"	"%s% zoom reduction"
+	}
+	"Attrib_SniperNoCharge"
+	{
+		"en"	"No zoom or damage charge"
+	}
+	"Attrib_CloakIsFeignDeath"
+	{
+		"en"	"Cloak Type: Feign Death.\nLeave a fake corpse on taking damage\nand temporarily gain invisibility, speed and damage resistance."
+	}
+	"Attrib_CloakIsMovementBased"
+	{
+		"en"	"Cloak Type: Motion Sensitive.\nAlt-Fire: Turn invisible. Cannot attack while invisible. Bumping in to enemies will make you slightly visible to enemies.\nCloak drain rate based on movement speed."
+	}
+	"Attrib_NoDoubleJump"
+	{
+		"en"	"Disables double jump"
+	}
+	"Attrib_AbsorbDmgWhileCloaked"
+	{
+		"en"	"Absorbs %s% damage while cloaked"
+	}
+	"Attrib_RevolverUseHitLocations"
+	{
+		"en"	"Crits on headshot"
+	}
+	"Attrib_FireRetardant"
+	{
+		"en"	"Wearer cannot ignite"
+	}
+	"Attrib_BackstabShield"
+	{
+		"en"	"Blocks a single backstab attempt"
+	}
+	"Attrib_MoveSpeed_Penalty"
+	{
+		"en"	"%s% slower move speed on wearer"
+	}
+	"Attrib_Jarate_Description"
+	{
+		"en"	"Coated enemies take mini-crits\nCan be used to extinguish fires"
+	}
+	"Attrib_HealthRegen"
+	{
+		"en"	"+%s health regenerated per second on wearer"
+	}
+	"Attrib_HealthDrain"
+	{
+		"en"	"%s health drained per second on wearer"
+	}
+	"Attrib_HealthDrainMedic"
+	{
+		"en"	"%s health regenerated per second on wearer"
+	}
+	"Attrib_SelfDmgPush_Increased"
+	{
+		"en"	"+%s% self damage force"
+	}
+	"Attrib_SelfDmgPush_Decreased"
+	{
+		"en"	"%s% self damage force"
+	}
+	"Attrib_DmgTaken_From_Fire_Reduced"
+	{
+		"en"	"+%s% fire damage resistance on wearer"
+	}
+	"Attrib_DmgTaken_From_Fire_ReducedActive"
+	{
+		"en"	"+%s% fire damage resistance while deployed"
+	}
+	"Attrib_DmgTaken_From_Fire_Increased"
+	{
+		"en"	"%s% fire damage vulnerability on wearer"
+	}
+	"Attrib_DmgTaken_From_Crit_Reduced"
+	{
+		"en"	"+%s% critical hit damage resistance on wearer"
+	}
+	"Attrib_DmgTaken_From_Crit_Increased"
+	{
+		"en"	"%s% critical hit damage vulnerability on wearer"
+	}
+	"Attrib_DmgTaken_From_Blast_Reduced"
+	{
+		"en"	"+%s% explosive damage resistance on wearer"
+	}
+	"Attrib_DmgTaken_From_Blast_Increased"
+	{
+		"en"	"%s% explosive damage vulnerability on wearer"
+	}
+	"Attrib_DmgTaken_From_Bullets_Reduced"
+	{
+		"en"	"+%s% bullet damage resistance on wearer"
+	}
+	"Attrib_DmgTaken_From_Bullets_Increased"
+	{
+		"en"	"%s% bullet damage vulnerability on wearer"
+	}
+	"Attrib_DmgTaken_Increased"
+	{
+		"en"	"%s% damage vulnerability on wearer"
+	}
+	"Attrib_CaptureValue_Increased"
+	{
+		"en"	"+%s capture rate on wearer"
+	}
+	"Attrib_HealthFromHealers_Reduced"
+	{
+		"en"	"%s% health from healers on wearer"
+	}
+	"Attrib_HealthFromHealers_Increased"
+	{
+		"en"	"+%s% health from healers on wearer"
+	}
+	"Attrib_WpnBurnDmg_Increased"
+	{
+		"en"	"+%s% afterburn damage bonus"
+	}
+	"Attrib_WpnBurnDmg_Reduced"
+	{
+		"en"	"%s% afterburn damage penalty"
+	}
+	"Attrib_WpnBurnTime_Increased"
+	{
+		"en"	"+%s% afterburn duration"
+	}
+	"Attrib_WpnBurnTime_Reduced"
+	{
+		"en"	"%s% afterburn duration"
+	}
+	"Attrib_GestureSpeed_Increase"
+	{
+		"en"	"+%s% faster taunt speed on wearer"
+	}
+	"Attrib_AimingMoveSpeed_Increased"
+	{
+		"en"	"+%s% faster move speed while deployed"
+	}
+	"Attrib_AimingMoveSpeed_Decreased"
+	{
+		"en"	"%s% slower move speed while deployed"
+	}
+	"Attrib_MaxammoPrimary_Increased"
+	{
+		"en"	"+%s% max primary ammo on wearer"
+	}
+	"Attrib_MaxammoPrimary_Reduced"
+	{
+		"en"	"%s% max primary ammo on wearer"
+	}
+	"Attrib_MaxammoSecondary_Increased"
+	{
+		"en"	"+%s% max secondary ammo on wearer"
+	}
+	"Attrib_MaxammoSecondary_Reduced"
+	{
+		"en"	"%s% max secondary ammo on wearer"
+	}
+	"Attrib_MaxammoMetal_Increased"
+	{
+		"en"	"+%s% max metal on wearer"
+	}
+	"Attrib_MaxammoMetal_Reduced"
+	{
+		"en"	"%s% max metal on wearer"
+	}
+	"Attrib_CloakConsumeRate_Increased"
+	{
+		"en"	"-%s% cloak duration"
+	}
+	"Attrib_CloakConsumeRate_Decreased"
+	{
+		"en"	"+%s% cloak duration"
+	}
+	"Attrib_CloakRegenRate_Increased"
+	{
+		"en"	"+%s% cloak regeneration rate"
+	}
+	"Attrib_CloakRegenRate_Decreased"
+	{
+		"en"	"%s% cloak regeneration rate"
+	}
+	"Attrib_MinigunSpinup_Increased"
+	{
+		"en"	"%s% slower spin up time"
+	}
+	"Attrib_MinigunSpinup_Decreased"
+	{
+		"en"	"%s% faster spin up time"
+	}
+	"Attrib_MaxPipebombs_Increased"
+	{
+		"en"	"+%s max pipebombs out"
+	}
+	"Attrib_MaxPipebombs_Decreased"
+	{
+		"en"	"%s max pipebombs out"
+	}
+	"Attrib_SRifleChargeRate_Increased"
+	{
+		"en"	"%s% faster power charge"
+	}
+	"Attrib_SRifleChargeRate_Decreased"
+	{
+		"en"	"%s% slower power charge"
+	}
+	"Attrib_ConstructionRate_Increased"
+	{
+		"en"	"Construction hit speed boost increased by %s%"
+	}
+	"Attrib_ConstructionRate_Decreased"
+	{
+		"en"	"Construction hit speed boost decreased by %s%"
+	}
+	"Attrib_RepairRate_Increased"
+	{
+		"en"	"%s% faster repair rate"
+	}
+	"Attrib_RepairRate_Decreased"
+	{
+		"en"	"%s% slower repair rate"
+	}
+	"Attrib_UpgradeRate_Decreased"
+	{
+		"en"	"%s% slower upgrade rate"
+	}
+	"Attrib_metal_pickup_decreased"
+	{
+		"en"	"%s% less metal from pickups and dispensers"
+	}
+	"Attrib_ReloadTime_Increased"
+	{
+		"en"	"%s% slower reload time"
+	}
+	"Attrib_ReloadTime_Decreased"
+	{
+		"en"	"%s% faster reload time"
+	}
+	"Attrib_BlastRadius_Increased"
+	{
+		"en"	"+%s% explosion radius"
+	}
+	"Attrib_BlastRadius_Decreased"
+	{
+		"en"	"%s% explosion radius"
+	}
+	"Attrib_ProjectileRange_Increased"
+	{
+		"en"	"+%s% projectile range"
+	}
+	"Attrib_ProjectileRange_Decreased"
+	{
+		"en"	"%s% projectile range"
+	}
+	"Attrib_ProjectileSpeed_Increased"
+	{
+		"en"	"+%s% projectile speed"
+	}
+	"Attrib_ProjectileSpeed_Decreased"
+	{
+		"en"	"%s% projectile speed"
+	}
+	"Attrib_OverhealAmount_Negative"
+	{
+		"en"	"%s% max overheal"
+	}
+	"Attrib_MoveSpeed_Bonus"
+	{
+		"en"	"+%s% faster move speed on wearer"
+	}
+	"Attrib_MoveSpeed_Bonus_ShieldRequired"
+	{
+		"en"	"+%s% faster move speed on wearer (shield required)"
+	}
+	"Attrib_HealthFromPacks_Increased"
+	{
+		"en"	"+%s% health from packs on wearer"
+	}
+	"Attrib_HealthFromPacks_Decreased"
+	{
+		"en"	"%s% health from packs on wearer"
+	}
+	"Attrib_AmmoRegen"
+	{
+		"en"	"+%s% ammo regenerated every 5 seconds on wearer"
+	}
+	"Attrib_MetalRegen"
+	{
+		"en"	"+%s metal regenerated every 5 seconds on wearer"
+	}
+	"Attrib_RocketLauncherSeeker"
+	{
+		"en"	"Fires laser guided rockets"
+	}
+	"Attrib_ShovelDamageBoost"
+	{
+		"en"	"Damage increases as the user becomes injured"
+	}
+	"Attrib_ShovelSpeedBoost"
+	{
+		"en"	"Move speed increases as the user becomes injured"
+	}
+	"Attrib_WeaponBlocksHealing"
+	{
+		"en"	"Blocks healing while in use"
+	}
+	"Attrib_Dmg_Falloff_Decreased"
+	{
+		"en"	"%s% splash damage fall off"
+	}
+	"Attrib_Dmg_Falloff_Increase"
+	{
+		"en"	"+%s% splash damage fall off"
+	}
+	"Attrib_StickyDetonateMode"
+	{
+		"en"	"Detonates stickybombs near the crosshair and directly under your feet"
+	}
+	"Attrib_StickyAirBurstMode"
+	{
+		"en"	"Launched bombs shatter on surfaces"
+	}
+	"Attrib_StickyArmTimePenalty"
+	{
+		"en"	"%s sec slower bomb arm time"
+	}
+	"Attrib_StickyArmTimeBonus"
+	{
+		"en"	"%s sec faster bomb arm time"
+	}
+	"Attrib_MiniCritAirborneEnemies"
+	{
+		"en"	"Mini-crits targets launched airborne by explosions, grapple hooks or rocket packs"
+	}
+	"Attrib_MiniCritAirborneEnemiesDeploy"
+	{
+		"en"	""
+	}
+	"Attrib_CritWhileAirborne"
+	{
+		"en"	"Deals crits while the wielder is rocket jumping"
+	}
+	"Attrib_StickiesDetonateStickies"
+	{
+		"en"	"Able to destroy enemy stickybombs"
+	}
+	"Attrib_SpeedBoostWhenActive"
+	{
+		"en"	"%s% speed boost while active weapon"
+	}
+	"Attrib_WrenchBuildsMiniSentry"
+	{
+		"en"	"Replaces the Sentry with a Mini-Sentry"
+	}
+	"Attrib_GunslingerPunchCombo"
+	{
+		"en"	"Third successful punch in a row always crits"
+	}
+	"Attrib_ProvideOnActive"
+	{
+		"en"	"When weapon is active:"
+	}
+	"Attrib_MedicRegenBonus"
+	{
+		"en"	"+%s% natural regen rate"
+	}
+	"Attrib_MedicRegenPenalty"
+	{
+		"en"	"-%s% natural regen rate"
+	}
+	"Attrib_Community_Description"
+	{
+		"en"	"Given to valuable Community Contributors"
+	}
+	"Attrib_MedalIndex_Description"
+	{
+		"en"	"Medal no. %s"
+	}
+	"Attrib_RocketJumpDmgReduction"
+	{
+		"en"	"%s% blast damage from rocket jumps"
+	}
+	"Attrib_Selfmade_Description"
+	{
+		"en"	"I made this!"
+	}
+	"Attrib_SetItemTintRGB"
+	{
+		"en"	"Item tint color code: %s"
+	}
+	"Attrib_SentryKilledRevenge"
+	{
+		"en"	"Gain 2 revenge crits for each sentry kill and\n1 for each sentry assist when your sentry is destroyed"
+	}
+	"Attrib_LoseRevengeCritsOnDeath"
+	{
+		"en"	"Revenge crits are lost on death"
+	}
+	"Attrib_ExtinguishRevenge"
+	{
+		"en"	"Alt-Fire: Extinguish teammates to gain guaranteed critical hits"
+	}
+	"Attrib_BurnDamageEarnsRage"
+	{
+		"en"	"Build 'Mmmph' by dealing damage.\nAlt-Fire on full 'Mmmph': Taunt to gain crit for several seconds.\nInvulnerable while 'Mmmph' taunting."
+	}
+	"Attrib_DmgVsBuilding_Increased"
+	{
+		"en"	"+%s% damage vs buildings"
+	}
+	"Attrib_DmgVsBuilding_decreased"
+	{
+		"en"	"%s% damage penalty vs buildings"
+	}
+	"Attrib_DmgVsPlayer_Decreased"
+	{
+		"en"	"%s% damage vs players"
+	}
+	"Attrib_LunchboxAddsMaxHealth"
+	{
+		"en"	"Adds +50 max health for 30 seconds"
+	}
+	"Attrib_LunchboxAddsMinicrits"
+	{
+		"en"	"Sets weapon mode #%s"
+	}
+	"Attrib_EmployeeNumber"
+	{
+		"en"	"Hire Date: %s"
+	}
+	"Attrib_WrenchNumber"
+	{
+		"en"	"Wrench no. %s"
+	}
+	"Attrib_DmgAppliesToSappers"
+	{
+		"en"	"Damage removes Sappers"
+	}
+	"Attrib_BuildingCostReduction"
+	{
+		"en"	"%s metal reduction in building cost"
+	}
+	"Attrib_BleedingDuration"
+	{
+		"en"	"On Hit: Bleed for %s seconds"
+	}
+	"Attrib_TurnToGold"
+	{
+		"en"	"Imbued with an ancient power"
+	}
+	"Attrib_CustomTexture"
+	{
+		"en"	"Custom Texture"
+	}
+	"Attrib_NoiseMaker"
+	{
+		"en"	"Noise Maker"
+	}
+	"Attrib_Always_Tradable"
+	{
+		"en"	"Always Tradable"
+	}
+	"Attrib_CannotTrade"
+	{
+		"en"	"Not Tradable or Marketable"
+	}
+	"Attrib_CannotTradeOrCraft"
+	{
+		"en"	"Not Tradable, Marketable, or Usable in Crafting"
+	}
+	"Attrib_NonEconomyItem"
+	{
+		"en"	"Not Tradable, Marketable, Usable in Crafting, or Gift Wrappable"
+	}
+	"Attrib_DisguiseOnBackstab"
+	{
+		"en"	"Upon a successful backstab against a human target, you rapidly disguise as your victim"
+	}
+	"Attrib_CannotDisguise"
+	{
+		"en"	"Wearer cannot disguise"
+	}
+	"Attrib_SilentKiller"
+	{
+		"en"	"Silent Killer: No attack noise from backstabs"
+	}
+	"Attrib_DisguiseSpeedPenalty"
+	{
+		"en"	"%s sec slower disguise speed"
+	}
+	"Attrib_DisguiseNoBurn"
+	{
+		"en"	"Immune to fire damage while disguised"
+	}
+	"Attrib_AddCloakOnKill"
+	{
+		"en"	"+%s% cloak on kill"
+	}
+	"Attrib_AddCloakOnHit"
+	{
+		"en"	"+%s% cloak on hit"
+	}
+	"Attrib_CloakBlinkTimePenalty"
+	{
+		"en"	"%s sec longer cloak blink time"
+	}
+	"Attrib_QuietUnstealth"
+	{
+		"en"	"Reduced decloak sound volume"
+	}
+	"Attrib_FlameSize_Negative"
+	{
+		"en"	"%s% less flame spread area"
+	}
+	"Attrib_FlameSize_Positive"
+	{
+		"en"	"+%s% more flame spread area"
+	}
+	"Attrib_FlameLife_Negative"
+	{
+		"en"	"%s% less flame distance"
+	}
+	"Attrib_FlameLife_Positive"
+	{
+		"en"	"+%s% more flame distance"
+	}
+	"Attrib_ChargedAirblast"
+	{
+		"en"	"Airblast can now be charged, which will push enemies further"
+	}
+	"Attrib_AirblastDisabled"
+	{
+		"en"	"No airblast"
+	}
+	"Attrib_DmgFromSentryReduced"
+	{
+		"en"	"+%s% sentry damage resistance on wearer"
+	}
+	"Attrib_AirblastCost_Increased"
+	{
+		"en"	"+%s% airblast cost"
+	}
+	"Attrib_AirblastCost_Decreased"
+	{
+		"en"	"%s% airblast cost"
+	}
+	"Attrib_ExtinguishRestoresHealth"
+	{
+		"en"	"Extinguishing teammates restores %s health"
+	}
+	"Attrib_ExtinguishReducesCooldown"
+	{
+		"en"	"Extinguishing teammates reduces cooldown by %s%"
+	}
+	"Attrib_Purchased"
+	{
+		"en"	"Purchased: Not Tradable, Marketable, or Usable in Crafting"
+	}
+	"Attrib_Promotion"
+	{
+		"en"	"Store Promotion Item: Not Tradable or Marketable"
+	}
+	"Attrib_InUse"
+	{
+		"en"	"Currently In Use"
+	}
+	"Attrib_SpecialItem"
+	{
+		"en"	"Not Tradable, Marketable, or Usable in Crafting"
+	}
+	"Attrib_FlameAmmoPerSec_Increased"
+	{
+		"en"	"+%s% flamethrower ammo consumed per second"
+	}
+	"Attrib_FlameAmmoPerSec_Decreased"
+	{
+		"en"	"%s% flamethrower ammo consumed per second"
+	}
+	"Attrib_JarateDuration"
+	{
+		"en"	"On Scoped Hit: Apply Jarate for 2 to %s seconds based on charge level.\nNature's Call: Scoped headshots always mini-crit and reduce the remaining cooldown of Jarate by 1 second."
+	}
+	"Attrib_NoDeathFromHeadshots"
+	{
+		"en"	"The wearer cannot be killed by headshots"
+	}
+	"Attrib_AchievementItem"
+	{
+		"en"	"Achievement Item: Not Tradable or Marketable"
+	}
+	"Attrib_UntradableFreeContractReward"
+	{
+		"en"	"Free Contract Reward: Not Tradable or Marketable"
+	}
+	"Attrib_CannotCraft"
+	{
+		"en"	"Not Usable in Crafting"
+	}
+	"Attrib_CannotCraftWeapons"
+	{
+		"en"	"Weapons Are Not Usable in Crafting"
+	}
+	"Attrib_DeployTime_Increased"
+	{
+		"en"	"%s% longer weapon switch"
+	}
+	"Attrib_DeployTime_Decreased"
+	{
+		"en"	"%s% faster weapon switch"
+	}
+	"Attrib_SingleWepDeployBonus"
+	{
+		"en"	"This weapon deploys %s% faster"
+	}
+	"Attrib_SingleWepHolsterBonus"
+	{
+		"en"	"This weapon holsters %s% faster"
+	}
+	"Attrib_SingleWepDeployPenalty"
+	{
+		"en"	"This weapon deploys %s% slower"
+	}
+	"Attrib_SingleWepHolsterPenalty"
+	{
+		"en"	"This weapon holsters %s% slower"
+	}
+	"Attrib_RocketJump_DeployTime_DecreasedSingle"
+	{
+		"en"	"Deploys %s% faster while rocket jumping"
+	}
+	"Attrib_MinicritsBecomeCrits"
+	{
+		"en"	"Crits whenever it would normally mini-crit"
+	}
+	"Attrib_CritsBecomeMinicrits"
+	{
+		"en"	"Minicrits whenever it would normally crit"
+	}
+	"Attrib_HealOnKill"
+	{
+		"en"	"+%s health restored on kill"
+	}
+	"Attrib_NoSelfBlastDmg"
+	{
+		"en"	"No self inflicted blast damage taken"
+	}
+	"Attrib_Slow_Enemy_OnHit_Major"
+	{
+		"en"	"On Hit: Slow target movement by 40% for %ss"
+	}
+	"Attrib_LimitedUse"
+	{
+		"en"	"This is a limited use item. Uses: %s"
+	}
+	"Attrib_EventDate"
+	{
+		"en"	"Date Received: %s"
+	}
+	"Attrib_GifterAccountID"
+	{
+		"en"	"\nGift from: %s"
+	}
+	"Attrib_MvMLootReceiverAccountID"
+	{
+		"en"	"Awarded to %s"
+	}
+	"Attrib_AttachedParticle"
+	{
+		"en"	"★ Unusual Effect: %s"
+	}
+	"Attrib_SupplyCrateSeries"
+	{
+		"en"	"Crate Series #%s"
+	}
+	"Attrib_PreserveUbercharge"
+	{
+		"en"	"On death up to %s% of your stored\nÜberCharge is retained"
+	}
+	"Attrib_ReferencedItem"
+	{
+		"en"	"Contains: %s"
+	}
+	"Attrib_Renamed"
+	{
+		"en"	"This item has been renamed.\nOriginal name: \"%s\""
+	}
+	"Attrib_CustomDesc"
+	{
+		"en"	"This item has a user written description:"
+	}
+	"Attrib_Halloween_Item"
+	{
+		"en"	"This is a special Halloween %s item"
+	}
+	"Attrib_MapDonation"
+	{
+		"en"	"%s-%s"
+	}
+	"Attrib_NewUsersHelped"
+	{
+		"en"	"New Users Helped: %s"
+	}
+	"Attrib_FiresHealingBolts"
+	{
+		"en"	"Fires special bolts that heal teammates and deal damage based on distance traveled"
+	}
+	"Attrib_EnablesAOEHeal"
+	{
+		"en"	"Alt-Fire: Applies a healing effect to all nearby teammates"
+	}
+	"Attrib_ChargeTime_Increase"
+	{
+		"en"	"%s sec increase in charge duration"
+	}
+	"Attrib_ChargeTime_Decrease"
+	{
+		"en"	"%s sec decrease in charge duration"
+	}
+	"Attrib_DropHealthPackOnKill"
+	{
+		"en"	"On Kill: A small health pack is dropped"
+	}
+	"Attrib_HitSelfOnMiss"
+	{
+		"en"	"On Miss: Hit yourself. Idiot."
+	}
+	"Attrib_DmgFromRanged_Reduced"
+	{
+		"en"	"%s% damage from ranged sources while active"
+	}
+	"Attrib_DmgFromMelee_Increased"
+	{
+		"en"	"+%s% damage from melee sources while active"
+	}
+	"Attrib_BlastDamageToSelf_Increased"
+	{
+		"en"	"+%s% damage to self"
+	}
+	"Attrib_SetDamageType_Ignite"
+	{
+		"en"	"On Hit: target is engulfed in flames"
+	}
+	"Attrib_Minicrit_Vs_Burning_Player"
+	{
+		"en"	"100% mini-crits vs burning players"
+	}
+	"Attrib_TradableAfterDate"
+	{
+		"en"	"\nTradable After: %s"
+	}
+	"Attrib_ToolEscrowUntilDate"
+	{
+		"en"	"Usable After: %s"
+	}
+	"Attrib_Store_TradableAfterDate"
+	{
+		"en"	"Becomes Tradable After a Few Days"
+	}
+	"Attrib_Store_ToolEscrowUntilDate"
+	{
+		"en"	"Becomes Usable After a Few Days"
+	}
+	"Attrib_Store_IncludesSteamGiftPackage"
+	{
+		"en"	"( Includes Steam Gift Copy of \"%s\" )"
+	}
+	"Attrib_Store_Purchased"
+	{
+		"en"	"Will Not Be Tradable, Marketable, or Usable in Crafting"
+	}
+	"Attrib_Sanguisuge"
+	{
+		"en"	"On Backstab: Absorbs the health from your victim"
+	}
+	"Attrib_Honorbound"
+	{
+		"en"	"Honorbound: Once drawn sheathing deals 50 damage to yourself unless it kills"
+	}
+	"Attrib_MarkForDeath"
+	{
+		"en"	"On Hit: One target at a time is Marked-For-Death, causing all damage taken to be mini-crits"
+	}
+	"Attrib_RestoreHealthOnKill"
+	{
+		"en"	"Gain %s% of base health on kill"
+	}
+	"Attrib_MultSniperChargeAfterBodyshot"
+	{
+		"en"	"On Scoped Bodyshot: Rifle charge rate increased by %s%"
+	}
+	"Attrib_MultSniperChargeAfterMiss"
+	{
+		"en"	"On Scoped Miss: Rifle charge rate decreased by %s%"
+	}
+	"Attrib_MultSniperChargeAfterHeadshot"
+	{
+		"en"	"On Scoped Headshot: Rifle charge rate increased by %s%"
+	}
+	"Attrib_MultSniperChargePenalty"
+	{
+		"en"	"Base charge rate decreased by %s%"
+	}
+	"Attrib_MultDmgBonusWhileHalfDead"
+	{
+		"en"	"%s% increase in damage when health <50% of max"
+	}
+	"Attrib_MultDmgPenaltyWhileHalfAlive"
+	{
+		"en"	"%s% decrease in damage when health >50% of max"
+	}
+	"Attrib_Medigun_MegaHeal"
+	{
+		"en"	"ÜberCharge increases healing to 300% and grants immunity to movement-impairing effects"
+	}
+	"Attrib_Medigun_Resists"
+	{
+		"en"	"Press your reload key to cycle through resist types.\nWhile healing, provides you and your target with a constant 10% resistance to the selected damage type."
+	}
+	"Attrib_MedicKilledRevenge"
+	{
+		"en"	"When the medic healing you is killed you\ngain 2 revenge crits"
+	}
+	"Attrib_MedicKilledMiniCritBoost"
+	{
+		"en"	"When the medic healing you is killed\nyou gain mini-crit boost for %s seconds"
+	}
+	"Attrib_MedicHealedDamageBonus"
+	{
+		"en"	"While a medic is healing you,\nthis weapon's damage is increased by %s%"
+	}
+	"Attrib_MedicHealedDeployTimePenalty"
+	{
+		"en"	"While not being healed by a medic,\nyour weapon switch time is %s% longer"
+	}
+	"Attrib_MakersMark"
+	{
+		"en"	"Crafted by %s"
+	}
+	"Attrib_MinigunNoSpinSounds"
+	{
+		"en"	"Silent Killer: No barrel spin sound"
+	}
+	"Attrib_UberchargeRate_ForHealer"
+	{
+		"en"	"+%s% ÜberCharge rate for the medic healing you\nThis effect does not work in the respawn room"
+	}
+	"Attrib_ReloadTime_Decreased_While_Healed"
+	{
+		"en"	"%s% faster reload time while being healed"
+	}
+	"Attrib_MedicKilledMarkedForDeath"
+	{
+		"en"	"When the medic healing you is killed\nthe killer becomes Marked-For-Death"
+	}
+	"Attrib_RageOnHitPenalty"
+	{
+		"en"	"%s% rage lost on hit"
+	}
+	"Attrib_RageOnHitBonus"
+	{
+		"en"	"%s% rage gained on hit"
+	}
+	"Attrib_RageDamageBoost"
+	{
+		"en"	"Gains a damage bonus as rage increases, up to %s%"
+	}
+	"Attrib_RageOnDamage"
+	{
+		"en"	"Generate Rage by dealing damage. When fully charged, press the Special-Attack key to activate knockback."
+	}
+	"Attrib_ChargeTurnControl"
+	{
+		"en"	"+%s% increase in turning control while charging"
+	}
+	"Attrib_ChargeTurnControlFull"
+	{
+		"en"	"Full turning control while charging"
+	}
+	"Attrib_NoChargeImpactRange"
+	{
+		"en"	"Can deal charge impact damage at any range"
+	}
+	"Attrib_ChargeImpactDamageIncreased"
+	{
+		"en"	"+%s% increase in charge impact damage"
+	}
+	"Attrib_ChargeImpactDamageDecreased"
+	{
+		"en"	"%s% decrease in charge impact damage"
+	}
+	"Attrib_ChargeRechargeRateIncreased"
+	{
+		"en"	"+%s% increase in charge recharge rate"
+	}
+	"Attrib_AirDashCountIncreased"
+	{
+		"en"	"Grants Triple Jump while deployed.\nMelee attacks mini-crit while airborne."
+	}
+	"Attrib_SpeedBuffAlly"
+	{
+		"en"	"On Hit Teammate: Boosts both players' speed for several seconds"
+	}
+	"Attrib_DamageForceReduction"
+	{
+		"en"	"%s% reduction in push force taken from damage"
+	}
+	"Attrib_DamageForceIncrease"
+	{
+		"en"	"%s% increase in push force taken from damage"
+	}
+	"Attrib_DamageForceIncreaseString"
+	{
+		"en"	"Increase in push force taken from damage and airblast"
+	}
+	"Attrib_CloakRate"
+	{
+		"en"	"%s sec increase in time to cloak"
+	}
+	"Attrib_NoCloakWhenCloaked"
+	{
+		"en"	"No cloak meter from ammo boxes when invisible"
+	}
+	"Attrib_ReducedCloakFromAmmo"
+	{
+		"en"	"%s% cloak meter from ammo boxes"
+	}
+	"Attrib_AmmoBecomesHealth"
+	{
+		"en"	"Ammo collected from ammo boxes becomes health"
+	}
+	"Attrib_BootsFallingStomp"
+	{
+		"en"	"Deals 3x falling damage to the player you land on"
+	}
+	"Attrib_SaxxyAward"
+	{
+		"en"	"Winner: %s %s\n"
+	}
+	"Attrib_MemoryMakerAward"
+	{
+		"en"	"Saxxy Nominee: %s %s\n"
+	}
+	"Attrib_SeeEnemyHealth"
+	{
+		"en"	"Allows you to see enemy health"
+	}
+	"Attrib_HideEnemyHealth"
+	{
+		"en"	"Unable to see enemy health"
+	}
+	"Attrib_PowerupCharges"
+	{
+		"en"	"Currently holds %s charges"
+	}
+	"Attrib_PowerupMaxCharges"
+	{
+		"en"	"Holds a maximum of %s charges"
+	}
+	"Attrib_PowerupDuration"
+	{
+		"en"	"Each charge lasts %s seconds"
+	}
+	"Attrib_CritBoost"
+	{
+		"en"	"Consumable: Become Crit Boosted for 5 seconds\n(and double your sentry's firing speed)"
+	}
+	"Attrib_Ubercharge"
+	{
+		"en"	"Consumable: Become Übercharged for 5 seconds\n(and shield your sentry from damage)"
+	}
+	"Attrib_CancelFallingDamage"
+	{
+		"en"	"Wearer never takes falling damage"
+	}
+	"Attrib_EffectBarRechargeRateIncreased"
+	{
+		"en"	"+%s% increase in recharge rate"
+	}
+	"Attrib_MaxammoGrenades1_Increased"
+	{
+		"en"	"+%s% max misc ammo on wearer"
+	}
+	"Attrib_EnergyWeaponNoAmmo"
+	{
+		"en"	"Does not require ammo"
+	}
+	"Attrib_EnergyWeaponNoHurtBuilding"
+	{
+		"en"	"Deals only 20% damage to buildings"
+	}
+	"Attrib_EnergyWeaponChargedShot"
+	{
+		"en"	"Alt-Fire: A charged shot that\nmini-crits players, sets them on fire\nand disables buildings for 4 sec"
+	}
+	"Attrib_EnergyWeaponPenetration"
+	{
+		"en"	"Projectile penetrates enemy targets"
+	}
+	"Attrib_EnergyWeaponNoDeflect"
+	{
+		"en"	"Projectile cannot be deflected"
+	}
+	"Attrib_EngyBuildingHealthBonus"
+	{
+		"en"	"+%s% max building health"
+	}
+	"Attrib_EngyBuildingHealthPenalty"
+	{
+		"en"	"%s% max building health"
+	}
+	"Attrib_EngySentryDamageBonus"
+	{
+		"en"	"+%s% Sentry Gun damage bonus"
+	}
+	"Attrib_NoCritBoost"
+	{
+		"en"	"Cannot be crit boosted"
+	}
+	"Attrib_SniperOnlyFireZoomed"
+	{
+		"en"	"Cannot fire unless zoomed"
+	}
+	"Attrib_Penetration"
+	{
+		"en"	"Projectiles penetrate enemy players"
+	}
+	"Attrib_AmmoPerShot"
+	{
+		"en"	"Per Shot: -%s ammo"
+	}
+	"Attrib_OnHit_AddAmmo"
+	{
+		"en"	"On Hit: damage dealt is returned as ammo"
+	}
+	"Attrib_UseMetalAmmoType"
+	{
+		"en"	"Uses metal for ammo"
+	}
+	"Attrib_ExpirationDate"
+	{
+		"en"	"This item will expire on %s."
+	}
+	"Attrib_LoanerItemExpirationDate"
+	{
+		"en"	"This item will be removed when the associated contract is completed or deactivated."
+	}
+	"Attrib_DropPeriodComing"
+	{
+		"en"	"This item stops dropping on %s."
+	}
+	"Attrib_DropPeriodPast"
+	{
+		"en"	"This item stopped dropping on %s."
+	}
+	"Attrib_PreviewItem"
+	{
+		"en"	"Test Run - Cannot be traded, marketed, crafted, or modified"
+	}
+	"Attrib_LoanerItem"
+	{
+		"en"	"Loaner - Cannot be traded, marketed, crafted, or modified"
+	}
+	"Attrib_Sniper_FullChargeBonus"
+	{
+		"en"	"On Full Charge: +%s% damage per shot"
+	}
+	"Attrib_Sniper_NoHeadShot"
+	{
+		"en"	"No headshots when not fully charged"
+	}
+	"Attrib_NoReload"
+	{
+		"en"	"No reload necessary"
+	}
+	"Attrib_SniperFullChargePenetration"
+	{
+		"en"	"On Full Charge: Projectiles penetrate players"
+	}
+	"Attrib_DrawBeamWhenScoped"
+	{
+		"en"	"Uses laser sight"
+	}
+	"Attrib_Recall"
+	{
+		"en"	"Consumable: Instantly teleport to spawn"
+	}
+	"Attrib_SapperKillsCollectCrits"
+	{
+		"en"	"Gives one guaranteed critical hit for each\nbuilding destroyed with your sapper attached\nor backstab kill"
+	}
+	"Attrib_Sniper_FiresTracer"
+	{
+		"en"	"Fires tracer rounds"
+	}
+	"Attrib_ElectricalAirblast"
+	{
+		"en"	"Alt-Fire: Launches a projectile-consuming energy ball. Costs 65 metal."
+	}
+	"Attrib_Unlimited"
+	{
+		"en"	"Unlimited use"
+	}
+	"Attrib_UberDurationBonus"
+	{
+		"en"	"Über duration increased %s seconds"
+	}
+	"Attrib_RefillAmmo"
+	{
+		"en"	"Consumable: Instantly refill all weapon clips and ammo"
+	}
+	"Attrib_FastReload"
+	{
+		"en"	"+%s% faster reload time"
+	}
+	"Attrib_BuffTime_Increased"
+	{
+		"en"	"+%s% buff duration"
+	}
+	"Attrib_BuildRateBonus"
+	{
+		"en"	"+%s% faster build speed"
+	}
+	"Attrib_AttackProjectiles"
+	{
+		"en"	"Bullets destroy rockets and grenades in-flight. Increased accuracy and frequency per-level."
+	}
+	"Attrib_AccurScalesDmg"
+	{
+		"en"	"Accuracy scales damage"
+	}
+	"Attrib_CurrencyBonus"
+	{
+		"en"	"+%s% bonus currency from packs"
+	}
+	"Attrib_RoboSapper"
+	{
+		"en"	"Increased robot Sapper radius and duration"
+	}
+	"Attrib_JumpHeightBonus"
+	{
+		"en"	"+%s% greater jump height when active"
+	}
+	"Attrib_AppliesSnareEffect"
+	{
+		"en"	"%s% movement speed on targets"
+	}
+	"Attrib_BuildingInstaUpgrade"
+	{
+		"en"	"Consumable: Instantly upgrade all buildings to max level"
+	}
+	"Attrib_BiDirectionalTP"
+	{
+		"en"	"Teleporters can be used in both directions"
+	}
+	"Attrib_AirBlastPushScale"
+	{
+		"en"	"+%s% airblast push force"
+	}
+	"Attrib_AirBlastVulnerabilityMultipier"
+	{
+		"en"	"%s% reduction in airblast vulnerability"
+	}
+	"Attrib_BombinomiconEffectOnDeath"
+	{
+		"en"	"Explode spectacularly on death"
+	}
+	"Attrib_CritKillWillGib"
+	{
+		"en"	"Killing an enemy with a critical hit will dismember your victim. Painfully."
+	}
+	"Attrib_SubtractVictimCloakOnHit"
+	{
+		"en"	"On Hit: Victim loses up to %s% cloak"
+	}
+	"Attrib_SubtractVictimMedigunChargeOnHit"
+	{
+		"en"	"On Hit: Victim loses up to %s% Medigun charge"
+	}
+	"Attrib_RevealCloakedVictimOnHit"
+	{
+		"en"	"On Hit Spy: Reveal cloaked Spy"
+	}
+	"Attrib_RevealDisguisedVictimOnHit"
+	{
+		"en"	"On Hit Spy: Reveal disguised Spy"
+	}
+	"Attrib_JarateBackstabber"
+	{
+		"en"	"When backstabbed: Jarate attacker"
+	}
+	"Attrib_SentryFireRate_Increased"
+	{
+		"en"	"+%s% sentry firing speed"
+	}
+	"Attrib_SentryRadius_Increased"
+	{
+		"en"	"+%s% sentry range"
+	}
+	"Attrib_DispenserRadius_Increased"
+	{
+		"en"	"+%s% dispenser range"
+	}
+	"Attrib_BatLaunchesOrnaments"
+	{
+		"en"	"Alt-Fire: Launches a festive ornament that shatters causing bleed"
+	}
+	"Attrib_FreezeBackstabVictim"
+	{
+		"en"	"Backstab turns victim to ice"
+	}
+	"Attrib_VictimsBecomeAsh"
+	{
+		"en"	"Victims turn to ash!"
+	}
+	"Attrib_EngyDisposableSentries"
+	{
+		"en"	"Build +%s additional disposable-sentry"
+	}
+	"Attrib_AltFireTeleportToSpawn"
+	{
+		"en"	"Press your reload key to choose to teleport to spawn or your exit teleporter"
+	}
+	"Attrib_CannotPickUpBuildings"
+	{
+		"en"	"Cannot carry buildings"
+	}
+	"Attrib_StunEnemiesWieldingSameWeapon"
+	{
+		"en"	"Stuns enemies who are also wielding this weapon"
+	}
+	"Attrib_TickleEnemiesWieldingSameWeapon"
+	{
+		"en"	"On Hit: Force enemies to laugh who are also wearing this item"
+	}
+	"Attrib_CritForcesLaugh"
+	{
+		"en"	"Critical hit forces victim to laugh"
+	}
+	"Attrib_MeltsInFire"
+	{
+		"en"	"Melts in fire, regenerates in %s seconds and by picking up ammo"
+	}
+	"Attrib_BecomeFireproofOnHitByFire"
+	{
+		"en"	"On Hit by Fire: Fireproof for 1 second and Afterburn immunity for %s seconds"
+	}
+	"Attrib_CritFromBehind"
+	{
+		"en"	"Always critical hit from behind"
+	}
+	"Attrib_CritDoesNoDamage"
+	{
+		"en"	"Critical hits do no damage"
+	}
+	"Attrib_AddJingleToFootsteps"
+	{
+		"en"	"Jingle all the way"
+	}
+	"Attrib_StunWaistHighAirborne"
+	{
+		"en"	"On Hit: If enemy's belt is at or above eye level,\nstun them for %s seconds"
+	}
+	"Attrib_DamageAllConnected"
+	{
+		"en"	"All players connected via Medigun beams are hit"
+	}
+	"Attrib_AimingNoFlinch"
+	{
+		"en"	"No flinching when aiming and fully charged"
+	}
+	"Attrib_AimingKnockbackResistance"
+	{
+		"en"	"Knockback reduced by %s% when aiming"
+	}
+	"Attrib_SniperAimingMoveSpeed_Decreased"
+	{
+		"en"	"%s% slower move speed when aiming"
+	}
+	"Attrib_RageGainOnKill"
+	{
+		"en"	"Gain Focus on kills and assists" // Text is made for sniper only, fix this
+	}
 //"Attrib_RageGainOnAssists"				""
-"Attrib_ShotPenetration"				"Shots go through multiple enemies"
-"Attrib_HeadshotDamageIncrease"			"Headshots deal an extra +%s1% damage"
-"Attrib_MysterySolvingTimeDecrease"		"Reduces mystery solving time by up to %s1%"
-"Attrib_DamageDone_Bodyshot_Negative"	"%s1% damage on body shot"
-"Attrib_SniperRageDisplayOnly"			"Press 'Reload' to activate focus\nIn Focus: +25% faster charge and no unscoping"
-"Attrib_ExplosiveSniperShot"			"Increased headshot explosion radius and damage to nearby enemies"
-"Attrib_MeleeRate_Positive"				"+%s1% faster melee attack speed"
-"Attrib_MeleeRate_Negative"				"%s1% slower melee attack speed"
-"Attrib_Penetration_Heavy"				"Bullets penetrate +%s1 enemies"
-"Attrib_ArmorPiercing"					"Increase backstab damage against Giant Robots by %s1%"
-"Attrib_CannotPickUpIntelligence"		"Wearer cannot carry the intelligence briefcase or PASS Time JACK"
-"Attrib_ChanceOfHungerDecrease"			"Reduces chance of hunger by up to %s1%"
-"Attrib_CannotBeBackstabbed"			"Cannot be backstabbed"
-"Attrib_ShareConsumable"				"Using your Power Up Canteen will apply the same bonus effect to your heal target"
-"Attrib_CritVsDisguised"				"100% critical hit vs disguised players"
-"Attrib_CritVsNonBurning"				"100% critical hit vs non-burning players"
-"Attrib_KillForcesAttackerLaugh"		"On Kill: Burst into joyous laughter"
-"Attrib_DmgBonus_Disguised"				"+%s1% damage bonus while disguised"
-"Attrib_Projectile_Spread_Angle_Negative"	"+%s1 degrees random projectile deviation"
-"Attrib_AutoFiresFullClip"				"Hold Fire to load up to three rockets\nRelease Fire to unleash the barrage"
-"Attrib_SelfMarkForDeath"				"You are Marked-For-Death while active, and for short period after switching weapons"
-"Attrib_FlaregunPelletsWithKnockback"			"Flare knocks back target on hit\nand explodes when it hits the ground.\nIncreased knock back on burning players"
-"Attrib_CanOverload"					"Overloading the chamber will cause a misfire"
-"Attrib_BoostOnDamage"					"On Hit: Builds Boost\nRun speed increased with Boost"
-"Attrib_HypeOnDamage"					"On Hit: Builds Hype"
-"Attrib_HypeResetsOnJump"				"Boost reduced on air jumps"
-"Attrib_losehypeontakedamage"			"Boost reduced when hit"
-"Attrib_PyroYearNumber"					"Witnessed the %s1 inferno"
-"Attrib_NoPrimaryAmmoFromDispensers"	"No ammo from dispensers when active"
-"Attrib_PyrovisionOptIn"				"On Equip: Visit Pyroland"
-"Attrib_PyrovisionFilter"				"Only visible in Pyroland"
-"Attrib_Sapper_Damage_Bonus"			"+%s1% sapper damage bonus"
-"Attrib_Sapper_Damage_Penalty"			"%s1% sapper damage penalty"
-"Attrib_Sapper_Leaches_Health"			"+%s1 health regenerated per second for each active sapper"
-"Attrib_Sapper_Health_Bonus"			"%s1% sapper health bonus"
-"Attrib_Sapper_Health_Penalty"			"%s1% sapper health penalty"
-"Attrib_Ring_Of_Fire_While_Aiming"		"Creates a ring of flames while spun up"
-"Attrib_Uses_Ammo_While_Aiming"			"Consumes an additional %s1 ammo per second while spun up"
-"Attrib_Sapper_Degenerates_Buildings"	"Reverses enemy building construction"
-"Attrib_Cleaver_Description"			"Throw at your enemies to make them bleed!  Long distance hits reduce recharge time"
-"Attrib_CritVsStunned"					"100% critical hit vs stunned players"
-"Attrib_CritVsWet"						"100% critical hit vs wet players"
-"Attrib_ClipSize_Atomic"				"+%s1 clip size"
-"Attrib_HalloweenSpell_RGB"				"%s1"
-"Attrib_HalloweenSpell_Footstep"		"%s1"
-"Attrib_HalloweenSpell_Voice"			"Voices From Below"
-"Attrib_HalloweenSpell_PumpkinBombs"	"Pumpkin Bombs"
-"Attrib_HalloweenSpell_GreenFlames"		"Halloween Fire"
-"Attrib_HalloweenSpell_DeathGhosts"		"Exorcism"
-"Attrib_SoldierBackpackRange"			"Effect Radius +%s1%"
-"Attrib_LifeleechOnDamage"				"Lifeleech %s1%"
-"Attrib_SentryAmmo"						"Sentry Ammo +%s1"
-"Attrib_CritChance"						"Crit Chance +%s1%"
-"Attrib_AOEHealChance_Small"			"Small Chance to heal teammates around you when you deal damage"
-"Attrib_AOEHealChance_Large"			"Large Chance to heal teammates around you when you deal damage"
-"Attrib_StunChance_Small"				"Small Chance to stun enemies you damage"
-"Attrib_StunChance_Large"				"Large Chance to stun enemies you damage"
-"Attrib_AOEDamageChance_Small"			"Small Chance to shock enemies near targets you damage"
-"Attrib_AOEDamageChance_Large"			"Large Chance to shock enemies near targets you damage"
-"Attrib_CritStreakChance_Small"			"Small Chance to become Crit Boosted when you deal damage"
-"Attrib_CritStreakChance_Large"			"Large Chance to become Crit Boosted when you deal damage"
-"Attrib_UberOnHitChance"				"+%s1% Chance to become Übered when enemies damage you"
-"Attrib_DamageSameClass"				"+%s1% Damage to Enemies of the Same Class"
-"Attrib_TeleportInsteadOfDie"			"+%s1% Chance to Teleport to base when taking damage that would otherwise kill you"
-"Attrib_MeleeCleaveAttack"				"Cleave Attack"
-"Attrib_Sentry_Build_Rate"				"Sentry build speed increased by %s1%"
-"Attrib_Teleporter_Build_Rate"			"Increases teleporter build speed by %s1%"
-"Attrib_Grenade_Launcher_Mortar_Mode"	"Cannonballs have a fuse time of 1 second; fuses can be primed to explode earlier by holding down the fire key"
-"Attrib_Grenade_Not_Explode_On_Impact"	"Cannonballs do not explode on impact"
-"Attrib_Grenade_Damage_Reduction_On_World_Contact"	"%s1% damage on contact with surfaces"
-"Attrib_Building_Telporting_PickUp"		"Alt-Fire: Use %s1 metal to pick up your targeted building from long range"
-"Attrib_EngineerBuildingRescueRage"		"Generate building rescue energy on damage"
-"Attrib_MarkedForDeathOnBuildingPickup" "Self mark for death when hauling buildings"
-"Attrib_ArrowHealsBuildings"			"Fires a special bolt that can repair friendly buildings"
-"Attrib_Cannonball_Push_Back"			"Cannonballs push players back on impact"
-"Attrib_Overheal_Fill_Rate_Reduced"		"%s1% Overheal build rate"
-"Attrib_Healing_Provided_Resistance"	"When healing, provides you and your target with a constant 10% resistance to the selected damage type."
-"Attrib_Canteen_Specialist"				"Share Canteens with your heal target\n+1 duration, -10 price per point (minimum cost: 5)"
-"Attrib_Overheal_Expert"				"+25% more overheal, +50% longer duration per point"
-"Attrib_Medic_MadMilkSyringes"			"Syringes deliver a highly concentrated dose of Mad Milk. Duration increases per hit to a max of 4 seconds."
-"Attrib_Rocket_Specialist"				"+15% rocket speed per point. On direct hits: rocket does maximum damage, stuns target, and blast radius increased +15% per point."
-"Attrib_Healing_Mastery"				"+25% heal rate for patient, +25% faster revive rate, and +25% self heal rate, per point"
-"Attrib_RageOnHeal"						"Build energy by healing teammates. When fully charged, press the Special-Attack key to deploy a frontal projectile shield."
-"Attrib_HealingReceivedBonus"			"+%s1% bonus healing from all sources"
-"Attrib_HealingReceivedPenalty"			"%s1% less healing from all sources"
-"Attrib_HealingFromMedics_Negative"		"%s1% less healing from Medic sources"
-"Attrib_AfterburnImmunity"				"Immune to the effects of afterburn"
-"Attrib_TauntParticles"					"Extra effects when taunting"
-"Attrib_CallingCardOnKill"				"Leave a Calling Card on your victims"
-"Attrib_AmmoPerShotMissed"				"Per Shot Missed: -%s1 ammo"
-"Attrib_MiniCritBoost_OnKill"			"On Kill: Gain Mini-crits for %s1 seconds"
-"Attrib_MiniCritBoost_WhenCharged"		"Secondary fire when charged grants mini-crits for %s1 seconds"
-"Attrib_MiniCritBoost_ChargeRate"		"Dealing damage fills charge meter"
-"Attrib_NoMetalFromDispensersWhileActive"	"No metal from dispensers when active"
-"Attrib_SniperCritNoScope"				"Charge and fire shots independent of zoom"
-"Attrib_SniperIndependentZoom"			"Zoom does not affect charge"
-"Attrib_KillsRefillMeter"				"Melee kills refill %s1% of your charge meter"
-"Attrib_HitsRefillMeter"				"Melee hits refill %s1% of your charge meter"
-"Attrib_AirControl"						"%s1% increased air control"
-"Attrib_AirControlBlastJump"			"%s1% increased air control when blast jumping"
-"Attrib_HypeDecays"						"Hype Decays Over Time"
-"Attrib_RocketJumpAttackRateBonus"		"Increased attack speed and smaller blast radius while blast jumping"
-"Attrib_NonRocketJumpAttackRatePenalty"		"Decreased %s1% attack speed while not blast jumping"
-"Attrib_AirBombardment"					"Fires 3 barrages while explosive jumping"
-"Attrib_IncreaesBlastJumpForce"			"Increased blast jump force"
-"Attrib_ExtraRocketsOnKill"			"Clip size increased on kill"
-"Attrib_Summer2014Tag"					"Rewarded for participating in the 2014 Summer Adventure"
-"Attrib_CrateGenerationCode"			"Crate generation code: '%s1'"
-"Attrib_AiXenoSetBonusPos"					"Increased Melee damage against Isolated Merc Set"
-"Attrib_AiXenoSetBonusNeg"					"Increased Nostromo Napalmer damage taken from Isolated Merc Set"
-"Attrib_AiMercSetBonusPos"					"Increased Nostromo Napalmer damage against Isolationist Pack Set"
-"Attrib_AiMercSetBonusNeg"					"Increased Melee damage taken from Isolationist Pack Set"
-"Attrib_stickybomb_fizzle_time"				"Stickybombs fizzle %s1 seconds after landing"
-"Attrib_stickybomb_charge_rate"				"Max charge time decreased by %s1%"
-"Attrib_stickybomb_charge_damage_increase"	"Up to +%s1% damage based on charge"
-"Attrib_grenade_no_bounce"					"Grenades have very little bounce and roll"
-"Attrib_GrenadeDetonationDamagePenalty"		"%s1% damage on grenades that explode on timer"
-"Attrib_LoseDemoChargeOnDamageWhenCharging"	"Taking damage while shield charging reduces remaining charging time"
-"Attrib_PanicAttack"					"Hold fire to load up to 4 shells"
-"Attrib_FireRateBonusWithReducedHealth"	"Fire rate increases as health decreases"
-"Attrib_PanicAttackNegative"			"Weapon spread increases as health decreases"
-"Attrib_AutoFiresFullClipNegative"		""
-"Attrib_AutoFiresWhenFull"				""
-"Attrib_SpeedBoostOnKill"				"Gain a speed boost on kill"
-"Attrib_SpeedBoostOnHit"				"On Hit: Gain a speed boost"
-"Attrib_spup_damage_resistance"			"%s1% damage resistance when below 50% health and spun up"
-"Attrib_stattrakmodule"					"%s1 Stat Clock Attached"
-"Attrib_HasTeamColorPaintkit"			"Team Colored Decorated Weapon"
-"Attrib_MeleeRangeMultiplier"			"%s1% increased melee attack range"
-"Attrib_ItemsTradedIn"					"Items Traded in : %s1"
-"Attrib_LunchboxAddsAmmo"				"Restores ammo as well as health"
-"Attrib_LunchboxHealingDecreased"		"%s1% healing effect"
-"Attrib_IsASword"						"This Weapon has a large melee range and\ndeploys and holsters slower"
-"Attrib_AmmoGivesCharge"				"Ammo boxes collected also refill your charge meter"
-"Attrib_IsFestivized"						"Festivized"
-"Attrib_Fuse_Bonus"						"%s1% fuse time on grenades"
-"Attrib_DamageBonusAgainstSentryTarget" "%s1% increased damage to your sentry's target"
-"Attrib_TeleporterBuildCost"			"%s1% metal cost when constructing or upgrading teleporters"
-"Attrib_DmgBonusVsBurning"				"%s1% damage bonus vs burning players"
-"Attrib_PierceResists"					"Attacks pierce damage resistance effects and bonuses"
-"Attrib_PatientOverheal_Penalty"		"%s1% maximum overheal on wearer"
-"Attrib_AddHeadOnKill"					"Collect the organs of your victims"
-"Attrib_UberchargeSavedOnHit"			"Collect the organs of people you hit"
-"Attrib_SpreadPenaltyScalesCons"		"Successive shots become less accurate"
-"Attrib_FixedShotPattern"				"Fires a wide, fixed shot pattern"
-"Attrib_SpunUpPushForceResist"			"Immune to push force from damage and airblast when spun up"
-"Attrib_DisguiseConsumesCloak"			"Normal disguises require (and consume) a full cloak meter"
-"Attrib_MaxHealthDrain"					"Maximum health is drained while item is active"
-"Attrib_ImpactPushback"					"Push enemies back when you land (force and radius based on velocity)"
-"Attrib_ImpactStun"						"Stun enemies when you land"
-"Attrib_ThermalThrusterAirLaunch"		"Able to re-launch while already in-flight"
-"Attrib_ChargeMeterRateMult"			"%s1% faster recharge rate"
-"Attrib_ChargeMeterRateMult_shortdesc"	"%s1% Recharge Rate"
-"Attrib_ExplodeOnIgnite"				"Ignited enemies explode"
-"Attrib_ExplodeOnIgnite_shortdesc"		"Explode On Ignite"
-"Attrib_SpeedBoostEnemy"				"Gain a speed boost when you hit an enemy player"
-"Attrib_MeterResupplyDenied"			"Spawning and resupply do not affect the Gas meter"
-"Attrib_MeterStartsEmpty"				"Gas meter starts empty"
-"Attrib_MeterChargeType3"				"Gas meter builds with damage done and/or time"
-"Attrib_ConsumesBurning"				"Mini-crits burning targets and extinguishes them.\nDamage increases based on remaining duration of afterburn\nKilling blows on burning players grant a speed boost."
-"Attrib_RepairHealthToMetalRatio"		"%s1-to-1 health-to-metal ratio when repairing buildings"
 
-"Econ_Attrib_UserGeneratedWrapper_1"		"MvM only: %s1"
-"Econ_Attrib_UserGeneratedWrapper_2"		"Halloween: %s1 (spell only active during event)"
+	"Attrib_ShotPenetration"
+	{
+		"en"	"Shots go through multiple enemies"
+	}
+	"Attrib_HeadshotDamageIncrease"
+	{
+		"en"	"Headshots deal an extra +%s% damage"
+	}
+	"Attrib_MysterySolvingTimeDecrease"
+	{
+		"en"	"Reduces mystery solving time by up to %s%"
+	}
+	"Attrib_DamageDone_Bodyshot_Negative"
+	{
+		"en"	"%s% damage on body shot"
+	}
+	"Attrib_SniperRageDisplayOnly"
+	{
+		"en"	"Press 'Reload' to activate focus\nIn Focus: +25% faster charge and no unscoping"
+	}
+	"Attrib_ExplosiveSniperShot"
+	{
+		"en"	"Increased headshot explosion radius and damage to nearby enemies"
+	}
+	"Attrib_MeleeRate_Positive"
+	{
+		"en"	"+%s% faster melee attack speed"
+	}
+	"Attrib_MeleeRate_Negative"
+	{
+		"en"	"%s% slower melee attack speed"
+	}
+	"Attrib_Penetration_Heavy"
+	{
+		"en"	"Bullets penetrate +%s enemies"
+	}
+	"Attrib_ArmorPiercing"
+	{
+		"en"	"Increase backstab damage against Giant Robots by %s%"
+	}
+	"Attrib_CannotPickUpIntelligence"
+	{
+		"en"	"Wearer cannot carry the intelligence briefcase or PASS Time JACK"
+	}
+	"Attrib_ChanceOfHungerDecrease"
+	{
+		"en"	"Reduces chance of hunger by up to %s%"
+	}
+	"Attrib_CannotBeBackstabbed"
+	{
+		"en"	"Cannot be backstabbed"
+	}
+	"Attrib_ShareConsumable"
+	{
+		"en"	"Using your Power Up Canteen will apply the same bonus effect to your heal target"
+	}
+	"Attrib_CritVsDisguised"
+	{
+		"en"	"100% critical hit vs disguised players"
+	}
+	"Attrib_CritVsNonBurning"
+	{
+		"en"	"100% critical hit vs non-burning players"
+	}
+	"Attrib_KillForcesAttackerLaugh"
+	{
+		"en"	"On Kill: Burst into joyous laughter"
+	}
+	"Attrib_DmgBonus_Disguised"
+	{
+		"en"	"+%s% damage bonus while disguised"
+	}
+	"Attrib_Projectile_Spread_Angle_Negative"
+	{
+		"en"	"+%s degrees random projectile deviation"
+	}
+	"Attrib_AutoFiresFullClip"
+	{
+		"en"	"Hold Fire to load up to three rockets\nRelease Fire to unleash the barrage"
+	}
+	"Attrib_SelfMarkForDeath"
+	{
+		"en"	"You are Marked-For-Death while active, and for short period after switching weapons"
+	}
+	"Attrib_FlaregunPelletsWithKnockback"
+	{
+		"en"	"Flare knocks back target on hit\nand explodes when it hits the ground.\nIncreased knock back on burning players"
+	}
+	"Attrib_CanOverload"
+	{
+		"en"	"Overloading the chamber will cause a misfire"
+	}
+	"Attrib_BoostOnDamage"
+	{
+		"en"	"On Hit: Builds Boost\nRun speed increased with Boost"
+	}
+	"Attrib_HypeOnDamage"
+	{
+		"en"	"On Hit: Builds Hype"
+	}
+	"Attrib_HypeResetsOnJump"
+	{
+		"en"	"Boost reduced on air jumps"
+	}
+	"Attrib_losehypeontakedamage"
+	{
+		"en"	"Boost reduced when hit"
+	}
+	"Attrib_PyroYearNumber"
+	{
+		"en"	"Witnessed the %s inferno"
+	}
+	"Attrib_NoPrimaryAmmoFromDispensers"
+	{
+		"en"	"No ammo from dispensers when active"
+	}
+	"Attrib_PyrovisionOptIn"
+	{
+		"en"	"On Equip: Visit Pyroland"
+	}
+	"Attrib_PyrovisionFilter"
+	{
+		"en"	"Only visible in Pyroland"
+	}
+	"Attrib_Sapper_Damage_Bonus"
+	{
+		"en"	"+%s% sapper damage bonus"
+	}
+	"Attrib_Sapper_Damage_Penalty"
+	{
+		"en"	"%s% sapper damage penalty"
+	}
+	"Attrib_Sapper_Leaches_Health"
+	{
+		"en"	"+%s health regenerated per second for each active sapper"
+	}
+	"Attrib_Sapper_Health_Bonus"
+	{
+		"en"	"%s% sapper health bonus"
+	}
+	"Attrib_Sapper_Health_Penalty"
+	{
+		"en"	"%s% sapper health penalty"
+	}
+	"Attrib_Ring_Of_Fire_While_Aiming"
+	{
+		"en"	"Creates a ring of flames while spun up"
+	}
+	"Attrib_Uses_Ammo_While_Aiming"
+	{
+		"en"	"Consumes an additional %s ammo per second while spun up"
+	}
+	"Attrib_Sapper_Degenerates_Buildings"
+	{
+		"en"	"Reverses enemy building construction"
+	}
+	"Attrib_Cleaver_Description"
+	{
+		"en"	"Throw at your enemies to make them bleed! Long distance hits reduce recharge time"
+	}
+	"Attrib_CritVsStunned"
+	{
+		"en"	"100% critical hit vs stunned players"
+	}
+	"Attrib_CritVsWet"
+	{
+		"en"	"100% critical hit vs wet players"
+	}
+	"Attrib_ClipSize_Atomic"
+	{
+		"en"	"+%s clip size"
+	}
+	"Attrib_HalloweenSpell_RGB"
+	{
+		"en"	"%s"
+	}
+	"Attrib_HalloweenSpell_Footstep"
+	{
+		"en"	"%s"
+	}
+	"Attrib_HalloweenSpell_Voice"
+	{
+		"en"	"Voices From Below"
+	}
+	"Attrib_HalloweenSpell_PumpkinBombs"
+	{
+		"en"	"Pumpkin Bombs"
+	}
+	"Attrib_HalloweenSpell_GreenFlames"
+	{
+		"en"	"Halloween Fire"
+	}
+	"Attrib_HalloweenSpell_DeathGhosts"
+	{
+		"en"	"Exorcism"
+	}
+	"Attrib_SoldierBackpackRange"
+	{
+		"en"	"Effect Radius +%s%"
+	}
+	"Attrib_LifeleechOnDamage"
+	{
+		"en"	"Lifeleech %s%"
+	}
+	"Attrib_SentryAmmo"
+	{
+		"en"	"Sentry Ammo +%s"
+	}
+	"Attrib_CritChance"
+	{
+		"en"	"Crit Chance +%s%"
+	}
+	"Attrib_AOEHealChance_Small"
+	{
+		"en"	"Small Chance to heal teammates around you when you deal damage"
+	}
+	"Attrib_AOEHealChance_Large"
+	{
+		"en"	"Large Chance to heal teammates around you when you deal damage"
+	}
+	"Attrib_StunChance_Small"
+	{
+		"en"	"Small Chance to stun enemies you damage"
+	}
+	"Attrib_StunChance_Large"
+	{
+		"en"	"Large Chance to stun enemies you damage"
+	}
+	"Attrib_AOEDamageChance_Small"
+	{
+		"en"	"Small Chance to shock enemies near targets you damage"
+	}
+	"Attrib_AOEDamageChance_Large"
+	{
+		"en"	"Large Chance to shock enemies near targets you damage"
+	}
+	"Attrib_CritStreakChance_Small"
+	{
+		"en"	"Small Chance to become Crit Boosted when you deal damage"
+	}
+	"Attrib_CritStreakChance_Large"
+	{
+		"en"	"Large Chance to become Crit Boosted when you deal damage"
+	}
+	"Attrib_UberOnHitChance"
+	{
+		"en"	"+%s% Chance to become Übered when enemies damage you"
+	}
+	"Attrib_DamageSameClass"
+	{
+		"en"	"+%s% Damage to Enemies of the Same Class"
+	}
+	"Attrib_TeleportInsteadOfDie"
+	{
+		"en"	"+%s% Chance to Teleport to base when taking damage that would otherwise kill you"
+	}
+	"Attrib_MeleeCleaveAttack"
+	{
+		"en"	"Cleave Attack"
+	}
+	"Attrib_Sentry_Build_Rate"
+	{
+		"en"	"Sentry build speed increased by %s%"
+	}
+	"Attrib_Teleporter_Build_Rate"
+	{
+		"en"	"Increases teleporter build speed by %s%"
+	}
+	"Attrib_Grenade_Launcher_Mortar_Mode"
+	{
+		"en"	"Cannonballs have a fuse time of 1 second; fuses can be primed to explode earlier by holding down the fire key"
+	}
+	"Attrib_Grenade_Not_Explode_On_Impact"
+	{
+		"en"	"Cannonballs do not explode on impact"
+	}
+	"Attrib_Grenade_Damage_Reduction_On_World_Contact"
+	{
+		"en"	"%s% damage on contact with surfaces"
+	}
+	"Attrib_Building_Telporting_PickUp"
+	{
+		"en"	"Alt-Fire: Use %s metal to pick up your targeted building from long range"
+	}
+	"Attrib_EngineerBuildingRescueRage"
+	{
+		"en"	"Generate building rescue energy on damage"
+	}
+	"Attrib_MarkedForDeathOnBuildingPickup"
+	{
+		"en"	"Self mark for death when hauling buildings"
+	}
+	"Attrib_ArrowHealsBuildings"
+	{
+		"en"	"Fires a special bolt that can repair friendly buildings"
+	}
+	"Attrib_Cannonball_Push_Back"
+	{
+		"en"	"Cannonballs push players back on impact"
+	}
+	"Attrib_Overheal_Fill_Rate_Reduced"
+	{
+		"en"	"%s% Overheal build rate"
+	}
+	"Attrib_Healing_Provided_Resistance"
+	{
+		"en"	"When healing, provides you and your target with a constant 10% resistance to the selected damage type."
+	}
+	"Attrib_Canteen_Specialist"
+	{
+		"en"	"Share Canteens with your heal target\n+1 duration, -10 price per point (minimum cost: 5)"
+	}
+	"Attrib_Overheal_Expert"
+	{
+		"en"	"+25% more overheal, +50% longer duration per point"
+	}
+	"Attrib_Medic_MadMilkSyringes"
+	{
+		"en"	"Syringes deliver a highly concentrated dose of Mad Milk. Duration increases per hit to a max of 4 seconds."
+	}
+	"Attrib_Rocket_Specialist"
+	{
+		"en"	"+15% rocket speed per point. On direct hits: rocket does maximum damage, stuns target, and blast radius increased +15% per point."
+	}
+	"Attrib_Healing_Mastery"
+	{
+		"en"	"+25% heal rate for patient, +25% faster revive rate, and +25% self heal rate, per point"
+	}
+	"Attrib_RageOnHeal"
+	{
+		"en"	"Build energy by healing teammates. When fully charged, press the Special-Attack key to deploy a frontal projectile shield."
+	}
+	"Attrib_HealingReceivedBonus"
+	{
+		"en"	"+%s% bonus healing from all sources"
+	}
+	"Attrib_HealingReceivedPenalty"
+	{
+		"en"	"%s% less healing from all sources"
+	}
+	"Attrib_HealingFromMedics_Negative"
+	{
+		"en"	"%s% less healing from Medic sources"
+	}
+	"Attrib_AfterburnImmunity"
+	{
+		"en"	"Immune to the effects of afterburn"
+	}
+	"Attrib_TauntParticles"
+	{
+		"en"	"Extra effects when taunting"
+	}
+	"Attrib_CallingCardOnKill"
+	{
+		"en"	"Leave a Calling Card on your victims"
+	}
+	"Attrib_AmmoPerShotMissed"
+	{
+		"en"	"Per Shot Missed: -%s ammo"
+	}
+	"Attrib_MiniCritBoost_OnKill"
+	{
+		"en"	"On Kill: Gain Mini-crits for %s seconds"
+	}
+	"Attrib_MiniCritBoost_WhenCharged"
+	{
+		"en"	"Secondary fire when charged grants mini-crits for %s seconds"
+	}
+	"Attrib_MiniCritBoost_ChargeRate"
+	{
+		"en"	"Dealing damage fills charge meter"
+	}
+	"Attrib_NoMetalFromDispensersWhileActive"
+	{
+		"en"	"No metal from dispensers when active"
+	}
+	"Attrib_SniperCritNoScope"
+	{
+		"en"	"Charge and fire shots independent of zoom"
+	}
+	"Attrib_SniperIndependentZoom"
+	{
+		"en"	"Zoom does not affect charge"
+	}
+	"Attrib_KillsRefillMeter"
+	{
+		"en"	"Melee kills refill %s% of your charge meter"
+	}
+	"Attrib_HitsRefillMeter"
+	{
+		"en"	"Melee hits refill %s% of your charge meter"
+	}
+	"Attrib_AirControl"
+	{
+		"en"	"%s% increased air control"
+	}
+	"Attrib_AirControlBlastJump"
+	{
+		"en"	"%s% increased air control when blast jumping"
+	}
+	"Attrib_HypeDecays"
+	{
+		"en"	"Hype Decays Over Time"
+	}
+	"Attrib_RocketJumpAttackRateBonus"
+	{
+		"en"	"Increased attack speed and smaller blast radius while blast jumping"
+	}
+	"Attrib_NonRocketJumpAttackRatePenalty"
+	{
+		"en"	"Decreased %s% attack speed while not blast jumping"
+	}
+	"Attrib_AirBombardment"
+	{
+		"en"	"Fires 3 barrages while explosive jumping"
+	}
+	"Attrib_IncreaesBlastJumpForce"
+	{
+		"en"	"Increased blast jump force"
+	}
+	"Attrib_ExtraRocketsOnKill"
+	{
+		"en"	"Clip size increased on kill"
+	}
+	"Attrib_Summer2014Tag"
+	{
+		"en"	"Rewarded for participating in the 2014 Summer Adventure"
+	}
+	"Attrib_CrateGenerationCode"
+	{
+		"en"	"Crate generation code: '%s'"
+	}
+	"Attrib_AiXenoSetBonusPos"
+	{
+		"en"	"Increased Melee damage against Isolated Merc Set"
+	}
+	"Attrib_AiXenoSetBonusNeg"
+	{
+		"en"	"Increased Nostromo Napalmer damage taken from Isolated Merc Set"
+	}
+	"Attrib_AiMercSetBonusPos"
+	{
+		"en"	"Increased Nostromo Napalmer damage against Isolationist Pack Set"
+	}
+	"Attrib_AiMercSetBonusNeg"
+	{
+		"en"	"Increased Melee damage taken from Isolationist Pack Set"
+	}
+	"Attrib_stickybomb_fizzle_time"
+	{
+		"en"	"Stickybombs fizzle %s seconds after landing"
+	}
+	"Attrib_stickybomb_charge_rate"
+	{
+		"en"	"Max charge time decreased by %s%"
+	}
+	"Attrib_stickybomb_charge_damage_increase"
+	{
+		"en"	"Up to +%s% damage based on charge"
+	}
+	"Attrib_grenade_no_bounce"
+	{
+		"en"	"Grenades have very little bounce and roll"
+	}
+	"Attrib_GrenadeDetonationDamagePenalty"
+	{
+		"en"	"%s% damage on grenades that explode on timer"
+	}
+	"Attrib_LoseDemoChargeOnDamageWhenCharging"
+	{
+		"en"	"Taking damage while shield charging reduces remaining charging time"
+	}
+	"Attrib_PanicAttack"
+	{
+		"en"	"Hold fire to load up to 4 shells"
+	}
+	"Attrib_FireRateBonusWithReducedHealth"
+	{
+		"en"	"Fire rate increases as health decreases"
+	}
+	"Attrib_PanicAttackNegative"
+	{
+		"en"	"Weapon spread increases as health decreases"
+	}
+	"Attrib_AutoFiresFullClipNegative"
+	{
+		"en"	""
+	}
+	"Attrib_AutoFiresWhenFull"
+	{
+		"en"	""
+	}
+	"Attrib_SpeedBoostOnKill"
+	{
+		"en"	"Gain a speed boost on kill"
+	}
+	"Attrib_SpeedBoostOnHit"
+	{
+		"en"	"On Hit: Gain a speed boost"
+	}
+	"Attrib_spup_damage_resistance"
+	{
+		"en"	"%s% damage resistance when below 50% health and spun up"
+	}
+	"Attrib_stattrakmodule"
+	{
+		"en"	"%s Stat Clock Attached"
+	}
+	"Attrib_HasTeamColorPaintkit"
+	{
+		"en"	"Team Colored Decorated Weapon"
+	}
+	"Attrib_MeleeRangeMultiplier"
+	{
+		"en"	"%s% increased melee attack range"
+	}
+	"Attrib_ItemsTradedIn"
+	{
+		"en"	"Items Traded in : %s"
+	}
+	"Attrib_LunchboxAddsAmmo"
+	{
+		"en"	"Restores ammo as well as health"
+	}
+	"Attrib_LunchboxHealingDecreased"
+	{
+		"en"	"%s% healing effect"
+	}
+	"Attrib_IsASword"
+	{
+		"en"	"This Weapon has a large melee range and\ndeploys and holsters slower"
+	}
+	"Attrib_AmmoGivesCharge"
+	{
+		"en"	"Ammo boxes collected also refill your charge meter"
+	}
+	"Attrib_IsFestivized"
+	{
+		"en"	"Festivized"
+	}
+	"Attrib_Fuse_Bonus"
+	{
+		"en"	"%s% fuse time on grenades"
+	}
+	"Attrib_DamageBonusAgainstSentryTarget"
+	{
+		"en"	"%s% increased damage to your sentry's target"
+	}
+	"Attrib_TeleporterBuildCost"
+	{
+		"en"	"%s% metal cost when constructing or upgrading teleporters"
+	}
+	"Attrib_DmgBonusVsBurning"
+	{
+		"en"	"%s% damage bonus vs burning players"
+	}
+	"Attrib_PierceResists"
+	{
+		"en"	"Attacks pierce damage resistance effects and bonuses"
+	}
+	"Attrib_PatientOverheal_Penalty"
+	{
+		"en"	"%s% maximum overheal on wearer"
+	}
+	"Attrib_AddHeadOnKill"
+	{
+		"en"	"Collect the organs of your victims"
+	}
+	"Attrib_UberchargeSavedOnHit"
+	{
+		"en"	"Collect the organs of people you hit"
+	}
+	"Attrib_SpreadPenaltyScalesCons"
+	{
+		"en"	"Successive shots become less accurate"
+	}
+	"Attrib_FixedShotPattern"
+	{
+		"en"	"Fires a wide, fixed shot pattern"
+	}
+	"Attrib_SpunUpPushForceResist"
+	{
+		"en"	"Immune to push force from damage and airblast when spun up"
+	}
+	"Attrib_DisguiseConsumesCloak"
+	{
+		"en"	"Normal disguises require (and consume) a full cloak meter"
+	}
+	"Attrib_MaxHealthDrain"
+	{
+		"en"	"Maximum health is drained while item is active"
+	}
+	"Attrib_ImpactPushback"
+	{
+		"en"	"Push enemies back when you land (force and radius based on velocity)"
+	}
+	"Attrib_ImpactStun"
+	{
+		"en"	"Stun enemies when you land"
+	}
+	"Attrib_ThermalThrusterAirLaunch"
+	{
+		"en"	"Able to re-launch while already in-flight"
+	}
+	"Attrib_ChargeMeterRateMult"
+	{
+		"en"	"%s% faster recharge rate"
+	}
+	"Attrib_ChargeMeterRateMult_shortdesc"
+	{
+		"en"	"%s% Recharge Rate"
+	}
+	"Attrib_ExplodeOnIgnite"
+	{
+		"en"	"Ignited enemies explode"
+	}
+	"Attrib_ExplodeOnIgnite_shortdesc"
+	{
+		"en"	"Explode On Ignite"
+	}
+	"Attrib_SpeedBoostEnemy"
+	{
+		"en"	"Gain a speed boost when you hit an enemy player"
+	}
+	"Attrib_MeterResupplyDenied"
+	{
+		"en"	"Spawning and resupply do not affect the Gas meter"
+	}
+	"Attrib_MeterStartsEmpty"
+	{
+		"en"	"Gas meter starts empty"
+	}
+	"Attrib_MeterChargeType3"
+	{
+		"en"	"Gas meter builds with damage done and/or time"
+	}
+	"Attrib_ConsumesBurning"
+	{
+		"en"	"Mini-crits burning targets and extinguishes them.\nDamage increases based on remaining duration of afterburn\nKilling blows on burning players grant a speed boost."
+	}
+	"Attrib_RepairHealthToMetalRatio"
+	{
+		"en"	"%s-to-1 health-to-metal ratio when repairing buildings"
+	}
 
-"Attrib_HalloweenSpellbookPage_A"		"Pages of Tumidum: %s1"
-"Attrib_HalloweenSpellbookPage_B"		"Pages of Gratanter: %s1"
-"Attrib_HalloweenSpellbookPage_C"		"Pages of Audere: %s1"
-"Attrib_HalloweenSpellbookPage_D"		"Pages of Congeriae: %s1"
-"Attrib_HalloweenSpellbookPage_E"		"Pages of Veteris: %s1"
+
+	"Econ_Attrib_UserGeneratedWrapper_1"
+	{
+		"en"	"MvM only: %s"
+	}
+	"Econ_Attrib_UserGeneratedWrapper_2"
+	{
+		"en"	"Halloween: %s (spell only active during event)"
+	}
+
+
+	"Attrib_HalloweenSpellbookPage_A"
+	{
+		"en"	"Pages of Tumidum: %s"
+	}
+	"Attrib_HalloweenSpellbookPage_B"
+	{
+		"en"	"Pages of Gratanter: %s"
+	}
+	"Attrib_HalloweenSpellbookPage_C"
+	{
+		"en"	"Pages of Audere: %s"
+	}
+	"Attrib_HalloweenSpellbookPage_D"
+	{
+		"en"	"Pages of Congeriae: %s"
+	}
+	"Attrib_HalloweenSpellbookPage_E"
+	{
+		"en"	"Pages of Veteris: %s"
+	}
+
 
 // SHORT DESCRIPTIONS FOR THE MVM UPGRADE UI
 
+
+
 // Self
-"Attrib_MoveSpeed_Bonus_shortdesc"				"+%s1% Movement Speed"
-"Attrib_JumpHeightBonus_shortdesc"				"+%s1% Jump Height"
-"Attrib_AmmoRegen_shortdesc"					"+%s1% Ammo Regen"
-"Attrib_MetalRegen_shortdesc"					"+%s1 Metal Regen"
-"Attrib_HealthRegen_shortdesc"					"+%s1 Health Regen"
-"Attrib_DmgTaken_From_Fire_Reduced_shortdesc"		"+%s1% Fire Resistance"
-"Attrib_DmgTaken_From_Crit_Reduced_shortdesc"		"+%s1% Crit Resistance"
-"Attrib_DmgTaken_From_Blast_Reduced_shortdesc"		"+%s1% Blast Resistance"
-"Attrib_DmgTaken_From_Bullets_Reduced_shortdesc"	"+%s1% Bullet Resistance"
-"Attrib_DamageForceReduction_shortdesc"			"%s1% Push Force"
+
+	"Attrib_MoveSpeed_Bonus_shortdesc"
+	{
+		"en"	"+%s% Movement Speed"
+	}
+	"Attrib_JumpHeightBonus_shortdesc"
+	{
+		"en"	"+%s% Jump Height"
+	}
+	"Attrib_AmmoRegen_shortdesc"
+	{
+		"en"	"+%s% Ammo Regen"
+	}
+	"Attrib_MetalRegen_shortdesc"
+	{
+		"en"	"+%s Metal Regen"
+	}
+	"Attrib_HealthRegen_shortdesc"
+	{
+		"en"	"+%s Health Regen"
+	}
+	"Attrib_DmgTaken_From_Fire_Reduced_shortdesc"
+	{
+		"en"	"+%s% Fire Resistance"
+	}
+	"Attrib_DmgTaken_From_Crit_Reduced_shortdesc"
+	{
+		"en"	"+%s% Crit Resistance"
+	}
+	"Attrib_DmgTaken_From_Blast_Reduced_shortdesc"
+	{
+		"en"	"+%s% Blast Resistance"
+	}
+	"Attrib_DmgTaken_From_Bullets_Reduced_shortdesc"
+	{
+		"en"	"+%s% Bullet Resistance"
+	}
+	"Attrib_DamageForceReduction_shortdesc"
+	{
+		"en"	"%s% Push Force"
+	}
+
 
 // Bottles
-"Attrib_CritBoost_shortdesc"					"Become Crit Boosted"
-"Attrib_Ubercharge_shortdesc"					"Become Übercharged"
-"Attrib_RefillAmmo_shortdesc"					"Refill Clips and Ammo"
-"Attrib_Recall_shortdesc"						"Teleport To Spawn"
-"Attrib_BuildingInstaUpgrade_shortdesc"			"Building Upgrade"
+
+	"Attrib_CritBoost_shortdesc"
+	{
+		"en"	"Become Crit Boosted"
+	}
+	"Attrib_Ubercharge_shortdesc"
+	{
+		"en"	"Become Übercharged"
+	}
+	"Attrib_RefillAmmo_shortdesc"
+	{
+		"en"	"Refill Clips and Ammo"
+	}
+	"Attrib_Recall_shortdesc"
+	{
+		"en"	"Teleport To Spawn"
+	}
+	"Attrib_BuildingInstaUpgrade_shortdesc"
+	{
+		"en"	"Building Upgrade"
+	}
+
 
 // General Weapon
-"Attrib_ClipSize_Positive_shortdesc"			"+%s1% Clip Size"
-"Attrib_MaxammoPrimary_Increased_shortdesc"		"+%s1% Ammo Capacity"
-"Attrib_MaxammoSecondary_Increased_shortdesc"	"+%s1% Ammo Capacity"
-"Attrib_FastReload_shortdesc"					"+%s1% Reload Speed"
-"Attrib_DamageDone_Positive_shortdesc"			"+%s1% Damage"
-"Attrib_FireRate_Positive_shortdesc"			"+%s1% Firing Speed"
-"Attrib_MeleeRate_Positive_shortdesc"			"+%s1% Attack Speed"
-"Attrib_ProjectileSpeed_Increased_shortdesc"	"+%s1% Projectile Speed"
-"Attrib_Penetration_shortdesc"					"Projectile Penetration"
-"Attrib_HealOnKill_shortdesc"					"+%s1 Health On Kill"
-"Attrib_Dmg_Crit_Falloff"						"Critical damage is affected by range"
+
+	"Attrib_ClipSize_Positive_shortdesc"
+	{
+		"en"	"+%s% Clip Size"
+	}
+	"Attrib_MaxammoPrimary_Increased_shortdesc"
+	{
+		"en"	"+%s% Ammo Capacity"
+	}
+	"Attrib_MaxammoSecondary_Increased_shortdesc"
+	{
+		"en"	"+%s% Ammo Capacity"
+	}
+	"Attrib_FastReload_shortdesc"
+	{
+		"en"	"+%s% Reload Speed"
+	}
+	"Attrib_DamageDone_Positive_shortdesc"
+	{
+		"en"	"+%s% Damage"
+	}
+	"Attrib_FireRate_Positive_shortdesc"
+	{
+		"en"	"+%s% Firing Speed"
+	}
+	"Attrib_MeleeRate_Positive_shortdesc"
+	{
+		"en"	"+%s% Attack Speed"
+	}
+	"Attrib_ProjectileSpeed_Increased_shortdesc"
+	{
+		"en"	"+%s% Projectile Speed"
+	}
+	"Attrib_Penetration_shortdesc"
+	{
+		"en"	"Projectile Penetration"
+	}
+	"Attrib_HealOnKill_shortdesc"
+	{
+		"en"	"+%s Health On Kill"
+	}
+	"Attrib_Dmg_Crit_Falloff"
+	{
+		"en"	"Critical damage is affected by range"
+	}
+
 
 // Heavy
-"Attrib_RageOnDamage_shortdesc"					"Knockback Rage"
-"Attrib_AttackProjectiles_shortdesc"			"Destroy Projectiles"
-"Attrib_Penetration_Heavy_shortdesc"			"Projectile Penetration"
+
+	"Attrib_RageOnDamage_shortdesc"
+	{
+		"en"	"Knockback Rage"
+	}
+	"Attrib_AttackProjectiles_shortdesc"
+	{
+		"en"	"Destroy Projectiles"
+	}
+	"Attrib_Penetration_Heavy_shortdesc"
+	{
+		"en"	"Projectile Penetration"
+	}
+
 
 // Sniper
-"Attrib_AppliesSnareEffect_shortdesc"			"%s1% Speed On Target"
-"Attrib_BleedingDuration_shortdesc"				"+%s1s Bleed On Target"
-"Attrib_SRifleChargeRate_Increased_shortdesc"	"%s1% Faster Charge"
-"Attrib_ExplosiveSniperShot_shortdesc"			"Explosive Headshot"
+
+	"Attrib_AppliesSnareEffect_shortdesc"
+	{
+		"en"	"%s% Speed On Target"
+	}
+	"Attrib_BleedingDuration_shortdesc"
+	{
+		"en"	"+%ss Bleed On Target"
+	}
+	"Attrib_SRifleChargeRate_Increased_shortdesc"
+	{
+		"en"	"%s% Faster Charge"
+	}
+	"Attrib_ExplosiveSniperShot_shortdesc"
+	{
+		"en"	"Explosive Headshot"
+	}
+
 
 // Spy
-"Attrib_RoboSapper_shortdesc"					"Robot Sapper Power"
-"Attrib_CritBoost_OnKill_shortdesc"				"+%s1s Crits On Kill"
-"Attrib_ArmorPiercing_shortdesc"				"Armor Penetration"
-"Attrib_ConsumeCloakFeignDeath"					"%s1% cloak meter when Feign Death is activated"
+
+	"Attrib_RoboSapper_shortdesc"
+	{
+		"en"	"Robot Sapper Power"
+	}
+	"Attrib_CritBoost_OnKill_shortdesc"
+	{
+		"en"	"+%ss Crits On Kill"
+	}
+	"Attrib_ArmorPiercing_shortdesc"
+	{
+		"en"	"Armor Penetration"
+	}
+	"Attrib_ConsumeCloakFeignDeath"
+	{
+		"en"	"%s% cloak meter when Feign Death is activated"
+	}
+
 
 // Soldier
-"Attrib_BuffTime_Increased_shortdesc"			"+%s1% Buff Duration"
-"Attrib_EffectBarRechargeRateIncreased_shortdesc"	"+%s1% Recharge Rate"
-"Attrib_Rocket_Specialist_shortdesc"			"Rocket Specialist"
+
+	"Attrib_BuffTime_Increased_shortdesc"
+	{
+		"en"	"+%s% Buff Duration"
+	}
+	"Attrib_EffectBarRechargeRateIncreased_shortdesc"
+	{
+		"en"	"+%s% Recharge Rate"
+	}
+	"Attrib_Rocket_Specialist_shortdesc"
+	{
+		"en"	"Rocket Specialist"
+	}
+
 
 // Engineer
-"Attrib_BuildRateBonus_shortdesc"				"+%s1% Build Speed"
-"Attrib_BiDirectionalTP_shortdesc"				"2-Way Teleporters"
-"Attrib_EngyDisposableSentries_shortdesc"		"+%s1 Disposable Sentry"
-"Attrib_SentryFireRate_Increased_shortdesc"		"+%s1% Sentry Firing Speed"
-"Attrib_DispenserRadius_Increased_shortdesc"	"+%s1% Dispenser Range"
-"Attrib_MaxammoMetal_Increased_shortdesc"		"+%s1% Max Metal Capacity"
-"Attrib_EngyBuildingHealthBonus_shortdesc"		"+%s1% Building Health"
+
+	"Attrib_BuildRateBonus_shortdesc"
+	{
+		"en"	"+%s% Build Speed"
+	}
+	"Attrib_BiDirectionalTP_shortdesc"
+	{
+		"en"	"2-Way Teleporters"
+	}
+	"Attrib_EngyDisposableSentries_shortdesc"
+	{
+		"en"	"+%s Disposable Sentry"
+	}
+	"Attrib_SentryFireRate_Increased_shortdesc"
+	{
+		"en"	"+%s% Sentry Firing Speed"
+	}
+	"Attrib_DispenserRadius_Increased_shortdesc"
+	{
+		"en"	"+%s% Dispenser Range"
+	}
+	"Attrib_MaxammoMetal_Increased_shortdesc"
+	{
+		"en"	"+%s% Max Metal Capacity"
+	}
+	"Attrib_EngyBuildingHealthBonus_shortdesc"
+	{
+		"en"	"+%s% Building Health"
+	}
+
 
 // Medic
-"Attrib_HealRate_Positive_shortdesc"			"+%s1% Heal Rate"
-"Attrib_OverhealAmount_Positive_shortdesc"		"+%s1% Max Overheal"
-"Attrib_UberchargeRate_Positive_shortdesc"		"+%s1% ÜberCharge Rate"
-"Attrib_OverhealDecay_Positive_shortdesc"		"+%s1% Overheal Time"
-"Attrib_UberDurationBonus_shortdesc"			"+%s1s Über Duration"
-"Attrib_ShareConsumable_shortdesc"				"Share Power Ups"
-"Attrib_Canteen_Specialist_shortdesc"			"Canteen Specialist"
-"Attrib_Overheal_Expert_shortdesc"				"Overheal Expert"
-"Attrib_Medic_MadMilkSyringes_shortdesc"		"Mad Milk Syringes"
-"Attrib_Healing_Mastery_shortdesc"				"Healing Mastery"
-"Attrib_RageOnHeal_shortdesc"					"Projectile Shield"
-"Attrib_Revive"									"Revive Teammates"
+
+	"Attrib_HealRate_Positive_shortdesc"
+	{
+		"en"	"+%s% Heal Rate"
+	}
+	"Attrib_OverhealAmount_Positive_shortdesc"
+	{
+		"en"	"+%s% Max Overheal"
+	}
+	"Attrib_UberchargeRate_Positive_shortdesc"
+	{
+		"en"	"+%s% ÜberCharge Rate"
+	}
+	"Attrib_OverhealDecay_Positive_shortdesc"
+	{
+		"en"	"+%s% Overheal Time"
+	}
+	"Attrib_UberDurationBonus_shortdesc"
+	{
+		"en"	"+%ss Über Duration"
+	}
+	"Attrib_ShareConsumable_shortdesc"
+	{
+		"en"	"Share Power Ups"
+	}
+	"Attrib_Canteen_Specialist_shortdesc"
+	{
+		"en"	"Canteen Specialist"
+	}
+	"Attrib_Overheal_Expert_shortdesc"
+	{
+		"en"	"Overheal Expert"
+	}
+	"Attrib_Medic_MadMilkSyringes_shortdesc"
+	{
+		"en"	"Mad Milk Syringes"
+	}
+	"Attrib_Healing_Mastery_shortdesc"
+	{
+		"en"	"Healing Mastery"
+	}
+	"Attrib_RageOnHeal_shortdesc"
+	{
+		"en"	"Projectile Shield"
+	}
+	"Attrib_Revive"
+	{
+		"en"	"Revive Teammates"
+	}
+
 
 // Pyro
-"Attrib_WpnBurnDmg_Increased_shortdesc"			"+%s1% Burn Damage"
-"Attrib_WpnBurnTime_Increased_shortdesc"		"+%s1% Burn Time"
-"Attrib_AirBlastPushScale_shortdesc"			"+%s1% Airblast Force"
+
+	"Attrib_WpnBurnDmg_Increased_shortdesc"
+	{
+		"en"	"+%s% Burn Damage"
+	}
+	"Attrib_WpnBurnTime_Increased_shortdesc"
+	{
+		"en"	"+%s% Burn Time"
+	}
+	"Attrib_AirBlastPushScale_shortdesc"
+	{
+		"en"	"+%s% Airblast Force"
+	}
+
 
 // Demo
-"Attrib_ChargeImpactDamageIncreased_shortdesc"	"+%s1% Charge Damage"
-"Attrib_ChargeRechargeRateIncreased_shortdesc"	"+%s1% Charge Recharge"
+
+	"Attrib_ChargeImpactDamageIncreased_shortdesc"
+	{
+		"en"	"+%s% Charge Damage"
+	}
+	"Attrib_ChargeRechargeRateIncreased_shortdesc"
+	{
+		"en"	"+%s% Charge Recharge"
+	}
+
 
 // Scout
-"Attrib_MarkForDeath_shortdesc"					"Ball Marks Target"
+
+	"Attrib_MarkForDeath_shortdesc"
+	{
+		"en"	"Ball Marks Target"
+	}
+
 
 // Halloween Merasmus Hat
-"Attrib_Merasmus_Hat_Level"						"Killed Merasmus at level %s1"
 
-"Attrib_MvMChallengesCompletedSummary"			"Challenges completed: %s1"
-"Attrib_MvMChallengeCompletedDetail"			"Completed: %s1 %s2"
+	"Attrib_Merasmus_Hat_Level"
+	{
+		"en"	"Killed Merasmus at level %s"
+	}
 
-"AttribFormat_AdditionalNote"			"( %s1 )"
+
+	"Attrib_MvMChallengesCompletedSummary"
+	{
+		"en"	"Challenges completed: %s"
+	}
+	"Attrib_MvMChallengeCompletedDetail"
+	{
+		"en"	"Completed: %s %s"
+	}
+
+
+	"AttribFormat_AdditionalNote"
+	{
+		"en"	"( %s )"
+	}
+
 
 // Hat Unusuals
-"Attrib_Particle0"			"Invalid Particle"
-"Attrib_Particle1"			"Particle 1"
-"Attrib_Particle2"			"Flying Bits"
-"Attrib_Particle3"			"Nemesis Burst"
-"Attrib_Particle4"			"Community Sparkle"
-"Attrib_Particle5"			"Holy Glow"
-"Attrib_Particle6"			"Green Confetti"
-"Attrib_Particle7"			"Purple Confetti"
-"Attrib_Particle8"			"Haunted Ghosts"
-"Attrib_Particle9"			"Green Energy"
-"Attrib_Particle10"			"Purple Energy"
-"Attrib_Particle11"			"Circling TF Logo"
-"Attrib_Particle12"			"Massed Flies"
-"Attrib_Particle13"			"Burning Flames"
-"Attrib_Particle14"			"Scorching Flames"
-"Attrib_Particle15"			"Searing Plasma"
-"Attrib_Particle16"			"Vivid Plasma"
-"Attrib_Particle17"			"Sunbeams"
-"Attrib_Particle18"			"Circling Peace Sign"
-"Attrib_Particle19"			"Circling Heart"
-"Attrib_Particle20"			"Map Stamps"
-"Attrib_Particle28"			"Genteel Smoke"
-"Attrib_Particle29"			"Stormy Storm"
-"Attrib_Particle30"			"Blizzardy Storm"
-"Attrib_Particle31"			"Nuts n' Bolts"
-"Attrib_Particle32"			"Orbiting Planets"
-"Attrib_Particle33"			"Orbiting Fire"
-"Attrib_Particle34"			"Bubbling"
-"Attrib_Particle35"			"Smoking"
-"Attrib_Particle36"			"Steaming"
-"Attrib_Particle37"			"Flaming Lantern"
-"Attrib_Particle38"			"Cloudy Moon"
-"Attrib_Particle39"			"Cauldron Bubbles"
-"Attrib_Particle40"			"Eerie Orbiting Fire"
 
-"Attrib_Particle43"			"Knifestorm"
-"Attrib_Particle44"			"Misty Skull"
-"Attrib_Particle45"			"Harvest Moon"
-"Attrib_Particle46"			"It's A Secret To Everybody"
-"Attrib_Particle47"			"Stormy 13th Hour"
+	"Attrib_Particle0"
+	{
+		"en"	"Invalid Particle"
+	}
+	"Attrib_Particle1"
+	{
+		"en"	"Particle 1"
+	}
+	"Attrib_Particle2"
+	{
+		"en"	"Flying Bits"
+	}
+	"Attrib_Particle3"
+	{
+		"en"	"Nemesis Burst"
+	}
+	"Attrib_Particle4"
+	{
+		"en"	"Community Sparkle"
+	}
+	"Attrib_Particle5"
+	{
+		"en"	"Holy Glow"
+	}
+	"Attrib_Particle6"
+	{
+		"en"	"Green Confetti"
+	}
+	"Attrib_Particle7"
+	{
+		"en"	"Purple Confetti"
+	}
+	"Attrib_Particle8"
+	{
+		"en"	"Haunted Ghosts"
+	}
+	"Attrib_Particle9"
+	{
+		"en"	"Green Energy"
+	}
+	"Attrib_Particle10"
+	{
+		"en"	"Purple Energy"
+	}
+	"Attrib_Particle11"
+	{
+		"en"	"Circling TF Logo"
+	}
+	"Attrib_Particle12"
+	{
+		"en"	"Massed Flies"
+	}
+	"Attrib_Particle13"
+	{
+		"en"	"Burning Flames"
+	}
+	"Attrib_Particle14"
+	{
+		"en"	"Scorching Flames"
+	}
+	"Attrib_Particle15"
+	{
+		"en"	"Searing Plasma"
+	}
+	"Attrib_Particle16"
+	{
+		"en"	"Vivid Plasma"
+	}
+	"Attrib_Particle17"
+	{
+		"en"	"Sunbeams"
+	}
+	"Attrib_Particle18"
+	{
+		"en"	"Circling Peace Sign"
+	}
+	"Attrib_Particle19"
+	{
+		"en"	"Circling Heart"
+	}
+	"Attrib_Particle20"
+	{
+		"en"	"Map Stamps"
+	}
+	"Attrib_Particle28"
+	{
+		"en"	"Genteel Smoke"
+	}
+	"Attrib_Particle29"
+	{
+		"en"	"Stormy Storm"
+	}
+	"Attrib_Particle30"
+	{
+		"en"	"Blizzardy Storm"
+	}
+	"Attrib_Particle31"
+	{
+		"en"	"Nuts n' Bolts"
+	}
+	"Attrib_Particle32"
+	{
+		"en"	"Orbiting Planets"
+	}
+	"Attrib_Particle33"
+	{
+		"en"	"Orbiting Fire"
+	}
+	"Attrib_Particle34"
+	{
+		"en"	"Bubbling"
+	}
+	"Attrib_Particle35"
+	{
+		"en"	"Smoking"
+	}
+	"Attrib_Particle36"
+	{
+		"en"	"Steaming"
+	}
+	"Attrib_Particle37"
+	{
+		"en"	"Flaming Lantern"
+	}
+	"Attrib_Particle38"
+	{
+		"en"	"Cloudy Moon"
+	}
+	"Attrib_Particle39"
+	{
+		"en"	"Cauldron Bubbles"
+	}
+	"Attrib_Particle40"
+	{
+		"en"	"Eerie Orbiting Fire"
+	}
 
-"Attrib_Particle56"			"Kill-a-Watt"
-"Attrib_Particle57"			"Terror-Watt"
-"Attrib_Particle58"			"Cloud 9"
-"Attrib_Particle59"			"Aces High"
-"Attrib_Particle60"			"Dead Presidents"
-"Attrib_Particle61"			"Miami Nights"
-"Attrib_Particle62"			"Disco Beat Down"
 
-"Attrib_Particle63"			"Phosphorous"
-"Attrib_Particle64"			"Sulphurous"
-"Attrib_Particle65"			"Memory Leak"
-"Attrib_Particle66"			"Overclocked"
-"Attrib_Particle67"			"Electrostatic"
-"Attrib_Particle68"			"Power Surge"
-"Attrib_Particle69"			"Anti-Freeze"
-"Attrib_Particle70"			"Time Warp"
-"Attrib_Particle71"			"Green Black Hole"
-"Attrib_Particle72"			"Roboactive"
+	"Attrib_Particle43"
+	{
+		"en"	"Knifestorm"
+	}
+	"Attrib_Particle44"
+	{
+		"en"	"Misty Skull"
+	}
+	"Attrib_Particle45"
+	{
+		"en"	"Harvest Moon"
+	}
+	"Attrib_Particle46"
+	{
+		"en"	"It's A Secret To Everybody"
+	}
+	"Attrib_Particle47"
+	{
+		"en"	"Stormy 13th Hour"
+	}
 
-"Attrib_Particle73"			"Arcana"
-"Attrib_Particle74"			"Spellbound"
-"Attrib_Particle75"			"Chiroptera Venenata"
-"Attrib_Particle76"			"Poisoned Shadows"
-"Attrib_Particle77"			"Something Burning This Way Comes"
-"Attrib_Particle78"			"Hellfire"
-"Attrib_Particle79"			"Darkblaze"
-"Attrib_Particle80"			"Demonflame"
 
-"Attrib_Particle81"			"Bonzo The All-Gnawing"
-"Attrib_Particle82"			"Amaranthine"
-"Attrib_Particle83"			"Stare From Beyond"
-"Attrib_Particle84"			"The Ooze"
-"Attrib_Particle85"			"Ghastly Ghosts Jr"
-"Attrib_Particle86"			"Haunted Phantasm Jr"
+	"Attrib_Particle56"
+	{
+		"en"	"Kill-a-Watt"
+	}
+	"Attrib_Particle57"
+	{
+		"en"	"Terror-Watt"
+	}
+	"Attrib_Particle58"
+	{
+		"en"	"Cloud 9"
+	}
+	"Attrib_Particle59"
+	{
+		"en"	"Aces High"
+	}
+	"Attrib_Particle60"
+	{
+		"en"	"Dead Presidents"
+	}
+	"Attrib_Particle61"
+	{
+		"en"	"Miami Nights"
+	}
+	"Attrib_Particle62"
+	{
+		"en"	"Disco Beat Down"
+	}
 
-"Attrib_Particle87"			"Frostbite"
-"Attrib_Particle88"			"Molten Mallard"
-"Attrib_Particle89"			"Morning Glory"
-"Attrib_Particle90"			"Death at Dusk"
 
-"Attrib_Particle91"			"Abduction"
-"Attrib_Particle92"			"Atomic"
-"Attrib_Particle93"			"Subatomic"
-"Attrib_Particle94"			"Electric Hat Protector"
-"Attrib_Particle95"			"Magnetic Hat Protector"
-"Attrib_Particle96"			"Voltaic Hat Protector"
-"Attrib_Particle97"			"Galactic Codex"
-"Attrib_Particle98"			"Ancient Codex"
-"Attrib_Particle99"			"Nebula"
+	"Attrib_Particle63"
+	{
+		"en"	"Phosphorous"
+	}
+	"Attrib_Particle64"
+	{
+		"en"	"Sulphurous"
+	}
+	"Attrib_Particle65"
+	{
+		"en"	"Memory Leak"
+	}
+	"Attrib_Particle66"
+	{
+		"en"	"Overclocked"
+	}
+	"Attrib_Particle67"
+	{
+		"en"	"Electrostatic"
+	}
+	"Attrib_Particle68"
+	{
+		"en"	"Power Surge"
+	}
+	"Attrib_Particle69"
+	{
+		"en"	"Anti-Freeze"
+	}
+	"Attrib_Particle70"
+	{
+		"en"	"Time Warp"
+	}
+	"Attrib_Particle71"
+	{
+		"en"	"Green Black Hole"
+	}
+	"Attrib_Particle72"
+	{
+		"en"	"Roboactive"
+	}
+
+
+	"Attrib_Particle73"
+	{
+		"en"	"Arcana"
+	}
+	"Attrib_Particle74"
+	{
+		"en"	"Spellbound"
+	}
+	"Attrib_Particle75"
+	{
+		"en"	"Chiroptera Venenata"
+	}
+	"Attrib_Particle76"
+	{
+		"en"	"Poisoned Shadows"
+	}
+	"Attrib_Particle77"
+	{
+		"en"	"Something Burning This Way Comes"
+	}
+	"Attrib_Particle78"
+	{
+		"en"	"Hellfire"
+	}
+	"Attrib_Particle79"
+	{
+		"en"	"Darkblaze"
+	}
+	"Attrib_Particle80"
+	{
+		"en"	"Demonflame"
+	}
+
+
+	"Attrib_Particle81"
+	{
+		"en"	"Bonzo The All-Gnawing"
+	}
+	"Attrib_Particle82"
+	{
+		"en"	"Amaranthine"
+	}
+	"Attrib_Particle83"
+	{
+		"en"	"Stare From Beyond"
+	}
+	"Attrib_Particle84"
+	{
+		"en"	"The Ooze"
+	}
+	"Attrib_Particle85"
+	{
+		"en"	"Ghastly Ghosts Jr"
+	}
+	"Attrib_Particle86"
+	{
+		"en"	"Haunted Phantasm Jr"
+	}
+
+
+	"Attrib_Particle87"
+	{
+		"en"	"Frostbite"
+	}
+	"Attrib_Particle88"
+	{
+		"en"	"Molten Mallard"
+	}
+	"Attrib_Particle89"
+	{
+		"en"	"Morning Glory"
+	}
+	"Attrib_Particle90"
+	{
+		"en"	"Death at Dusk"
+	}
+
+
+	"Attrib_Particle91"
+	{
+		"en"	"Abduction"
+	}
+	"Attrib_Particle92"
+	{
+		"en"	"Atomic"
+	}
+	"Attrib_Particle93"
+	{
+		"en"	"Subatomic"
+	}
+	"Attrib_Particle94"
+	{
+		"en"	"Electric Hat Protector"
+	}
+	"Attrib_Particle95"
+	{
+		"en"	"Magnetic Hat Protector"
+	}
+	"Attrib_Particle96"
+	{
+		"en"	"Voltaic Hat Protector"
+	}
+	"Attrib_Particle97"
+	{
+		"en"	"Galactic Codex"
+	}
+	"Attrib_Particle98"
+	{
+		"en"	"Ancient Codex"
+	}
+	"Attrib_Particle99"
+	{
+		"en"	"Nebula"
+	}
+
 
 // Halloween 2015 Unusual
-"Attrib_Particle100"			"Death by Disco"
-"Attrib_Particle101"			"It's a mystery to everyone"
-"Attrib_Particle102"			"It's a puzzle to me"
-"Attrib_Particle103"			"Ether Trail"
-"Attrib_Particle104"			"Nether Trail"
-"Attrib_Particle105"			"Ancient Eldritch"
-"Attrib_Particle106"			"Eldritch Flame"
+
+	"Attrib_Particle100"
+	{
+		"en"	"Death by Disco"
+	}
+	"Attrib_Particle101"
+	{
+		"en"	"It's a mystery to everyone"
+	}
+	"Attrib_Particle102"
+	{
+		"en"	"It's a puzzle to me"
+	}
+	"Attrib_Particle103"
+	{
+		"en"	"Ether Trail"
+	}
+	"Attrib_Particle104"
+	{
+		"en"	"Nether Trail"
+	}
+	"Attrib_Particle105"
+	{
+		"en"	"Ancient Eldritch"
+	}
+	"Attrib_Particle106"
+	{
+		"en"	"Eldritch Flame"
+	}
+
 
 // Halloween 2016 Unusual
-"Attrib_Particle107"			"Neutron Star"
-"Attrib_Particle108"			"Tesla Coil"
-"Attrib_Particle109"			"Starstorm Insomnia"
-"Attrib_Particle110"			"Starstorm Slumber"
+
+	"Attrib_Particle107"
+	{
+		"en"	"Neutron Star"
+	}
+	"Attrib_Particle108"
+	{
+		"en"	"Tesla Coil"
+	}
+	"Attrib_Particle109"
+	{
+		"en"	"Starstorm Insomnia"
+	}
+	"Attrib_Particle110"
+	{
+		"en"	"Starstorm Slumber"
+	}
+
 
 // Halloween 2018 Unusual
-"Attrib_Particle111"			"Brain Drain"
-"Attrib_Particle112"			"Open Mind"
-"Attrib_Particle113"			"Head of Steam"
-"Attrib_Particle114"			"Galactic Gateway"
-"Attrib_Particle115"			"The Eldritch Opening"
-"Attrib_Particle116"			"The Dark Doorway"
-"Attrib_Particle117"			"Ring of Fire"
-"Attrib_Particle118"			"Vicious Circle"
-"Attrib_Particle119"			"White Lightning"
-"Attrib_Particle120"			"Omniscient Orb"
-"Attrib_Particle121"			"Clairvoyance"
+
+	"Attrib_Particle111"
+	{
+		"en"	"Brain Drain"
+	}
+	"Attrib_Particle112"
+	{
+		"en"	"Open Mind"
+	}
+	"Attrib_Particle113"
+	{
+		"en"	"Head of Steam"
+	}
+	"Attrib_Particle114"
+	{
+		"en"	"Galactic Gateway"
+	}
+	"Attrib_Particle115"
+	{
+		"en"	"The Eldritch Opening"
+	}
+	"Attrib_Particle116"
+	{
+		"en"	"The Dark Doorway"
+	}
+	"Attrib_Particle117"
+	{
+		"en"	"Ring of Fire"
+	}
+	"Attrib_Particle118"
+	{
+		"en"	"Vicious Circle"
+	}
+	"Attrib_Particle119"
+	{
+		"en"	"White Lightning"
+	}
+	"Attrib_Particle120"
+	{
+		"en"	"Omniscient Orb"
+	}
+	"Attrib_Particle121"
+	{
+		"en"	"Clairvoyance"
+	}
+
 
 // Halloween 2019 Unusual
-"Attrib_Particle122"			"Fifth Dimension"
-"Attrib_Particle123"			"Vicious Vortex"
-"Attrib_Particle124"			"Menacing Miasma"
-"Attrib_Particle125"			"Abyssal Aura"
-"Attrib_Particle126"			"Wicked Wood"
-"Attrib_Particle127"			"Ghastly Grove"
-"Attrib_Particle128"			"Mystical Medley"
-"Attrib_Particle129"			"Ethereal Essence"
-"Attrib_Particle130"			"Twisted Radiance"
-"Attrib_Particle131"			"Violet Vortex"
-"Attrib_Particle132"			"Verdant Vortex"
-"Attrib_Particle133"			"Valiant Vortex"
+
+	"Attrib_Particle122"
+	{
+		"en"	"Fifth Dimension"
+	}
+	"Attrib_Particle123"
+	{
+		"en"	"Vicious Vortex"
+	}
+	"Attrib_Particle124"
+	{
+		"en"	"Menacing Miasma"
+	}
+	"Attrib_Particle125"
+	{
+		"en"	"Abyssal Aura"
+	}
+	"Attrib_Particle126"
+	{
+		"en"	"Wicked Wood"
+	}
+	"Attrib_Particle127"
+	{
+		"en"	"Ghastly Grove"
+	}
+	"Attrib_Particle128"
+	{
+		"en"	"Mystical Medley"
+	}
+	"Attrib_Particle129"
+	{
+		"en"	"Ethereal Essence"
+	}
+	"Attrib_Particle130"
+	{
+		"en"	"Twisted Radiance"
+	}
+	"Attrib_Particle131"
+	{
+		"en"	"Violet Vortex"
+	}
+	"Attrib_Particle132"
+	{
+		"en"	"Verdant Vortex"
+	}
+	"Attrib_Particle133"
+	{
+		"en"	"Valiant Vortex"
+	}
+
 
 // Smissmas 2019 Unusual
-"Attrib_Particle134"			"Sparkling Lights"
-"Attrib_Particle135"			"Frozen Icefall"
-"Attrib_Particle136"			"Fragmented Gluons"
-"Attrib_Particle137"			"Fragmented Quarks"
-"Attrib_Particle138"			"Fragmented Photons"
-"Attrib_Particle139"			"Defragmenting Reality"
-"Attrib_Particle141"			"Fragmenting Reality"
-"Attrib_Particle142"			"Refragmenting Reality"
-"Attrib_Particle143"			"Snowfallen"
-"Attrib_Particle144"			"Snowblinded"
-"Attrib_Particle145"			"Pyroland Daydream"
+
+	"Attrib_Particle134"
+	{
+		"en"	"Sparkling Lights"
+	}
+	"Attrib_Particle135"
+	{
+		"en"	"Frozen Icefall"
+	}
+	"Attrib_Particle136"
+	{
+		"en"	"Fragmented Gluons"
+	}
+	"Attrib_Particle137"
+	{
+		"en"	"Fragmented Quarks"
+	}
+	"Attrib_Particle138"
+	{
+		"en"	"Fragmented Photons"
+	}
+	"Attrib_Particle139"
+	{
+		"en"	"Defragmenting Reality"
+	}
+	"Attrib_Particle141"
+	{
+		"en"	"Fragmenting Reality"
+	}
+	"Attrib_Particle142"
+	{
+		"en"	"Refragmenting Reality"
+	}
+	"Attrib_Particle143"
+	{
+		"en"	"Snowfallen"
+	}
+	"Attrib_Particle144"
+	{
+		"en"	"Snowblinded"
+	}
+	"Attrib_Particle145"
+	{
+		"en"	"Pyroland Daydream"
+	}
+
 
 // Summer 2020 Unusual
-"Attrib_Particle147"			 "Verdatica"
-"Attrib_Particle148"			 "Aromatica"
-"Attrib_Particle149"			 "Chromatica"
-"Attrib_Particle150"			 "Prismatica"
-"Attrib_Particle151"			 "Bee Swarm"
-"Attrib_Particle152"			 "Frisky Fireflies"
-"Attrib_Particle153"			 "Smoldering Spirits"
-"Attrib_Particle154"			 "Wandering Wisps"
-"Attrib_Particle155"			 "Kaleidoscope"
+
+	"Attrib_Particle147"
+	{
+		"en"	"Verdatica"
+	}
+	"Attrib_Particle148"
+	{
+		"en"	"Aromatica"
+	}
+	"Attrib_Particle149"
+	{
+		"en"	"Chromatica"
+	}
+	"Attrib_Particle150"
+	{
+		"en"	"Prismatica"
+	}
+	"Attrib_Particle151"
+	{
+		"en"	"Bee Swarm"
+	}
+	"Attrib_Particle152"
+	{
+		"en"	"Frisky Fireflies"
+	}
+	"Attrib_Particle153"
+	{
+		"en"	"Smoldering Spirits"
+	}
+	"Attrib_Particle154"
+	{
+		"en"	"Wandering Wisps"
+	}
+	"Attrib_Particle155"
+	{
+		"en"	"Kaleidoscope"
+	}
+
 
 // Halloween 2020 Unusual
-"Attrib_Particle156"			"Green Giggler"
-"Attrib_Particle157"			"Laugh-O-Lantern"
-"Attrib_Particle158"			"Plum Prankster"
-"Attrib_Particle159"			"Pyroland Nightmare"
-"Attrib_Particle160"			"Gravelly Ghoul"
-"Attrib_Particle161"			"Vexed Volcanics"
-"Attrib_Particle162"			"Gourdian Angel"
-"Attrib_Particle163"			"Pumpkin Party"
+
+	"Attrib_Particle156"
+	{
+		"en"	"Green Giggler"
+	}
+	"Attrib_Particle157"
+	{
+		"en"	"Laugh-O-Lantern"
+	}
+	"Attrib_Particle158"
+	{
+		"en"	"Plum Prankster"
+	}
+	"Attrib_Particle159"
+	{
+		"en"	"Pyroland Nightmare"
+	}
+	"Attrib_Particle160"
+	{
+		"en"	"Gravelly Ghoul"
+	}
+	"Attrib_Particle161"
+	{
+		"en"	"Vexed Volcanics"
+	}
+	"Attrib_Particle162"
+	{
+		"en"	"Gourdian Angel"
+	}
+	"Attrib_Particle163"
+	{
+		"en"	"Pumpkin Party"
+	}
+
 
 // Smissmas 2020 Unusual
-"Attrib_Particle164"			"Frozen Fractals"
-"Attrib_Particle165"			"Lavender Landfall"
-"Attrib_Particle166"			"Special Snowfall"
-"Attrib_Particle167"			"Divine Desire"
-"Attrib_Particle168"			"Distant Dream"
-"Attrib_Particle169"			"Violent Wintertide"
-"Attrib_Particle170"			"Blighted Snowstorm"
-"Attrib_Particle171"			"Pale Nimbus"
-"Attrib_Particle172"			"Genus Plasmos"
-"Attrib_Particle173"			"Serenus Lumen"
-"Attrib_Particle174"			"Ventum Maris"
-"Attrib_Particle175"			"Mirthful Mistletoe"
+
+	"Attrib_Particle164"
+	{
+		"en"	"Frozen Fractals"
+	}
+	"Attrib_Particle165"
+	{
+		"en"	"Lavender Landfall"
+	}
+	"Attrib_Particle166"
+	{
+		"en"	"Special Snowfall"
+	}
+	"Attrib_Particle167"
+	{
+		"en"	"Divine Desire"
+	}
+	"Attrib_Particle168"
+	{
+		"en"	"Distant Dream"
+	}
+	"Attrib_Particle169"
+	{
+		"en"	"Violent Wintertide"
+	}
+	"Attrib_Particle170"
+	{
+		"en"	"Blighted Snowstorm"
+	}
+	"Attrib_Particle171"
+	{
+		"en"	"Pale Nimbus"
+	}
+	"Attrib_Particle172"
+	{
+		"en"	"Genus Plasmos"
+	}
+	"Attrib_Particle173"
+	{
+		"en"	"Serenus Lumen"
+	}
+	"Attrib_Particle174"
+	{
+		"en"	"Ventum Maris"
+	}
+	"Attrib_Particle175"
+	{
+		"en"	"Mirthful Mistletoe"
+	}
+
 
 // Summer 2021 Unusual
-"Attrib_Particle177"			"Resonation"
-"Attrib_Particle178"			"Aggradation"
-"Attrib_Particle179"			"Lucidation"
-"Attrib_Particle180"			"Stunning"
-"Attrib_Particle181"			"Ardentum Saturnalis"
-"Attrib_Particle182"			"Fragrancium Elementalis"
-"Attrib_Particle183"			"Reverium Irregularis"
-"Attrib_Particle185"			"Perennial Petals"
-"Attrib_Particle186"			"Flavorsome Sunset"
-"Attrib_Particle187"			"Raspberry Bloom"
-"Attrib_Particle188"			"Iridescence"
+
+	"Attrib_Particle177"
+	{
+		"en"	"Resonation"
+	}
+	"Attrib_Particle178"
+	{
+		"en"	"Aggradation"
+	}
+	"Attrib_Particle179"
+	{
+		"en"	"Lucidation"
+	}
+	"Attrib_Particle180"
+	{
+		"en"	"Stunning"
+	}
+	"Attrib_Particle181"
+	{
+		"en"	"Ardentum Saturnalis"
+	}
+	"Attrib_Particle182"
+	{
+		"en"	"Fragrancium Elementalis"
+	}
+	"Attrib_Particle183"
+	{
+		"en"	"Reverium Irregularis"
+	}
+	"Attrib_Particle185"
+	{
+		"en"	"Perennial Petals"
+	}
+	"Attrib_Particle186"
+	{
+		"en"	"Flavorsome Sunset"
+	}
+	"Attrib_Particle187"
+	{
+		"en"	"Raspberry Bloom"
+	}
+	"Attrib_Particle188"
+	{
+		"en"	"Iridescence"
+	}
+
 
 // Halloween 2021 Unusual
-"Attrib_Particle189"			"Tempered Thorns"
-"Attrib_Particle190"			"Devilish Diablo"
-"Attrib_Particle191"			"Severed Serration"
-"Attrib_Particle192"			"Shrieking Shades"
-"Attrib_Particle193"			"Restless Wraiths"
-"Attrib_Particle194"			"Restless Wraiths"
-"Attrib_Particle195"			"Infernal Wraith"
-"Attrib_Particle196"			"Phantom Crown"
-"Attrib_Particle197"			"Ancient Specter"
-"Attrib_Particle198"			"Viridescent Peeper"
-"Attrib_Particle199"			"Eyes of Molten"
-"Attrib_Particle200"			"Ominous Stare"
-"Attrib_Particle201"			"Pumpkin Moon"
-"Attrib_Particle202"			"Frantic Spooker"
-"Attrib_Particle203"			"Frightened Poltergeist"
-"Attrib_Particle204"			"Energetic Haunter"
+
+	"Attrib_Particle189"
+	{
+		"en"	"Tempered Thorns"
+	}
+	"Attrib_Particle190"
+	{
+		"en"	"Devilish Diablo"
+	}
+	"Attrib_Particle191"
+	{
+		"en"	"Severed Serration"
+	}
+	"Attrib_Particle192"
+	{
+		"en"	"Shrieking Shades"
+	}
+	"Attrib_Particle193"
+	{
+		"en"	"Restless Wraiths"
+	}
+	"Attrib_Particle194"
+	{
+		"en"	"Restless Wraiths"
+	}
+	"Attrib_Particle195"
+	{
+		"en"	"Infernal Wraith"
+	}
+	"Attrib_Particle196"
+	{
+		"en"	"Phantom Crown"
+	}
+	"Attrib_Particle197"
+	{
+		"en"	"Ancient Specter"
+	}
+	"Attrib_Particle198"
+	{
+		"en"	"Viridescent Peeper"
+	}
+	"Attrib_Particle199"
+	{
+		"en"	"Eyes of Molten"
+	}
+	"Attrib_Particle200"
+	{
+		"en"	"Ominous Stare"
+	}
+	"Attrib_Particle201"
+	{
+		"en"	"Pumpkin Moon"
+	}
+	"Attrib_Particle202"
+	{
+		"en"	"Frantic Spooker"
+	}
+	"Attrib_Particle203"
+	{
+		"en"	"Frightened Poltergeist"
+	}
+	"Attrib_Particle204"
+	{
+		"en"	"Energetic Haunter"
+	}
+
 
 // Smissmas 2021 Unusual
-"Attrib_Particle205"			"Smissmas Tree"
-"Attrib_Particle206"			"Hospitable Festivity"
-"Attrib_Particle207"			"Condescending Embrace"
-"Attrib_Particle208"			"Condescending Embrace"
-"Attrib_Particle209"			"Sparkling Spruce"
-"Attrib_Particle210"			"Glittering Juniper"
-"Attrib_Particle211"			"Prismatic Pine"
-"Attrib_Particle212"			"Spiraling Lights"
-"Attrib_Particle213"			"Twisting Lights"
-"Attrib_Particle214"			"Stardust Pathway"
-"Attrib_Particle215"			"Flurry Rush"
-"Attrib_Particle216"			"Spark of Smissmas"
-"Attrib_Particle217"			"Spark of Smissmas"
-"Attrib_Particle218"			"Polar Forecast"
-"Attrib_Particle219"			"Shining Stag"
-"Attrib_Particle220"			"Holiday Horns"
-"Attrib_Particle221"			"Ardent Antlers"
-"Attrib_Particle222"			"Ardent Antlers"
-"Attrib_Particle223"			"Festive Lights"
+
+	"Attrib_Particle205"
+	{
+		"en"	"Smissmas Tree"
+	}
+	"Attrib_Particle206"
+	{
+		"en"	"Hospitable Festivity"
+	}
+	"Attrib_Particle207"
+	{
+		"en"	"Condescending Embrace"
+	}
+	"Attrib_Particle208"
+	{
+		"en"	"Condescending Embrace"
+	}
+	"Attrib_Particle209"
+	{
+		"en"	"Sparkling Spruce"
+	}
+	"Attrib_Particle210"
+	{
+		"en"	"Glittering Juniper"
+	}
+	"Attrib_Particle211"
+	{
+		"en"	"Prismatic Pine"
+	}
+	"Attrib_Particle212"
+	{
+		"en"	"Spiraling Lights"
+	}
+	"Attrib_Particle213"
+	{
+		"en"	"Twisting Lights"
+	}
+	"Attrib_Particle214"
+	{
+		"en"	"Stardust Pathway"
+	}
+	"Attrib_Particle215"
+	{
+		"en"	"Flurry Rush"
+	}
+	"Attrib_Particle216"
+	{
+		"en"	"Spark of Smissmas"
+	}
+	"Attrib_Particle217"
+	{
+		"en"	"Spark of Smissmas"
+	}
+	"Attrib_Particle218"
+	{
+		"en"	"Polar Forecast"
+	}
+	"Attrib_Particle219"
+	{
+		"en"	"Shining Stag"
+	}
+	"Attrib_Particle220"
+	{
+		"en"	"Holiday Horns"
+	}
+	"Attrib_Particle221"
+	{
+		"en"	"Ardent Antlers"
+	}
+	"Attrib_Particle222"
+	{
+		"en"	"Ardent Antlers"
+	}
+	"Attrib_Particle223"
+	{
+		"en"	"Festive Lights"
+	}
+
 
 // Summer 2022 Unusual
-"Attrib_Particle224"			"Crustacean Sensation"
-"Attrib_Particle225"			"Crustacean Sensation"
-"Attrib_Particle226"			"Frosted Decadence"
-"Attrib_Particle227"			"Frosted Decadence"
-"Attrib_Particle228"			"Sprinkled Delights"
-"Attrib_Particle229"			"Terrestrial Favor"
-"Attrib_Particle230"			"Tropical Thrill"
-"Attrib_Particle231"			"Flourishing Passion"
-"Attrib_Particle232"			"Dazzling Fireworks"
-"Attrib_Particle233"			"Blazing Fireworks"
-"Attrib_Particle234"			"Shimmering Fireworks"
-"Attrib_Particle235"			"Twinkling Fireworks"
-"Attrib_Particle236"			"Sparkling Fireworks"
-"Attrib_Particle237"			"Glowing Fireworks"
-"Attrib_Particle238"			"Glimmering Fireworks"
-"Attrib_Particle239"			"Flying Lights"
-"Attrib_Particle240"			"Flying Lights"
-"Attrib_Particle241"			"Limelight"
-"Attrib_Particle242"			"Shining Star"
-"Attrib_Particle243"			"Cold Cosmos"
-"Attrib_Particle244"			"Refracting Fractals"
-"Attrib_Particle245"			"Startrance"
-"Attrib_Particle246"			"Startrance"
-"Attrib_Particle247"			"Starlush"
-"Attrib_Particle248"			"Starfire"
-"Attrib_Particle249"			"Stardust"
-"Attrib_Particle250"			"Contagious Eruption"
-"Attrib_Particle251"			"Daydream Eruption"
-"Attrib_Particle252"			"Volcanic Eruption"
-"Attrib_Particle253"			"Divine Sunlight"
-"Attrib_Particle254"			"Audiophile"
-"Attrib_Particle255"			"Soundwave"
-"Attrib_Particle256"			"Synesthesia"
+
+	"Attrib_Particle224"
+	{
+		"en"	"Crustacean Sensation"
+	}
+	"Attrib_Particle225"
+	{
+		"en"	"Crustacean Sensation"
+	}
+	"Attrib_Particle226"
+	{
+		"en"	"Frosted Decadence"
+	}
+	"Attrib_Particle227"
+	{
+		"en"	"Frosted Decadence"
+	}
+	"Attrib_Particle228"
+	{
+		"en"	"Sprinkled Delights"
+	}
+	"Attrib_Particle229"
+	{
+		"en"	"Terrestrial Favor"
+	}
+	"Attrib_Particle230"
+	{
+		"en"	"Tropical Thrill"
+	}
+	"Attrib_Particle231"
+	{
+		"en"	"Flourishing Passion"
+	}
+	"Attrib_Particle232"
+	{
+		"en"	"Dazzling Fireworks"
+	}
+	"Attrib_Particle233"
+	{
+		"en"	"Blazing Fireworks"
+	}
+	"Attrib_Particle234"
+	{
+		"en"	"Shimmering Fireworks"
+	}
+	"Attrib_Particle235"
+	{
+		"en"	"Twinkling Fireworks"
+	}
+	"Attrib_Particle236"
+	{
+		"en"	"Sparkling Fireworks"
+	}
+	"Attrib_Particle237"
+	{
+		"en"	"Glowing Fireworks"
+	}
+	"Attrib_Particle238"
+	{
+		"en"	"Glimmering Fireworks"
+	}
+	"Attrib_Particle239"
+	{
+		"en"	"Flying Lights"
+	}
+	"Attrib_Particle240"
+	{
+		"en"	"Flying Lights"
+	}
+	"Attrib_Particle241"
+	{
+		"en"	"Limelight"
+	}
+	"Attrib_Particle242"
+	{
+		"en"	"Shining Star"
+	}
+	"Attrib_Particle243"
+	{
+		"en"	"Cold Cosmos"
+	}
+	"Attrib_Particle244"
+	{
+		"en"	"Refracting Fractals"
+	}
+	"Attrib_Particle245"
+	{
+		"en"	"Startrance"
+	}
+	"Attrib_Particle246"
+	{
+		"en"	"Startrance"
+	}
+	"Attrib_Particle247"
+	{
+		"en"	"Starlush"
+	}
+	"Attrib_Particle248"
+	{
+		"en"	"Starfire"
+	}
+	"Attrib_Particle249"
+	{
+		"en"	"Stardust"
+	}
+	"Attrib_Particle250"
+	{
+		"en"	"Contagious Eruption"
+	}
+	"Attrib_Particle251"
+	{
+		"en"	"Daydream Eruption"
+	}
+	"Attrib_Particle252"
+	{
+		"en"	"Volcanic Eruption"
+	}
+	"Attrib_Particle253"
+	{
+		"en"	"Divine Sunlight"
+	}
+	"Attrib_Particle254"
+	{
+		"en"	"Audiophile"
+	}
+	"Attrib_Particle255"
+	{
+		"en"	"Soundwave"
+	}
+	"Attrib_Particle256"
+	{
+		"en"	"Synesthesia"
+	}
+
 
 // Weapon Unusual
-"Attrib_Particle701"			"Hot"
-"Attrib_Particle702"			"Isotope"
-"Attrib_Particle703"			"Cool"
-"Attrib_Particle704"			"Energy Orb"
+
+	"Attrib_Particle701"
+	{
+		"en"	"Hot"
+	}
+	"Attrib_Particle702"
+	{
+		"en"	"Isotope"
+	}
+	"Attrib_Particle703"
+	{
+		"en"	"Cool"
+	}
+	"Attrib_Particle704"
+	{
+		"en"	"Energy Orb"
+	}
+
+
 
 
 // Start Unusual taunt FX
-"Attrib_Particle3001"		"Showstopper"
-"Attrib_Particle3002"		"Showstopper"
-"Attrib_Particle3003"		"Holy Grail"
-"Attrib_Particle3004"		"'72"
-"Attrib_Particle3005"		"Fountain of Delight"
-"Attrib_Particle3006"		"Screaming Tiger"
-"Attrib_Particle3007"		"Skill Gotten Gains"
-"Attrib_Particle3008"		"Midnight Whirlwind"
-"Attrib_Particle3009"		"Silver Cyclone"
-"Attrib_Particle3010"		"Mega Strike"
 
-"Attrib_Particle3011"		"Haunted Phantasm"
-"Attrib_Particle3012"		"Ghastly Ghosts"
-"Attrib_Particle3013"		"Hellish Inferno"
-"Attrib_Particle3014"		"Spectral Swirl"
-"Attrib_Particle3015"		"Infernal Flames"
-"Attrib_Particle3016"		"Infernal Smoke"
+	"Attrib_Particle3001"
+	{
+		"en"	"Showstopper"
+	}
+	"Attrib_Particle3002"
+	{
+		"en"	"Showstopper"
+	}
+	"Attrib_Particle3003"
+	{
+		"en"	"Holy Grail"
+	}
+	"Attrib_Particle3004"
+	{
+		"en"	"'72"
+	}
+	"Attrib_Particle3005"
+	{
+		"en"	"Fountain of Delight"
+	}
+	"Attrib_Particle3006"
+	{
+		"en"	"Screaming Tiger"
+	}
+	"Attrib_Particle3007"
+	{
+		"en"	"Skill Gotten Gains"
+	}
+	"Attrib_Particle3008"
+	{
+		"en"	"Midnight Whirlwind"
+	}
+	"Attrib_Particle3009"
+	{
+		"en"	"Silver Cyclone"
+	}
+	"Attrib_Particle3010"
+	{
+		"en"	"Mega Strike"
+	}
+
+
+	"Attrib_Particle3011"
+	{
+		"en"	"Haunted Phantasm"
+	}
+	"Attrib_Particle3012"
+	{
+		"en"	"Ghastly Ghosts"
+	}
+	"Attrib_Particle3013"
+	{
+		"en"	"Hellish Inferno"
+	}
+	"Attrib_Particle3014"
+	{
+		"en"	"Spectral Swirl"
+	}
+	"Attrib_Particle3015"
+	{
+		"en"	"Infernal Flames"
+	}
+	"Attrib_Particle3016"
+	{
+		"en"	"Infernal Smoke"
+	}
+
 
 // Halloween 2018 Unusual Taunts
-"Attrib_Particle3017"		"Acidic Bubbles of Envy"
-"Attrib_Particle3018"		"Flammable Bubbles of Attraction"
-"Attrib_Particle3019"		"Poisonous Bubbles of Regret"
-"Attrib_Particle3020"		"Roaring Rockets"
-"Attrib_Particle3021"		"Spooky Night"
-"Attrib_Particle3022"		"Ominous Night"
+
+	"Attrib_Particle3017"
+	{
+		"en"	"Acidic Bubbles of Envy"
+	}
+	"Attrib_Particle3018"
+	{
+		"en"	"Flammable Bubbles of Attraction"
+	}
+	"Attrib_Particle3019"
+	{
+		"en"	"Poisonous Bubbles of Regret"
+	}
+	"Attrib_Particle3020"
+	{
+		"en"	"Roaring Rockets"
+	}
+	"Attrib_Particle3021"
+	{
+		"en"	"Spooky Night"
+	}
+	"Attrib_Particle3022"
+	{
+		"en"	"Ominous Night"
+	}
+
 
 // Halloween 2019 Unusual Taunts
-"Attrib_Particle3023"		"Bewitched"
-"Attrib_Particle3024"		"Accursed"
-"Attrib_Particle3025"		"Enchanted"
-"Attrib_Particle3026"		"Static Mist"
-"Attrib_Particle3027"		"Eerie Lightning"
-"Attrib_Particle3028"		"Terrifying Thunder"
-"Attrib_Particle3029"		"Jarate Shock"
-"Attrib_Particle3030"		"Nether Void"
+
+	"Attrib_Particle3023"
+	{
+		"en"	"Bewitched"
+	}
+	"Attrib_Particle3024"
+	{
+		"en"	"Accursed"
+	}
+	"Attrib_Particle3025"
+	{
+		"en"	"Enchanted"
+	}
+	"Attrib_Particle3026"
+	{
+		"en"	"Static Mist"
+	}
+	"Attrib_Particle3027"
+	{
+		"en"	"Eerie Lightning"
+	}
+	"Attrib_Particle3028"
+	{
+		"en"	"Terrifying Thunder"
+	}
+	"Attrib_Particle3029"
+	{
+		"en"	"Jarate Shock"
+	}
+	"Attrib_Particle3030"
+	{
+		"en"	"Nether Void"
+	}
+
 
 // Smissmas 2019 Unusual Taunts
-"Attrib_Particle3031"		"Good-Hearted Goodies"
-"Attrib_Particle3032"		"Wintery Wisp"
-"Attrib_Particle3033"		"Arctic Aurora"
-"Attrib_Particle3034"		"Winter Spirit"
-"Attrib_Particle3035"		"Festive Spirit"
-"Attrib_Particle3036"		"Magical Spirit"
+
+	"Attrib_Particle3031"
+	{
+		"en"	"Good-Hearted Goodies"
+	}
+	"Attrib_Particle3032"
+	{
+		"en"	"Wintery Wisp"
+	}
+	"Attrib_Particle3033"
+	{
+		"en"	"Arctic Aurora"
+	}
+	"Attrib_Particle3034"
+	{
+		"en"	"Winter Spirit"
+	}
+	"Attrib_Particle3035"
+	{
+		"en"	"Festive Spirit"
+	}
+	"Attrib_Particle3036"
+	{
+		"en"	"Magical Spirit"
+	}
+
 
 // Halloween 2020 Unusual Taunts
-"Attrib_Particle3037"		"Spectral Escort"
-"Attrib_Particle3038"		"Astral Presence"
-"Attrib_Particle3039"		"Arcane Assistance"
-"Attrib_Particle3040"		"Arcane Assistance"
-"Attrib_Particle3041"		"Emerald Allurement"
-"Attrib_Particle3042"		"Pyrophoric Personality"
-"Attrib_Particle3043"		"Spellbound Aspect"
-"Attrib_Particle3044"		"Static Shock"
-"Attrib_Particle3045"		"Veno Shock"
-"Attrib_Particle3046"		"Toxic Terrors"
-"Attrib_Particle3047"		"Arachnid Assault"
-"Attrib_Particle3048"		"Creepy Crawlies"
+
+	"Attrib_Particle3037"
+	{
+		"en"	"Spectral Escort"
+	}
+	"Attrib_Particle3038"
+	{
+		"en"	"Astral Presence"
+	}
+	"Attrib_Particle3039"
+	{
+		"en"	"Arcane Assistance"
+	}
+	"Attrib_Particle3040"
+	{
+		"en"	"Arcane Assistance"
+	}
+	"Attrib_Particle3041"
+	{
+		"en"	"Emerald Allurement"
+	}
+	"Attrib_Particle3042"
+	{
+		"en"	"Pyrophoric Personality"
+	}
+	"Attrib_Particle3043"
+	{
+		"en"	"Spellbound Aspect"
+	}
+	"Attrib_Particle3044"
+	{
+		"en"	"Static Shock"
+	}
+	"Attrib_Particle3045"
+	{
+		"en"	"Veno Shock"
+	}
+	"Attrib_Particle3046"
+	{
+		"en"	"Toxic Terrors"
+	}
+	"Attrib_Particle3047"
+	{
+		"en"	"Arachnid Assault"
+	}
+	"Attrib_Particle3048"
+	{
+		"en"	"Creepy Crawlies"
+	}
+
 
 // Smissmas 2020 Unusual Taunts
-"Attrib_Particle3049"		"Delightful Star"
-"Attrib_Particle3050"		"Frosted Star"
-"Attrib_Particle3051"		"Apotheosis"
-"Attrib_Particle3052"		"Ascension"
-"Attrib_Particle3053"		"Reindoonicorn Rancher"
-"Attrib_Particle3054"		"Reindoonicorn Rancher"
-"Attrib_Particle3055"		"Twinkling Lights"
-"Attrib_Particle3056"		"Shimmering Lights"
+
+	"Attrib_Particle3049"
+	{
+		"en"	"Delightful Star"
+	}
+	"Attrib_Particle3050"
+	{
+		"en"	"Frosted Star"
+	}
+	"Attrib_Particle3051"
+	{
+		"en"	"Apotheosis"
+	}
+	"Attrib_Particle3052"
+	{
+		"en"	"Ascension"
+	}
+	"Attrib_Particle3053"
+	{
+		"en"	"Reindoonicorn Rancher"
+	}
+	"Attrib_Particle3054"
+	{
+		"en"	"Reindoonicorn Rancher"
+	}
+	"Attrib_Particle3055"
+	{
+		"en"	"Twinkling Lights"
+	}
+	"Attrib_Particle3056"
+	{
+		"en"	"Shimmering Lights"
+	}
+
 
 // Halloween 2021 Unusual Taunts
-"Attrib_Particle3059"		"Spectral Shackles"
-"Attrib_Particle3060"		"Cursed Confinement"
-"Attrib_Particle3061"		"Cavalier de Carte"
-"Attrib_Particle3062"		"Cavalier de Carte"
-"Attrib_Particle3063"		"Hollow Flourish"
-"Attrib_Particle3064"		"Magic Shuffle"
-"Attrib_Particle3065"		"Vigorous Pulse"
-"Attrib_Particle3066"		"Thundering Spirit"
-"Attrib_Particle3067"		"Galvanic Defiance"
-"Attrib_Particle3068"		"Wispy Halos"
-"Attrib_Particle3069"		"Nether Wisps"
-"Attrib_Particle3070"		"Aurora Borealis"
-"Attrib_Particle3071"		"Aurora Australis"
-"Attrib_Particle3072"		"Aurora Polaris"
+
+	"Attrib_Particle3059"
+	{
+		"en"	"Spectral Shackles"
+	}
+	"Attrib_Particle3060"
+	{
+		"en"	"Cursed Confinement"
+	}
+	"Attrib_Particle3061"
+	{
+		"en"	"Cavalier de Carte"
+	}
+	"Attrib_Particle3062"
+	{
+		"en"	"Cavalier de Carte"
+	}
+	"Attrib_Particle3063"
+	{
+		"en"	"Hollow Flourish"
+	}
+	"Attrib_Particle3064"
+	{
+		"en"	"Magic Shuffle"
+	}
+	"Attrib_Particle3065"
+	{
+		"en"	"Vigorous Pulse"
+	}
+	"Attrib_Particle3066"
+	{
+		"en"	"Thundering Spirit"
+	}
+	"Attrib_Particle3067"
+	{
+		"en"	"Galvanic Defiance"
+	}
+	"Attrib_Particle3068"
+	{
+		"en"	"Wispy Halos"
+	}
+	"Attrib_Particle3069"
+	{
+		"en"	"Nether Wisps"
+	}
+	"Attrib_Particle3070"
+	{
+		"en"	"Aurora Borealis"
+	}
+	"Attrib_Particle3071"
+	{
+		"en"	"Aurora Australis"
+	}
+	"Attrib_Particle3072"
+	{
+		"en"	"Aurora Polaris"
+	}
+
 
 // Smissmas 2021 Unusual Taunts
-"Attrib_Particle3073"		"Amethyst Winds"
-"Attrib_Particle3074"		"Golden Gusts"
-"Attrib_Particle3075"		"Smissmas Swirls"
-"Attrib_Particle3076"		"Smissmas Swirls"
-"Attrib_Particle3077"		"Minty Cypress"
-"Attrib_Particle3078"		"Pristine Pine"
-"Attrib_Particle3079"		"Sparkly Spruce"
-"Attrib_Particle3080"		"Sparkly Spruce"
-"Attrib_Particle3081"		"Festive Fever"
-"Attrib_Particle3082"		"Festive Fever"
-"Attrib_Particle3083"		"Golden Glimmer"
-"Attrib_Particle3084"		"Frosty Silver"
-"Attrib_Particle3085"		"Glamorous Dazzle"
-"Attrib_Particle3086"		"Glamorous Dazzle"
-"Attrib_Particle3087"		"Sublime Snowstorm"
+
+	"Attrib_Particle3073"
+	{
+		"en"	"Amethyst Winds"
+	}
+	"Attrib_Particle3074"
+	{
+		"en"	"Golden Gusts"
+	}
+	"Attrib_Particle3075"
+	{
+		"en"	"Smissmas Swirls"
+	}
+	"Attrib_Particle3076"
+	{
+		"en"	"Smissmas Swirls"
+	}
+	"Attrib_Particle3077"
+	{
+		"en"	"Minty Cypress"
+	}
+	"Attrib_Particle3078"
+	{
+		"en"	"Pristine Pine"
+	}
+	"Attrib_Particle3079"
+	{
+		"en"	"Sparkly Spruce"
+	}
+	"Attrib_Particle3080"
+	{
+		"en"	"Sparkly Spruce"
+	}
+	"Attrib_Particle3081"
+	{
+		"en"	"Festive Fever"
+	}
+	"Attrib_Particle3082"
+	{
+		"en"	"Festive Fever"
+	}
+	"Attrib_Particle3083"
+	{
+		"en"	"Golden Glimmer"
+	}
+	"Attrib_Particle3084"
+	{
+		"en"	"Frosty Silver"
+	}
+	"Attrib_Particle3085"
+	{
+		"en"	"Glamorous Dazzle"
+	}
+	"Attrib_Particle3086"
+	{
+		"en"	"Glamorous Dazzle"
+	}
+	"Attrib_Particle3087"
+	{
+		"en"	"Sublime Snowstorm"
+	}
+
 
 // End Unusual taunt FX
 
-"Attrib_KillStreakEffect"	"Killstreaker: %s1"
-"Attrib_KillStreakEffect0"	"Invalid Killstreaker Effect"
+
+
+	"Attrib_KillStreakEffect"
+	{
+		"en"	"Killstreaker: %s"
+	}
+	"Attrib_KillStreakEffect0"
+	{
+		"en"	"Invalid Killstreaker Effect"
+	}
 //"Attrib_KillStreakEffect2001"	"NONE"
-"Attrib_KillStreakEffect2002"	"Fire Horns"
-"Attrib_KillStreakEffect2003"	"Cerebral Discharge"
-"Attrib_KillStreakEffect2004"	"Tornado"
-"Attrib_KillStreakEffect2005"	"Flames"
-"Attrib_KillStreakEffect2006"	"Singularity"
-"Attrib_KillStreakEffect2007"	"Incinerator"
-"Attrib_KillStreakEffect2008"	"Hypno-Beam"
 
-"Attrib_KillStreakIdleEffect"	"Sheen: %s1"
-"Attrib_KillStreakIdleEffect0"	"Invalid Sheen Effect"
-"Attrib_KillStreakIdleEffect1"	"Team Shine"
-"Attrib_KillStreakIdleEffect2"	"Deadly Daffodil"
-"Attrib_KillStreakIdleEffect3"	"Manndarin"
-"Attrib_KillStreakIdleEffect4"	"Mean Green"
-"Attrib_KillStreakIdleEffect5"	"Agonizing Emerald"
-"Attrib_KillStreakIdleEffect6"	"Villainous Violet"
-"Attrib_KillStreakIdleEffect7"	"Hot Rod"
+	"Attrib_KillStreakEffect2002"
+	{
+		"en"	"Fire Horns"
+	}
+	"Attrib_KillStreakEffect2003"
+	{
+		"en"	"Cerebral Discharge"
+	}
+	"Attrib_KillStreakEffect2004"
+	{
+		"en"	"Tornado"
+	}
+	"Attrib_KillStreakEffect2005"
+	{
+		"en"	"Flames"
+	}
+	"Attrib_KillStreakEffect2006"
+	{
+		"en"	"Singularity"
+	}
+	"Attrib_KillStreakEffect2007"
+	{
+		"en"	"Incinerator"
+	}
+	"Attrib_KillStreakEffect2008"
+	{
+		"en"	"Hypno-Beam"
+	}
 
-"Attrib_KillStreakTier"			"Killstreaks Active"
+
+	"Attrib_KillStreakIdleEffect"
+	{
+		"en"	"Sheen: %s"
+	}
+	"Attrib_KillStreakIdleEffect0"
+	{
+		"en"	"Invalid Sheen Effect"
+	}
+	"Attrib_KillStreakIdleEffect1"
+	{
+		"en"	"Team Shine"
+	}
+	"Attrib_KillStreakIdleEffect2"
+	{
+		"en"	"Deadly Daffodil"
+	}
+	"Attrib_KillStreakIdleEffect3"
+	{
+		"en"	"Manndarin"
+	}
+	"Attrib_KillStreakIdleEffect4"
+	{
+		"en"	"Mean Green"
+	}
+	"Attrib_KillStreakIdleEffect5"
+	{
+		"en"	"Agonizing Emerald"
+	}
+	"Attrib_KillStreakIdleEffect6"
+	{
+		"en"	"Villainous Violet"
+	}
+	"Attrib_KillStreakIdleEffect7"
+	{
+		"en"	"Hot Rod"
+	}
+
+
+	"Attrib_KillStreakTier"
+	{
+		"en"	"Killstreaks Active"
+	}
+}
