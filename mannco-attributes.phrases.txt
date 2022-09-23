@@ -2,53 +2,62 @@ Phrases
 {
 // Attribute descriptions
 
+	"C_Attrib_NoDuck"
+	{
+		"en"	"User cannot crouch"
+	}
+	"C_Attrib_NoJump"
+	{
+		"en"	"User cannot jump"
+	}
+    
 	"Attrib_ClipSize_Positive"
 	{
-		"en"	"+%s% clip size"
+		"en"	"+%s\% clip size"
 	}
 	"Attrib_ClipSize_Negative"
 	{
-		"en"	"%s% clip size"
+		"en"	"%s\% clip size"
 	}
 	"Attrib_UberchargeRate_Positive"
 	{
-		"en"	"+%s% ÜberCharge rate"
+		"en"	"+%s\% ÜberCharge rate"
 	}
 	"Attrib_UberchargeRate_Negative"
 	{
-		"en"	"%s% ÜberCharge rate"
+		"en"	"%s\% ÜberCharge rate"
 	}
 	"Attrib_OverhealUberchargeRate_Negative"
 	{
-		"en"	"%s% ÜberCharge rate on Overhealed patients"
+		"en"	"%s\% ÜberCharge rate on Overhealed patients"
 	}
 	"Attrib_DamageDone_Positive"
 	{
-		"en"	"+%s% damage bonus"
+		"en"	"+%s\% damage bonus"
 	}
 	"Attrib_DamageDone_Negative"
 	{
-		"en"	"%s% damage penalty"
+		"en"	"%s\% damage penalty"
 	}
 	"Attrib_HealRate_Positive"
 	{
-		"en"	"+%s% heal rate"
+		"en"	"+%s\% heal rate"
 	}
 	"Attrib_HealRate_Negative"
 	{
-		"en"	"%s% heal rate"
+		"en"	"%s\% heal rate"
 	}
 	"Attrib_FireRate_Positive"
 	{
-		"en"	"+%s% faster firing speed"
+		"en"	"+%s\% faster firing speed"
 	}
 	"Attrib_FireRate_Negative"
 	{
-		"en"	"%s% slower firing speed"
+		"en"	"%s\% slower firing speed"
 	}
 	"Attrib_OverhealAmount_Positive"
 	{
-		"en"	"+%s% max overheal"
+		"en"	"+%s\% max overheal"
 	}
 	"Attrib_OverhealDecay_Disabled"
 	{
@@ -56,11 +65,11 @@ Phrases
 	}
 	"Attrib_OverhealDecay_Positive"
 	{
-		"en"	"+%s% longer overheal time"
+		"en"	"+%s\% longer overheal time"
 	}
 	"Attrib_OverhealDecay_Negative"
 	{
-		"en"	"%s% shorter overheal time"
+		"en"	"%s\% shorter overheal time"
 	}
 	"Attrib_HealOnHit_Positive"
 	{
@@ -88,27 +97,27 @@ Phrases
 	}
 	"Attrib_AddUber_OnHit_Positive"
 	{
-		"en"	"On Hit: %s% ÜberCharge added"
+		"en"	"On Hit: %s\% ÜberCharge added"
 	}
 	"Attrib_Medigun_CritBoost"
 	{
-		"en"	"ÜberCharge grants 100% critical chance"
+		"en"	"ÜberCharge grants 100\% critical chance"
 	}
 	"Attrib_DamageDoneBonus_Positive"
 	{
-		"en"	"On Hit: +%s% damage bonus"
+		"en"	"On Hit: +%s\% damage bonus"
 	}
 	"Attrib_CritVsBurning"
 	{
-		"en"	"100% critical hit vs burning players"
+		"en"	"100\% critical hit vs burning players"
 	}
 	"Attrib_AxtinguisherProperties"
 	{
-		"en"	"100% critical hits burning players from behind\nMini-crits burning players from the front"
+		"en"	"100\% critical hits burning players from behind\nMini-crits burning players from the front"
 	}
 	"Attrib_DmgPenaltyVsNonBurning"
 	{
-		"en"	"%s% damage vs non-burning players"
+		"en"	"%s\% damage vs non-burning players"
 	}
 	"Attrib_NoCritVsNonBurning"
 	{
@@ -120,7 +129,7 @@ Phrases
 	}
 	"Attrib_ModFlamethrower_BackCrits"
 	{
-		"en"	"100% critical hits from behind"
+		"en"	"100\% critical hits from behind"
 	}
 	"Attrib_MaxHealth_Positive"
 	{
@@ -132,31 +141,31 @@ Phrases
 	}
 	"Attrib_FistsHaveRadialBuff"
 	{
-		"en"	"On Kill: +50 health on nearby teammates\nOn Kill: +10% Crit Chance on nearby teammates"
+		"en"	"On Kill: +50 health on nearby teammates\nOn Kill: +10\% Crit Chance on nearby teammates"
 	}
 	"Attrib_CritBoost_OnKill"
 	{
-		"en"	"On Kill: %s seconds of 100% critical chance"
+		"en"	"On Kill: %s seconds of 100\% critical chance"
 	}
 	"Attrib_Slow_Enemy_OnHit"
 	{
-		"en"	"On Hit: %s% chance to slow target"
+		"en"	"On Hit: %s\% chance to slow target"
 	}
 	"Attrib_CloakMeterConsumeRate"
 	{
-		"en"	"+%s% cloak drain rate"
+		"en"	"+%s\% cloak drain rate"
 	}
 	"Attrib_CloakMeterRegenRate"
 	{
-		"en"	"+%s% cloak regen rate"
+		"en"	"+%s\% cloak regen rate"
 	}
 	"Attrib_Spread_Negative"
 	{
-		"en"	"%s% less accurate"
+		"en"	"%s\% less accurate"
 	}
 	"Attrib_Spread_Positive"
 	{
-		"en"	"%s% more accurate"
+		"en"	"%s\% more accurate"
 	}
 	"Attrib_BatLaunchesBalls"
 	{
@@ -164,7 +173,7 @@ Phrases
 	}
 	"Attrib_DmgPenaltyVsNonStunned"
 	{
-		"en"	"%s% damage vs non-stunned players"
+		"en"	"%s\% damage vs non-stunned players"
 	}
 	"Attrib_ZoomSpeedMod_Disabled"
 	{
@@ -172,7 +181,7 @@ Phrases
 	}
 	"Attrib_SniperCharge_Per_Sec"
 	{
-		"en"	"+%s% charge rate"
+		"en"	"+%s\% charge rate"
 	}
 	"Attrib_SniperNoHeadshots"
 	{
@@ -184,11 +193,11 @@ Phrases
 	}
 	"Attrib_BulletsPerShot_Bonus"
 	{
-		"en"	"+%s% bullets per shot"
+		"en"	"+%s\% bullets per shot"
 	}
 	"Attrib_SniperZoom_Penalty"
 	{
-		"en"	"%s% zoom reduction"
+		"en"	"%s\% zoom reduction"
 	}
 	"Attrib_SniperNoCharge"
 	{
@@ -208,7 +217,7 @@ Phrases
 	}
 	"Attrib_AbsorbDmgWhileCloaked"
 	{
-		"en"	"Absorbs %s% damage while cloaked"
+		"en"	"Absorbs %s\% damage while cloaked"
 	}
 	"Attrib_RevolverUseHitLocations"
 	{
@@ -224,7 +233,7 @@ Phrases
 	}
 	"Attrib_MoveSpeed_Penalty"
 	{
-		"en"	"%s% slower move speed on wearer"
+		"en"	"%s\% slower move speed on wearer"
 	}
 	"Attrib_Jarate_Description"
 	{
@@ -244,51 +253,51 @@ Phrases
 	}
 	"Attrib_SelfDmgPush_Increased"
 	{
-		"en"	"+%s% self damage force"
+		"en"	"+%s\% self damage force"
 	}
 	"Attrib_SelfDmgPush_Decreased"
 	{
-		"en"	"%s% self damage force"
+		"en"	"%s\% self damage force"
 	}
 	"Attrib_DmgTaken_From_Fire_Reduced"
 	{
-		"en"	"+%s% fire damage resistance on wearer"
+		"en"	"+%s\% fire damage resistance on wearer"
 	}
 	"Attrib_DmgTaken_From_Fire_ReducedActive"
 	{
-		"en"	"+%s% fire damage resistance while deployed"
+		"en"	"+%s\% fire damage resistance while deployed"
 	}
 	"Attrib_DmgTaken_From_Fire_Increased"
 	{
-		"en"	"%s% fire damage vulnerability on wearer"
+		"en"	"%s\% fire damage vulnerability on wearer"
 	}
 	"Attrib_DmgTaken_From_Crit_Reduced"
 	{
-		"en"	"+%s% critical hit damage resistance on wearer"
+		"en"	"+%s\% critical hit damage resistance on wearer"
 	}
 	"Attrib_DmgTaken_From_Crit_Increased"
 	{
-		"en"	"%s% critical hit damage vulnerability on wearer"
+		"en"	"%s\% critical hit damage vulnerability on wearer"
 	}
 	"Attrib_DmgTaken_From_Blast_Reduced"
 	{
-		"en"	"+%s% explosive damage resistance on wearer"
+		"en"	"+%s\% explosive damage resistance on wearer"
 	}
 	"Attrib_DmgTaken_From_Blast_Increased"
 	{
-		"en"	"%s% explosive damage vulnerability on wearer"
+		"en"	"%s\% explosive damage vulnerability on wearer"
 	}
 	"Attrib_DmgTaken_From_Bullets_Reduced"
 	{
-		"en"	"+%s% bullet damage resistance on wearer"
+		"en"	"+%s\% bullet damage resistance on wearer"
 	}
 	"Attrib_DmgTaken_From_Bullets_Increased"
 	{
-		"en"	"%s% bullet damage vulnerability on wearer"
+		"en"	"%s\% bullet damage vulnerability on wearer"
 	}
 	"Attrib_DmgTaken_Increased"
 	{
-		"en"	"%s% damage vulnerability on wearer"
+		"en"	"%s\% damage vulnerability on wearer"
 	}
 	"Attrib_CaptureValue_Increased"
 	{
@@ -296,87 +305,87 @@ Phrases
 	}
 	"Attrib_HealthFromHealers_Reduced"
 	{
-		"en"	"%s% health from healers on wearer"
+		"en"	"%s\% health from healers on wearer"
 	}
 	"Attrib_HealthFromHealers_Increased"
 	{
-		"en"	"+%s% health from healers on wearer"
+		"en"	"+%s\% health from healers on wearer"
 	}
 	"Attrib_WpnBurnDmg_Increased"
 	{
-		"en"	"+%s% afterburn damage bonus"
+		"en"	"+%s\% afterburn damage bonus"
 	}
 	"Attrib_WpnBurnDmg_Reduced"
 	{
-		"en"	"%s% afterburn damage penalty"
+		"en"	"%s\% afterburn damage penalty"
 	}
 	"Attrib_WpnBurnTime_Increased"
 	{
-		"en"	"+%s% afterburn duration"
+		"en"	"+%s\% afterburn duration"
 	}
 	"Attrib_WpnBurnTime_Reduced"
 	{
-		"en"	"%s% afterburn duration"
+		"en"	"%s\% afterburn duration"
 	}
 	"Attrib_GestureSpeed_Increase"
 	{
-		"en"	"+%s% faster taunt speed on wearer"
+		"en"	"+%s\% faster taunt speed on wearer"
 	}
 	"Attrib_AimingMoveSpeed_Increased"
 	{
-		"en"	"+%s% faster move speed while deployed"
+		"en"	"+%s\% faster move speed while deployed"
 	}
 	"Attrib_AimingMoveSpeed_Decreased"
 	{
-		"en"	"%s% slower move speed while deployed"
+		"en"	"%s\% slower move speed while deployed"
 	}
 	"Attrib_MaxammoPrimary_Increased"
 	{
-		"en"	"+%s% max primary ammo on wearer"
+		"en"	"+%s\% max primary ammo on wearer"
 	}
 	"Attrib_MaxammoPrimary_Reduced"
 	{
-		"en"	"%s% max primary ammo on wearer"
+		"en"	"%s\% max primary ammo on wearer"
 	}
 	"Attrib_MaxammoSecondary_Increased"
 	{
-		"en"	"+%s% max secondary ammo on wearer"
+		"en"	"+%s\% max secondary ammo on wearer"
 	}
 	"Attrib_MaxammoSecondary_Reduced"
 	{
-		"en"	"%s% max secondary ammo on wearer"
+		"en"	"%s\% max secondary ammo on wearer"
 	}
 	"Attrib_MaxammoMetal_Increased"
 	{
-		"en"	"+%s% max metal on wearer"
+		"en"	"+%s\% max metal on wearer"
 	}
 	"Attrib_MaxammoMetal_Reduced"
 	{
-		"en"	"%s% max metal on wearer"
+		"en"	"%s\% max metal on wearer"
 	}
 	"Attrib_CloakConsumeRate_Increased"
 	{
-		"en"	"-%s% cloak duration"
+		"en"	"-%s\% cloak duration"
 	}
 	"Attrib_CloakConsumeRate_Decreased"
 	{
-		"en"	"+%s% cloak duration"
+		"en"	"+%s\% cloak duration"
 	}
 	"Attrib_CloakRegenRate_Increased"
 	{
-		"en"	"+%s% cloak regeneration rate"
+		"en"	"+%s\% cloak regeneration rate"
 	}
 	"Attrib_CloakRegenRate_Decreased"
 	{
-		"en"	"%s% cloak regeneration rate"
+		"en"	"%s\% cloak regeneration rate"
 	}
 	"Attrib_MinigunSpinup_Increased"
 	{
-		"en"	"%s% slower spin up time"
+		"en"	"%s\% slower spin up time"
 	}
 	"Attrib_MinigunSpinup_Decreased"
 	{
-		"en"	"%s% faster spin up time"
+		"en"	"%s\% faster spin up time"
 	}
 	"Attrib_MaxPipebombs_Increased"
 	{
@@ -388,91 +397,91 @@ Phrases
 	}
 	"Attrib_SRifleChargeRate_Increased"
 	{
-		"en"	"%s% faster power charge"
+		"en"	"%s\% faster power charge"
 	}
 	"Attrib_SRifleChargeRate_Decreased"
 	{
-		"en"	"%s% slower power charge"
+		"en"	"%s\% slower power charge"
 	}
 	"Attrib_ConstructionRate_Increased"
 	{
-		"en"	"Construction hit speed boost increased by %s%"
+		"en"	"Construction hit speed boost increased by %s\%"
 	}
 	"Attrib_ConstructionRate_Decreased"
 	{
-		"en"	"Construction hit speed boost decreased by %s%"
+		"en"	"Construction hit speed boost decreased by %s\%"
 	}
 	"Attrib_RepairRate_Increased"
 	{
-		"en"	"%s% faster repair rate"
+		"en"	"%s\% faster repair rate"
 	}
 	"Attrib_RepairRate_Decreased"
 	{
-		"en"	"%s% slower repair rate"
+		"en"	"%s\% slower repair rate"
 	}
 	"Attrib_UpgradeRate_Decreased"
 	{
-		"en"	"%s% slower upgrade rate"
+		"en"	"%s\% slower upgrade rate"
 	}
 	"Attrib_metal_pickup_decreased"
 	{
-		"en"	"%s% less metal from pickups and dispensers"
+		"en"	"%s\% less metal from pickups and dispensers"
 	}
 	"Attrib_ReloadTime_Increased"
 	{
-		"en"	"%s% slower reload time"
+		"en"	"%s\% slower reload time"
 	}
 	"Attrib_ReloadTime_Decreased"
 	{
-		"en"	"%s% faster reload time"
+		"en"	"%s\% faster reload time"
 	}
 	"Attrib_BlastRadius_Increased"
 	{
-		"en"	"+%s% explosion radius"
+		"en"	"+%s\% explosion radius"
 	}
 	"Attrib_BlastRadius_Decreased"
 	{
-		"en"	"%s% explosion radius"
+		"en"	"%s\% explosion radius"
 	}
 	"Attrib_ProjectileRange_Increased"
 	{
-		"en"	"+%s% projectile range"
+		"en"	"+%s\% projectile range"
 	}
 	"Attrib_ProjectileRange_Decreased"
 	{
-		"en"	"%s% projectile range"
+		"en"	"%s\% projectile range"
 	}
 	"Attrib_ProjectileSpeed_Increased"
 	{
-		"en"	"+%s% projectile speed"
+		"en"	"+%s\% projectile speed"
 	}
 	"Attrib_ProjectileSpeed_Decreased"
 	{
-		"en"	"%s% projectile speed"
+		"en"	"%s\% projectile speed"
 	}
 	"Attrib_OverhealAmount_Negative"
 	{
-		"en"	"%s% max overheal"
+		"en"	"%s\% max overheal"
 	}
 	"Attrib_MoveSpeed_Bonus"
 	{
-		"en"	"+%s% faster move speed on wearer"
+		"en"	"+%s\% faster move speed on wearer"
 	}
 	"Attrib_MoveSpeed_Bonus_ShieldRequired"
 	{
-		"en"	"+%s% faster move speed on wearer (shield required)"
+		"en"	"+%s\% faster move speed on wearer (shield required)"
 	}
 	"Attrib_HealthFromPacks_Increased"
 	{
-		"en"	"+%s% health from packs on wearer"
+		"en"	"+%s\% health from packs on wearer"
 	}
 	"Attrib_HealthFromPacks_Decreased"
 	{
-		"en"	"%s% health from packs on wearer"
+		"en"	"%s\% health from packs on wearer"
 	}
 	"Attrib_AmmoRegen"
 	{
-		"en"	"+%s% ammo regenerated every 5 seconds on wearer"
+		"en"	"+%s\% ammo regenerated every 5 seconds on wearer"
 	}
 	"Attrib_MetalRegen"
 	{
@@ -496,11 +505,11 @@ Phrases
 	}
 	"Attrib_Dmg_Falloff_Decreased"
 	{
-		"en"	"%s% splash damage fall off"
+		"en"	"%s\% splash damage fall off"
 	}
 	"Attrib_Dmg_Falloff_Increase"
 	{
-		"en"	"+%s% splash damage fall off"
+		"en"	"+%s\% splash damage fall off"
 	}
 	"Attrib_StickyDetonateMode"
 	{
@@ -536,7 +545,7 @@ Phrases
 	}
 	"Attrib_SpeedBoostWhenActive"
 	{
-		"en"	"%s% speed boost while active weapon"
+		"en"	"%s\% speed boost while active weapon"
 	}
 	"Attrib_WrenchBuildsMiniSentry"
 	{
@@ -552,11 +561,11 @@ Phrases
 	}
 	"Attrib_MedicRegenBonus"
 	{
-		"en"	"+%s% natural regen rate"
+		"en"	"+%s\% natural regen rate"
 	}
 	"Attrib_MedicRegenPenalty"
 	{
-		"en"	"-%s% natural regen rate"
+		"en"	"-%s\% natural regen rate"
 	}
 	"Attrib_Community_Description"
 	{
@@ -568,7 +577,7 @@ Phrases
 	}
 	"Attrib_RocketJumpDmgReduction"
 	{
-		"en"	"%s% blast damage from rocket jumps"
+		"en"	"%s\% blast damage from rocket jumps"
 	}
 	"Attrib_Selfmade_Description"
 	{
@@ -596,15 +605,15 @@ Phrases
 	}
 	"Attrib_DmgVsBuilding_Increased"
 	{
-		"en"	"+%s% damage vs buildings"
+		"en"	"+%s\% damage vs buildings"
 	}
 	"Attrib_DmgVsBuilding_decreased"
 	{
-		"en"	"%s% damage penalty vs buildings"
+		"en"	"%s\% damage penalty vs buildings"
 	}
 	"Attrib_DmgVsPlayer_Decreased"
 	{
-		"en"	"%s% damage vs players"
+		"en"	"%s\% damage vs players"
 	}
 	"Attrib_LunchboxAddsMaxHealth"
 	{
@@ -684,11 +693,11 @@ Phrases
 	}
 	"Attrib_AddCloakOnKill"
 	{
-		"en"	"+%s% cloak on kill"
+		"en"	"+%s\% cloak on kill"
 	}
 	"Attrib_AddCloakOnHit"
 	{
-		"en"	"+%s% cloak on hit"
+		"en"	"+%s\% cloak on hit"
 	}
 	"Attrib_CloakBlinkTimePenalty"
 	{
@@ -700,19 +709,19 @@ Phrases
 	}
 	"Attrib_FlameSize_Negative"
 	{
-		"en"	"%s% less flame spread area"
+		"en"	"%s\% less flame spread area"
 	}
 	"Attrib_FlameSize_Positive"
 	{
-		"en"	"+%s% more flame spread area"
+		"en"	"+%s\% more flame spread area"
 	}
 	"Attrib_FlameLife_Negative"
 	{
-		"en"	"%s% less flame distance"
+		"en"	"%s\% less flame distance"
 	}
 	"Attrib_FlameLife_Positive"
 	{
-		"en"	"+%s% more flame distance"
+		"en"	"+%s\% more flame distance"
 	}
 	"Attrib_ChargedAirblast"
 	{
@@ -724,15 +733,15 @@ Phrases
 	}
 	"Attrib_DmgFromSentryReduced"
 	{
-		"en"	"+%s% sentry damage resistance on wearer"
+		"en"	"+%s\% sentry damage resistance on wearer"
 	}
 	"Attrib_AirblastCost_Increased"
 	{
-		"en"	"+%s% airblast cost"
+		"en"	"+%s\% airblast cost"
 	}
 	"Attrib_AirblastCost_Decreased"
 	{
-		"en"	"%s% airblast cost"
+		"en"	"%s\% airblast cost"
 	}
 	"Attrib_ExtinguishRestoresHealth"
 	{
@@ -740,7 +749,7 @@ Phrases
 	}
 	"Attrib_ExtinguishReducesCooldown"
 	{
-		"en"	"Extinguishing teammates reduces cooldown by %s%"
+		"en"	"Extinguishing teammates reduces cooldown by %s\%"
 	}
 	"Attrib_Purchased"
 	{
@@ -760,11 +769,11 @@ Phrases
 	}
 	"Attrib_FlameAmmoPerSec_Increased"
 	{
-		"en"	"+%s% flamethrower ammo consumed per second"
+		"en"	"+%s\% flamethrower ammo consumed per second"
 	}
 	"Attrib_FlameAmmoPerSec_Decreased"
 	{
-		"en"	"%s% flamethrower ammo consumed per second"
+		"en"	"%s\% flamethrower ammo consumed per second"
 	}
 	"Attrib_JarateDuration"
 	{
@@ -792,31 +801,31 @@ Phrases
 	}
 	"Attrib_DeployTime_Increased"
 	{
-		"en"	"%s% longer weapon switch"
+		"en"	"%s\% longer weapon switch"
 	}
 	"Attrib_DeployTime_Decreased"
 	{
-		"en"	"%s% faster weapon switch"
+		"en"	"%s\% faster weapon switch"
 	}
 	"Attrib_SingleWepDeployBonus"
 	{
-		"en"	"This weapon deploys %s% faster"
+		"en"	"This weapon deploys %s\% faster"
 	}
 	"Attrib_SingleWepHolsterBonus"
 	{
-		"en"	"This weapon holsters %s% faster"
+		"en"	"This weapon holsters %s\% faster"
 	}
 	"Attrib_SingleWepDeployPenalty"
 	{
-		"en"	"This weapon deploys %s% slower"
+		"en"	"This weapon deploys %s\% slower"
 	}
 	"Attrib_SingleWepHolsterPenalty"
 	{
-		"en"	"This weapon holsters %s% slower"
+		"en"	"This weapon holsters %s\% slower"
 	}
 	"Attrib_RocketJump_DeployTime_DecreasedSingle"
 	{
-		"en"	"Deploys %s% faster while rocket jumping"
+		"en"	"Deploys %s\% faster while rocket jumping"
 	}
 	"Attrib_MinicritsBecomeCrits"
 	{
@@ -836,7 +845,7 @@ Phrases
 	}
 	"Attrib_Slow_Enemy_OnHit_Major"
 	{
-		"en"	"On Hit: Slow target movement by 40% for %ss"
+		"en"	"On Hit: Slow target movement by 40\% for %ss"
 	}
 	"Attrib_LimitedUse"
 	{
@@ -864,7 +873,7 @@ Phrases
 	}
 	"Attrib_PreserveUbercharge"
 	{
-		"en"	"On death up to %s% of your stored\nÜberCharge is retained"
+		"en"	"On death up to %s\% of your stored\nÜberCharge is retained"
 	}
 	"Attrib_ReferencedItem"
 	{
@@ -916,15 +925,15 @@ Phrases
 	}
 	"Attrib_DmgFromRanged_Reduced"
 	{
-		"en"	"%s% damage from ranged sources while active"
+		"en"	"%s\% damage from ranged sources while active"
 	}
 	"Attrib_DmgFromMelee_Increased"
 	{
-		"en"	"+%s% damage from melee sources while active"
+		"en"	"+%s\% damage from melee sources while active"
 	}
 	"Attrib_BlastDamageToSelf_Increased"
 	{
-		"en"	"+%s% damage to self"
+		"en"	"+%s\% damage to self"
 	}
 	"Attrib_SetDamageType_Ignite"
 	{
@@ -932,7 +941,7 @@ Phrases
 	}
 	"Attrib_Minicrit_Vs_Burning_Player"
 	{
-		"en"	"100% mini-crits vs burning players"
+		"en"	"100\% mini-crits vs burning players"
 	}
 	"Attrib_TradableAfterDate"
 	{
@@ -972,39 +981,39 @@ Phrases
 	}
 	"Attrib_RestoreHealthOnKill"
 	{
-		"en"	"Gain %s% of base health on kill"
+		"en"	"Gain %s\% of base health on kill"
 	}
 	"Attrib_MultSniperChargeAfterBodyshot"
 	{
-		"en"	"On Scoped Bodyshot: Rifle charge rate increased by %s%"
+		"en"	"On Scoped Bodyshot: Rifle charge rate increased by %s\%"
 	}
 	"Attrib_MultSniperChargeAfterMiss"
 	{
-		"en"	"On Scoped Miss: Rifle charge rate decreased by %s%"
+		"en"	"On Scoped Miss: Rifle charge rate decreased by %s\%"
 	}
 	"Attrib_MultSniperChargeAfterHeadshot"
 	{
-		"en"	"On Scoped Headshot: Rifle charge rate increased by %s%"
+		"en"	"On Scoped Headshot: Rifle charge rate increased by %s\%"
 	}
 	"Attrib_MultSniperChargePenalty"
 	{
-		"en"	"Base charge rate decreased by %s%"
+		"en"	"Base charge rate decreased by %s\%"
 	}
 	"Attrib_MultDmgBonusWhileHalfDead"
 	{
-		"en"	"%s% increase in damage when health <50% of max"
+		"en"	"%s\% increase in damage when health <50\% of max"
 	}
 	"Attrib_MultDmgPenaltyWhileHalfAlive"
 	{
-		"en"	"%s% decrease in damage when health >50% of max"
+		"en"	"%s\% decrease in damage when health >50\% of max"
 	}
 	"Attrib_Medigun_MegaHeal"
 	{
-		"en"	"ÜberCharge increases healing to 300% and grants immunity to movement-impairing effects"
+		"en"	"ÜberCharge increases healing to 300\% and grants immunity to movement-impairing effects"
 	}
 	"Attrib_Medigun_Resists"
 	{
-		"en"	"Press your reload key to cycle through resist types.\nWhile healing, provides you and your target with a constant 10% resistance to the selected damage type."
+		"en"	"Press your reload key to cycle through resist types.\nWhile healing, provides you and your target with a constant 10\% resistance to the selected damage type."
 	}
 	"Attrib_MedicKilledRevenge"
 	{
@@ -1016,11 +1025,11 @@ Phrases
 	}
 	"Attrib_MedicHealedDamageBonus"
 	{
-		"en"	"While a medic is healing you,\nthis weapon's damage is increased by %s%"
+		"en"	"While a medic is healing you,\nthis weapon's damage is increased by %s\%"
 	}
 	"Attrib_MedicHealedDeployTimePenalty"
 	{
-		"en"	"While not being healed by a medic,\nyour weapon switch time is %s% longer"
+		"en"	"While not being healed by a medic,\nyour weapon switch time is %s\% longer"
 	}
 	"Attrib_MakersMark"
 	{
@@ -1032,11 +1041,11 @@ Phrases
 	}
 	"Attrib_UberchargeRate_ForHealer"
 	{
-		"en"	"+%s% ÜberCharge rate for the medic healing you\nThis effect does not work in the respawn room"
+		"en"	"+%s\% ÜberCharge rate for the medic healing you\nThis effect does not work in the respawn room"
 	}
 	"Attrib_ReloadTime_Decreased_While_Healed"
 	{
-		"en"	"%s% faster reload time while being healed"
+		"en"	"%s\% faster reload time while being healed"
 	}
 	"Attrib_MedicKilledMarkedForDeath"
 	{
@@ -1044,15 +1053,15 @@ Phrases
 	}
 	"Attrib_RageOnHitPenalty"
 	{
-		"en"	"%s% rage lost on hit"
+		"en"	"%s\% rage lost on hit"
 	}
 	"Attrib_RageOnHitBonus"
 	{
-		"en"	"%s% rage gained on hit"
+		"en"	"%s\% rage gained on hit"
 	}
 	"Attrib_RageDamageBoost"
 	{
-		"en"	"Gains a damage bonus as rage increases, up to %s%"
+		"en"	"Gains a damage bonus as rage increases, up to %s\%"
 	}
 	"Attrib_RageOnDamage"
 	{
@@ -1060,7 +1069,7 @@ Phrases
 	}
 	"Attrib_ChargeTurnControl"
 	{
-		"en"	"+%s% increase in turning control while charging"
+		"en"	"+%s\% increase in turning control while charging"
 	}
 	"Attrib_ChargeTurnControlFull"
 	{
@@ -1072,15 +1081,15 @@ Phrases
 	}
 	"Attrib_ChargeImpactDamageIncreased"
 	{
-		"en"	"+%s% increase in charge impact damage"
+		"en"	"+%s\% increase in charge impact damage"
 	}
 	"Attrib_ChargeImpactDamageDecreased"
 	{
-		"en"	"%s% decrease in charge impact damage"
+		"en"	"%s\% decrease in charge impact damage"
 	}
 	"Attrib_ChargeRechargeRateIncreased"
 	{
-		"en"	"+%s% increase in charge recharge rate"
+		"en"	"+%s\% increase in charge recharge rate"
 	}
 	"Attrib_AirDashCountIncreased"
 	{
@@ -1092,11 +1101,11 @@ Phrases
 	}
 	"Attrib_DamageForceReduction"
 	{
-		"en"	"%s% reduction in push force taken from damage"
+		"en"	"%s\% reduction in push force taken from damage"
 	}
 	"Attrib_DamageForceIncrease"
 	{
-		"en"	"%s% increase in push force taken from damage"
+		"en"	"%s\% increase in push force taken from damage"
 	}
 	"Attrib_DamageForceIncreaseString"
 	{
@@ -1112,7 +1121,7 @@ Phrases
 	}
 	"Attrib_ReducedCloakFromAmmo"
 	{
-		"en"	"%s% cloak meter from ammo boxes"
+		"en"	"%s\% cloak meter from ammo boxes"
 	}
 	"Attrib_AmmoBecomesHealth"
 	{
@@ -1164,11 +1173,11 @@ Phrases
 	}
 	"Attrib_EffectBarRechargeRateIncreased"
 	{
-		"en"	"+%s% increase in recharge rate"
+		"en"	"+%s\% increase in recharge rate"
 	}
 	"Attrib_MaxammoGrenades1_Increased"
 	{
-		"en"	"+%s% max misc ammo on wearer"
+		"en"	"+%s\% max misc ammo on wearer"
 	}
 	"Attrib_EnergyWeaponNoAmmo"
 	{
@@ -1176,7 +1185,7 @@ Phrases
 	}
 	"Attrib_EnergyWeaponNoHurtBuilding"
 	{
-		"en"	"Deals only 20% damage to buildings"
+		"en"	"Deals only 20\% damage to buildings"
 	}
 	"Attrib_EnergyWeaponChargedShot"
 	{
@@ -1192,15 +1201,15 @@ Phrases
 	}
 	"Attrib_EngyBuildingHealthBonus"
 	{
-		"en"	"+%s% max building health"
+		"en"	"+%s\% max building health"
 	}
 	"Attrib_EngyBuildingHealthPenalty"
 	{
-		"en"	"%s% max building health"
+		"en"	"%s\% max building health"
 	}
 	"Attrib_EngySentryDamageBonus"
 	{
-		"en"	"+%s% Sentry Gun damage bonus"
+		"en"	"+%s\% Sentry Gun damage bonus"
 	}
 	"Attrib_NoCritBoost"
 	{
@@ -1252,7 +1261,7 @@ Phrases
 	}
 	"Attrib_Sniper_FullChargeBonus"
 	{
-		"en"	"On Full Charge: +%s% damage per shot"
+		"en"	"On Full Charge: +%s\% damage per shot"
 	}
 	"Attrib_Sniper_NoHeadShot"
 	{
@@ -1300,15 +1309,15 @@ Phrases
 	}
 	"Attrib_FastReload"
 	{
-		"en"	"+%s% faster reload time"
+		"en"	"+%s\% faster reload time"
 	}
 	"Attrib_BuffTime_Increased"
 	{
-		"en"	"+%s% buff duration"
+		"en"	"+%s\% buff duration"
 	}
 	"Attrib_BuildRateBonus"
 	{
-		"en"	"+%s% faster build speed"
+		"en"	"+%s\% faster build speed"
 	}
 	"Attrib_AttackProjectiles"
 	{
@@ -1316,11 +1325,11 @@ Phrases
 	}
 	"Attrib_AccurScalesDmg"
 	{
-		"en"	"Accuracy scales damage"
+		"en"	"Accuracy scales to +%s\% damage"
 	}
 	"Attrib_CurrencyBonus"
 	{
-		"en"	"+%s% bonus currency from packs"
+		"en"	"+%s\% bonus currency from packs"
 	}
 	"Attrib_RoboSapper"
 	{
@@ -1328,11 +1337,11 @@ Phrases
 	}
 	"Attrib_JumpHeightBonus"
 	{
-		"en"	"+%s% greater jump height when active"
+		"en"	"+%s\% greater jump height when active"
 	}
 	"Attrib_AppliesSnareEffect"
 	{
-		"en"	"%s% movement speed on targets"
+		"en"	"%s\% movement speed on targets"
 	}
 	"Attrib_BuildingInstaUpgrade"
 	{
@@ -1344,11 +1353,11 @@ Phrases
 	}
 	"Attrib_AirBlastPushScale"
 	{
-		"en"	"+%s% airblast push force"
+		"en"	"+%s\% airblast push force"
 	}
 	"Attrib_AirBlastVulnerabilityMultipier"
 	{
-		"en"	"%s% reduction in airblast vulnerability"
+		"en"	"%s\% reduction in airblast vulnerability"
 	}
 	"Attrib_BombinomiconEffectOnDeath"
 	{
@@ -1360,11 +1369,11 @@ Phrases
 	}
 	"Attrib_SubtractVictimCloakOnHit"
 	{
-		"en"	"On Hit: Victim loses up to %s% cloak"
+		"en"	"On Hit: Victim loses up to %s\% cloak"
 	}
 	"Attrib_SubtractVictimMedigunChargeOnHit"
 	{
-		"en"	"On Hit: Victim loses up to %s% Medigun charge"
+		"en"	"On Hit: Victim loses up to %s\% Medigun charge"
 	}
 	"Attrib_RevealCloakedVictimOnHit"
 	{
@@ -1380,15 +1389,15 @@ Phrases
 	}
 	"Attrib_SentryFireRate_Increased"
 	{
-		"en"	"+%s% sentry firing speed"
+		"en"	"+%s\% sentry firing speed"
 	}
 	"Attrib_SentryRadius_Increased"
 	{
-		"en"	"+%s% sentry range"
+		"en"	"+%s\% sentry range"
 	}
 	"Attrib_DispenserRadius_Increased"
 	{
-		"en"	"+%s% dispenser range"
+		"en"	"+%s\% dispenser range"
 	}
 	"Attrib_BatLaunchesOrnaments"
 	{
@@ -1460,11 +1469,11 @@ Phrases
 	}
 	"Attrib_AimingKnockbackResistance"
 	{
-		"en"	"Knockback reduced by %s% when aiming"
+		"en"	"Knockback reduced by %s\% when aiming"
 	}
 	"Attrib_SniperAimingMoveSpeed_Decreased"
 	{
-		"en"	"%s% slower move speed when aiming"
+		"en"	"%s\% slower move speed when aiming"
 	}
 	"Attrib_RageGainOnKill"
 	{
@@ -1478,19 +1487,19 @@ Phrases
 	}
 	"Attrib_HeadshotDamageIncrease"
 	{
-		"en"	"Headshots deal an extra +%s% damage"
+		"en"	"Headshots deal an extra +%s\% damage"
 	}
 	"Attrib_MysterySolvingTimeDecrease"
 	{
-		"en"	"Reduces mystery solving time by up to %s%"
+		"en"	"Reduces mystery solving time by up to %s\%"
 	}
 	"Attrib_DamageDone_Bodyshot_Negative"
 	{
-		"en"	"%s% damage on body shot"
+		"en"	"%s\% damage on body shot"
 	}
 	"Attrib_SniperRageDisplayOnly"
 	{
-		"en"	"Press 'Reload' to activate focus\nIn Focus: +25% faster charge and no unscoping"
+		"en"	"Press 'Reload' to activate focus\nIn Focus: +25\% faster charge and no unscoping"
 	}
 	"Attrib_ExplosiveSniperShot"
 	{
@@ -1498,11 +1507,11 @@ Phrases
 	}
 	"Attrib_MeleeRate_Positive"
 	{
-		"en"	"+%s% faster melee attack speed"
+		"en"	"+%s\% faster melee attack speed"
 	}
 	"Attrib_MeleeRate_Negative"
 	{
-		"en"	"%s% slower melee attack speed"
+		"en"	"%s\% slower melee attack speed"
 	}
 	"Attrib_Penetration_Heavy"
 	{
@@ -1510,7 +1519,7 @@ Phrases
 	}
 	"Attrib_ArmorPiercing"
 	{
-		"en"	"Increase backstab damage against Giant Robots by %s%"
+		"en"	"Increase backstab damage against Giant Robots by %s\%"
 	}
 	"Attrib_CannotPickUpIntelligence"
 	{
@@ -1518,7 +1527,7 @@ Phrases
 	}
 	"Attrib_ChanceOfHungerDecrease"
 	{
-		"en"	"Reduces chance of hunger by up to %s%"
+		"en"	"Reduces chance of hunger by up to %s\%"
 	}
 	"Attrib_CannotBeBackstabbed"
 	{
@@ -1530,11 +1539,11 @@ Phrases
 	}
 	"Attrib_CritVsDisguised"
 	{
-		"en"	"100% critical hit vs disguised players"
+		"en"	"100\% critical hit vs disguised players"
 	}
 	"Attrib_CritVsNonBurning"
 	{
-		"en"	"100% critical hit vs non-burning players"
+		"en"	"100\% critical hit vs non-burning players"
 	}
 	"Attrib_KillForcesAttackerLaugh"
 	{
@@ -1542,7 +1551,7 @@ Phrases
 	}
 	"Attrib_DmgBonus_Disguised"
 	{
-		"en"	"+%s% damage bonus while disguised"
+		"en"	"+%s\% damage bonus while disguised"
 	}
 	"Attrib_Projectile_Spread_Angle_Negative"
 	{
@@ -1598,11 +1607,11 @@ Phrases
 	}
 	"Attrib_Sapper_Damage_Bonus"
 	{
-		"en"	"+%s% sapper damage bonus"
+		"en"	"+%s\% sapper damage bonus"
 	}
 	"Attrib_Sapper_Damage_Penalty"
 	{
-		"en"	"%s% sapper damage penalty"
+		"en"	"%s\% sapper damage penalty"
 	}
 	"Attrib_Sapper_Leaches_Health"
 	{
@@ -1610,11 +1619,11 @@ Phrases
 	}
 	"Attrib_Sapper_Health_Bonus"
 	{
-		"en"	"%s% sapper health bonus"
+		"en"	"%s\% sapper health bonus"
 	}
 	"Attrib_Sapper_Health_Penalty"
 	{
-		"en"	"%s% sapper health penalty"
+		"en"	"%s\% sapper health penalty"
 	}
 	"Attrib_Ring_Of_Fire_While_Aiming"
 	{
@@ -1634,11 +1643,11 @@ Phrases
 	}
 	"Attrib_CritVsStunned"
 	{
-		"en"	"100% critical hit vs stunned players"
+		"en"	"100\% critical hit vs stunned players"
 	}
 	"Attrib_CritVsWet"
 	{
-		"en"	"100% critical hit vs wet players"
+		"en"	"100\% critical hit vs wet players"
 	}
 	"Attrib_ClipSize_Atomic"
 	{
@@ -1670,11 +1679,11 @@ Phrases
 	}
 	"Attrib_SoldierBackpackRange"
 	{
-		"en"	"Effect Radius +%s%"
+		"en"	"Effect Radius +%s\%"
 	}
 	"Attrib_LifeleechOnDamage"
 	{
-		"en"	"Lifeleech %s%"
+		"en"	"Lifeleech %s\%"
 	}
 	"Attrib_SentryAmmo"
 	{
@@ -1682,7 +1691,7 @@ Phrases
 	}
 	"Attrib_CritChance"
 	{
-		"en"	"Crit Chance +%s%"
+		"en"	"Crit Chance +%s\%"
 	}
 	"Attrib_AOEHealChance_Small"
 	{
@@ -1718,15 +1727,15 @@ Phrases
 	}
 	"Attrib_UberOnHitChance"
 	{
-		"en"	"+%s% Chance to become Übered when enemies damage you"
+		"en"	"+%s\% Chance to become Übered when enemies damage you"
 	}
 	"Attrib_DamageSameClass"
 	{
-		"en"	"+%s% Damage to Enemies of the Same Class"
+		"en"	"+%s\% Damage to Enemies of the Same Class"
 	}
 	"Attrib_TeleportInsteadOfDie"
 	{
-		"en"	"+%s% Chance to Teleport to base when taking damage that would otherwise kill you"
+		"en"	"+%s\% Chance to Teleport to base when taking damage that would otherwise kill you"
 	}
 	"Attrib_MeleeCleaveAttack"
 	{
@@ -1734,11 +1743,11 @@ Phrases
 	}
 	"Attrib_Sentry_Build_Rate"
 	{
-		"en"	"Sentry build speed increased by %s%"
+		"en"	"Sentry build speed increased by %s\%"
 	}
 	"Attrib_Teleporter_Build_Rate"
 	{
-		"en"	"Increases teleporter build speed by %s%"
+		"en"	"Increases teleporter build speed by %s\%"
 	}
 	"Attrib_Grenade_Launcher_Mortar_Mode"
 	{
@@ -1750,7 +1759,7 @@ Phrases
 	}
 	"Attrib_Grenade_Damage_Reduction_On_World_Contact"
 	{
-		"en"	"%s% damage on contact with surfaces"
+		"en"	"%s\% damage on contact with surfaces"
 	}
 	"Attrib_Building_Telporting_PickUp"
 	{
@@ -1774,11 +1783,11 @@ Phrases
 	}
 	"Attrib_Overheal_Fill_Rate_Reduced"
 	{
-		"en"	"%s% Overheal build rate"
+		"en"	"%s\% Overheal build rate"
 	}
 	"Attrib_Healing_Provided_Resistance"
 	{
-		"en"	"When healing, provides you and your target with a constant 10% resistance to the selected damage type."
+		"en"	"When healing, provides you and your target with a constant 10\% resistance to the selected damage type."
 	}
 	"Attrib_Canteen_Specialist"
 	{
@@ -1786,7 +1795,7 @@ Phrases
 	}
 	"Attrib_Overheal_Expert"
 	{
-		"en"	"+25% more overheal, +50% longer duration per point"
+		"en"	"+25\% more overheal, +50\% longer duration per point"
 	}
 	"Attrib_Medic_MadMilkSyringes"
 	{
@@ -1794,11 +1803,11 @@ Phrases
 	}
 	"Attrib_Rocket_Specialist"
 	{
-		"en"	"+15% rocket speed per point. On direct hits: rocket does maximum damage, stuns target, and blast radius increased +15% per point."
+		"en"	"+15\% rocket speed per point. On direct hits: rocket does maximum damage, stuns target, and blast radius increased +15\% per point."
 	}
 	"Attrib_Healing_Mastery"
 	{
-		"en"	"+25% heal rate for patient, +25% faster revive rate, and +25% self heal rate, per point"
+		"en"	"+25\% heal rate for patient, +25\% faster revive rate, and +25\% self heal rate, per point"
 	}
 	"Attrib_RageOnHeal"
 	{
@@ -1806,15 +1815,15 @@ Phrases
 	}
 	"Attrib_HealingReceivedBonus"
 	{
-		"en"	"+%s% bonus healing from all sources"
+		"en"	"+%s\% bonus healing from all sources"
 	}
 	"Attrib_HealingReceivedPenalty"
 	{
-		"en"	"%s% less healing from all sources"
+		"en"	"%s\% less healing from all sources"
 	}
 	"Attrib_HealingFromMedics_Negative"
 	{
-		"en"	"%s% less healing from Medic sources"
+		"en"	"%s\% less healing from Medic sources"
 	}
 	"Attrib_AfterburnImmunity"
 	{
@@ -1858,19 +1867,19 @@ Phrases
 	}
 	"Attrib_KillsRefillMeter"
 	{
-		"en"	"Melee kills refill %s% of your charge meter"
+		"en"	"Melee kills refill %s\% of your charge meter"
 	}
 	"Attrib_HitsRefillMeter"
 	{
-		"en"	"Melee hits refill %s% of your charge meter"
+		"en"	"Melee hits refill %s\% of your charge meter"
 	}
 	"Attrib_AirControl"
 	{
-		"en"	"%s% increased air control"
+		"en"	"%s\% increased air control"
 	}
 	"Attrib_AirControlBlastJump"
 	{
-		"en"	"%s% increased air control when blast jumping"
+		"en"	"%s\% increased air control when blast jumping"
 	}
 	"Attrib_HypeDecays"
 	{
@@ -1882,7 +1891,7 @@ Phrases
 	}
 	"Attrib_NonRocketJumpAttackRatePenalty"
 	{
-		"en"	"Decreased %s% attack speed while not blast jumping"
+		"en"	"Decreased %s\% attack speed while not blast jumping"
 	}
 	"Attrib_AirBombardment"
 	{
@@ -1926,11 +1935,11 @@ Phrases
 	}
 	"Attrib_stickybomb_charge_rate"
 	{
-		"en"	"Max charge time decreased by %s%"
+		"en"	"Max charge time decreased by %s\%"
 	}
 	"Attrib_stickybomb_charge_damage_increase"
 	{
-		"en"	"Up to +%s% damage based on charge"
+		"en"	"Up to +%s\% damage based on charge"
 	}
 	"Attrib_grenade_no_bounce"
 	{
@@ -1938,7 +1947,7 @@ Phrases
 	}
 	"Attrib_GrenadeDetonationDamagePenalty"
 	{
-		"en"	"%s% damage on grenades that explode on timer"
+		"en"	"%s\% damage on grenades that explode on timer"
 	}
 	"Attrib_LoseDemoChargeOnDamageWhenCharging"
 	{
@@ -1974,7 +1983,7 @@ Phrases
 	}
 	"Attrib_spup_damage_resistance"
 	{
-		"en"	"%s% damage resistance when below 50% health and spun up"
+		"en"	"%s\% damage resistance when below 50\% health and spun up"
 	}
 	"Attrib_stattrakmodule"
 	{
@@ -1986,7 +1995,7 @@ Phrases
 	}
 	"Attrib_MeleeRangeMultiplier"
 	{
-		"en"	"%s% increased melee attack range"
+		"en"	"%s\% increased melee attack range"
 	}
 	"Attrib_ItemsTradedIn"
 	{
@@ -1998,7 +2007,7 @@ Phrases
 	}
 	"Attrib_LunchboxHealingDecreased"
 	{
-		"en"	"%s% healing effect"
+		"en"	"%s\% healing effect"
 	}
 	"Attrib_IsASword"
 	{
@@ -2014,19 +2023,19 @@ Phrases
 	}
 	"Attrib_Fuse_Bonus"
 	{
-		"en"	"%s% fuse time on grenades"
+		"en"	"%s\% fuse time on grenades"
 	}
 	"Attrib_DamageBonusAgainstSentryTarget"
 	{
-		"en"	"%s% increased damage to your sentry's target"
+		"en"	"%s\% increased damage to your sentry's target"
 	}
 	"Attrib_TeleporterBuildCost"
 	{
-		"en"	"%s% metal cost when constructing or upgrading teleporters"
+		"en"	"%s\% metal cost when constructing or upgrading teleporters"
 	}
 	"Attrib_DmgBonusVsBurning"
 	{
-		"en"	"%s% damage bonus vs burning players"
+		"en"	"%s\% damage bonus vs burning players"
 	}
 	"Attrib_PierceResists"
 	{
@@ -2034,7 +2043,7 @@ Phrases
 	}
 	"Attrib_PatientOverheal_Penalty"
 	{
-		"en"	"%s% maximum overheal on wearer"
+		"en"	"%s\% maximum overheal on wearer"
 	}
 	"Attrib_AddHeadOnKill"
 	{
@@ -2078,11 +2087,11 @@ Phrases
 	}
 	"Attrib_ChargeMeterRateMult"
 	{
-		"en"	"%s% faster recharge rate"
+		"en"	"%s\% faster recharge rate"
 	}
 	"Attrib_ChargeMeterRateMult_shortdesc"
 	{
-		"en"	"%s% Recharge Rate"
+		"en"	"%s\% Recharge Rate"
 	}
 	"Attrib_ExplodeOnIgnite"
 	{
@@ -2158,15 +2167,15 @@ Phrases
 
 	"Attrib_MoveSpeed_Bonus_shortdesc"
 	{
-		"en"	"+%s% Movement Speed"
+		"en"	"+%s\% Movement Speed"
 	}
 	"Attrib_JumpHeightBonus_shortdesc"
 	{
-		"en"	"+%s% Jump Height"
+		"en"	"+%s\% Jump Height"
 	}
 	"Attrib_AmmoRegen_shortdesc"
 	{
-		"en"	"+%s% Ammo Regen"
+		"en"	"+%s\% Ammo Regen"
 	}
 	"Attrib_MetalRegen_shortdesc"
 	{
@@ -2178,23 +2187,23 @@ Phrases
 	}
 	"Attrib_DmgTaken_From_Fire_Reduced_shortdesc"
 	{
-		"en"	"+%s% Fire Resistance"
+		"en"	"+%s\% Fire Resistance"
 	}
 	"Attrib_DmgTaken_From_Crit_Reduced_shortdesc"
 	{
-		"en"	"+%s% Crit Resistance"
+		"en"	"+%s\% Crit Resistance"
 	}
 	"Attrib_DmgTaken_From_Blast_Reduced_shortdesc"
 	{
-		"en"	"+%s% Blast Resistance"
+		"en"	"+%s\% Blast Resistance"
 	}
 	"Attrib_DmgTaken_From_Bullets_Reduced_shortdesc"
 	{
-		"en"	"+%s% Bullet Resistance"
+		"en"	"+%s\% Bullet Resistance"
 	}
 	"Attrib_DamageForceReduction_shortdesc"
 	{
-		"en"	"%s% Push Force"
+		"en"	"%s\% Push Force"
 	}
 
 
@@ -2226,35 +2235,35 @@ Phrases
 
 	"Attrib_ClipSize_Positive_shortdesc"
 	{
-		"en"	"+%s% Clip Size"
+		"en"	"+%s\% Clip Size"
 	}
 	"Attrib_MaxammoPrimary_Increased_shortdesc"
 	{
-		"en"	"+%s% Ammo Capacity"
+		"en"	"+%s\% Ammo Capacity"
 	}
 	"Attrib_MaxammoSecondary_Increased_shortdesc"
 	{
-		"en"	"+%s% Ammo Capacity"
+		"en"	"+%s\% Ammo Capacity"
 	}
 	"Attrib_FastReload_shortdesc"
 	{
-		"en"	"+%s% Reload Speed"
+		"en"	"+%s\% Reload Speed"
 	}
 	"Attrib_DamageDone_Positive_shortdesc"
 	{
-		"en"	"+%s% Damage"
+		"en"	"+%s\% Damage"
 	}
 	"Attrib_FireRate_Positive_shortdesc"
 	{
-		"en"	"+%s% Firing Speed"
+		"en"	"+%s\% Firing Speed"
 	}
 	"Attrib_MeleeRate_Positive_shortdesc"
 	{
-		"en"	"+%s% Attack Speed"
+		"en"	"+%s\% Attack Speed"
 	}
 	"Attrib_ProjectileSpeed_Increased_shortdesc"
 	{
-		"en"	"+%s% Projectile Speed"
+		"en"	"+%s\% Projectile Speed"
 	}
 	"Attrib_Penetration_shortdesc"
 	{
@@ -2290,7 +2299,7 @@ Phrases
 
 	"Attrib_AppliesSnareEffect_shortdesc"
 	{
-		"en"	"%s% Speed On Target"
+		"en"	"%s\% Speed On Target"
 	}
 	"Attrib_BleedingDuration_shortdesc"
 	{
@@ -2298,7 +2307,7 @@ Phrases
 	}
 	"Attrib_SRifleChargeRate_Increased_shortdesc"
 	{
-		"en"	"%s% Faster Charge"
+		"en"	"%s\% Faster Charge"
 	}
 	"Attrib_ExplosiveSniperShot_shortdesc"
 	{
@@ -2322,7 +2331,7 @@ Phrases
 	}
 	"Attrib_ConsumeCloakFeignDeath"
 	{
-		"en"	"%s% cloak meter when Feign Death is activated"
+		"en"	"%s\% cloak meter when Feign Death is activated"
 	}
 
 
@@ -2330,11 +2339,11 @@ Phrases
 
 	"Attrib_BuffTime_Increased_shortdesc"
 	{
-		"en"	"+%s% Buff Duration"
+		"en"	"+%s\% Buff Duration"
 	}
 	"Attrib_EffectBarRechargeRateIncreased_shortdesc"
 	{
-		"en"	"+%s% Recharge Rate"
+		"en"	"+%s\% Recharge Rate"
 	}
 	"Attrib_Rocket_Specialist_shortdesc"
 	{
@@ -2346,7 +2355,7 @@ Phrases
 
 	"Attrib_BuildRateBonus_shortdesc"
 	{
-		"en"	"+%s% Build Speed"
+		"en"	"+%s\% Build Speed"
 	}
 	"Attrib_BiDirectionalTP_shortdesc"
 	{
@@ -2358,19 +2367,19 @@ Phrases
 	}
 	"Attrib_SentryFireRate_Increased_shortdesc"
 	{
-		"en"	"+%s% Sentry Firing Speed"
+		"en"	"+%s\% Sentry Firing Speed"
 	}
 	"Attrib_DispenserRadius_Increased_shortdesc"
 	{
-		"en"	"+%s% Dispenser Range"
+		"en"	"+%s\% Dispenser Range"
 	}
 	"Attrib_MaxammoMetal_Increased_shortdesc"
 	{
-		"en"	"+%s% Max Metal Capacity"
+		"en"	"+%s\% Max Metal Capacity"
 	}
 	"Attrib_EngyBuildingHealthBonus_shortdesc"
 	{
-		"en"	"+%s% Building Health"
+		"en"	"+%s\% Building Health"
 	}
 
 
@@ -2378,19 +2387,19 @@ Phrases
 
 	"Attrib_HealRate_Positive_shortdesc"
 	{
-		"en"	"+%s% Heal Rate"
+		"en"	"+%s\% Heal Rate"
 	}
 	"Attrib_OverhealAmount_Positive_shortdesc"
 	{
-		"en"	"+%s% Max Overheal"
+		"en"	"+%s\% Max Overheal"
 	}
 	"Attrib_UberchargeRate_Positive_shortdesc"
 	{
-		"en"	"+%s% ÜberCharge Rate"
+		"en"	"+%s\% ÜberCharge Rate"
 	}
 	"Attrib_OverhealDecay_Positive_shortdesc"
 	{
-		"en"	"+%s% Overheal Time"
+		"en"	"+%s\% Overheal Time"
 	}
 	"Attrib_UberDurationBonus_shortdesc"
 	{
@@ -2430,15 +2439,15 @@ Phrases
 
 	"Attrib_WpnBurnDmg_Increased_shortdesc"
 	{
-		"en"	"+%s% Burn Damage"
+		"en"	"+%s\% Burn Damage"
 	}
 	"Attrib_WpnBurnTime_Increased_shortdesc"
 	{
-		"en"	"+%s% Burn Time"
+		"en"	"+%s\% Burn Time"
 	}
 	"Attrib_AirBlastPushScale_shortdesc"
 	{
-		"en"	"+%s% Airblast Force"
+		"en"	"+%s\% Airblast Force"
 	}
 
 
@@ -2446,11 +2455,11 @@ Phrases
 
 	"Attrib_ChargeImpactDamageIncreased_shortdesc"
 	{
-		"en"	"+%s% Charge Damage"
+		"en"	"+%s\% Charge Damage"
 	}
 	"Attrib_ChargeRechargeRateIncreased_shortdesc"
 	{
-		"en"	"+%s% Charge Recharge"
+		"en"	"+%s\% Charge Recharge"
 	}
 
 
