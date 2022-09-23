@@ -1,13 +1,13 @@
 lines_start = []
 lines_end = []
 
-filename = "mannco-attributes.phrases.txt"
-output_filename = "mannco-manager.phrases.txt"
+filename = "raw-attribute-descs.txt"
+output_filename = "mannco-attributes.phrases.txt"
 
 with open(filename) as file:
     lines_start = file.readlines()
 
-lines_end.append("Phrases")
+lines_end.append("\"Phrases\"")
 lines_end.append("{")
 
 for line in lines_start:

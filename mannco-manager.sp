@@ -51,6 +51,11 @@ public Plugin myinfo = {
  * When the plugin starts up.
  * -------------------------------------------------------------------------- */
 public void OnPluginStart() {
+    
+    PrintToServer("Starting plugin, loading attribute phrases.");
+	LoadTranslations("mannco-attributes.phrases");
+    PrintToServer("Attributes loaded.");
+	
 	// Create convars
 	CreateConVar("tf2items_manager_version", PLUGIN_VERSION, PLUGIN_NAME, FCVAR_SPONLY|FCVAR_REPLICATED|FCVAR_NOTIFY);
 	g_hCvarEnabled = CreateConVar("tf2items_manager", "1", "Enables/disables the manager (0 - Disabled / 1 - Enabled)", FCVAR_REPLICATED|FCVAR_NOTIFY);
@@ -217,6 +222,19 @@ int Native_M_Item_GetSlot(Handle plugin, int numParams)
             }
         }
         
+        //catch newer items w/o a head/misc slot distinction
+        if (StrEqual(buffer, "unknown")) {
+            char buffer3[64];
+            KvGetString(kv_items, "prefab", buffer3, 64, "unknown");
+            if (StrEqual(buffer3, "hat")) {
+                buffer = "head";
+            } else if (StrEqual(buffer3, "misc")) {
+                buffer = "misc";
+            } else if (StrEqual(buffer3, "tournament_medal")) {
+                buffer = "misc";
+            }
+        }
+        
         KvGoBack(kv_items); //go back to root, or one level up
     }
     SetNativeString(2, buffer, 64);
@@ -271,6 +289,11 @@ int Native_M_Attrib_GetParent(Handle plugin, int numParams)
 int Native_M_Attrib_GetDatatype(Handle plugin, int numParams)
 {
     int id = GetNativeCell(1);
+    return Internal_M_Attrib_GetDatatype(id);
+}
+
+int Internal_M_Attrib_GetDatatype(int id) {
+    
     char buffer[64], buffer2[64];
     IntToString(id, buffer2, 64);
     bool result = KvJumpToKey(kv_attribs, buffer2, false); //false if id is not here
@@ -293,6 +316,7 @@ int Native_M_Attrib_GetDatatype(Handle plugin, int numParams)
     } else {
         return 0; //default
     }
+    
 }
 
 any Native_M_Attrib_GetMaxIncrease(Handle plugin, int numParams)
@@ -363,6 +387,43 @@ any Native_M_Attrib_GetMinimum(Handle plugin, int numParams)
         KvGoBack(kv_attribs); //go back to root, or one level up
     }
     return minimum;
+}
+
+any Native_M_Attrib_GetDesc(Handle plugin, int numParams)
+{
+    int attribId = GetNativeCell(1);
+    float attribValue = view_as<float>(GetNativeCell(2));
+    int attribMode = GetNativeCell(3);
+    char descTag[64];
+    char descBuffer[256];
+    int client = GetNativeCell(5);
+    
+    char idAsString[64];
+    char attribAsString[64];
+    
+    if (attribMode == 0) {
+        attribMode = Internal_M_Attrib_GetDatatype(attribId);
+    }
+    
+    if (attribMode == 1) {
+        Format(attribAsString, 64, "%.1f", attribValue);
+    } else if (attribMode == 2) {
+        Format(attribAsString, 64, "%.1f", 100.0 * (attribValue - 1.0));
+    } else if (attribMode == 3) {
+        Format(attribAsString, 64, "%.1f", 100.0 * attribValue);
+    } else if (attribMode == 4) {
+        Format(attribAsString, 64, "%.1f", 100.0 * (1.0 / attribValue - 1.0));
+    }
+    
+    IntToString(attribId, idAsString, 64);
+    bool result = KvJumpToKey(kv_attribs, idAsString, false); //false if id is not here
+    if (result) {
+        KvGetString(kv_attribs, "description_string", descTag, sizeof(descTag), "Untagged_Attribute");
+        Format(descBuffer, 256, "%T", descTag, client, attribAsString);
+        KvGoBack(kv_attribs); //go back to root, or one level up
+    }
+    
+    SetNativeString(4, descBuffer, 256);
 }
 
 any Native_M_FlagsAgree(Handle plugin, int numParams)
@@ -437,6 +498,7 @@ public APLRes AskPluginLoad2(Handle myself, bool late, char[] error, int err_max
 	CreateNative("M_Attrib_GetMaximum", Native_M_Attrib_GetMaximum);
 	CreateNative("M_Attrib_GetMinimum", Native_M_Attrib_GetMinimum);
     
+    CreateNative("M_Attrib_GetDesc", Native_M_Attrib_GetDesc);
 	CreateNative("M_FlagsAgree", Native_M_FlagsAgree);
     
 	return APLRes_Success;

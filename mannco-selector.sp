@@ -97,12 +97,12 @@ public void OnPluginStart() {
 
 Action CmdWhat(int client, int args) {
     
-    char item_debug[64], attribute_debug[64];
+    char item_debug[64], attribute_desc[256];
     
     M_Item_GetDebugName(item_id, item_debug);
-    M_Attrib_GetDebugName(attribute_id, attribute_debug);
+	M_Attrib_GetDesc(attribute_id, attribute_value, 0, attribute_desc, LANG_SERVER);
     
-    PrintToChat(client, "BLU is fighting for: %s %s %.3f", item_debug, attribute_debug, attribute_value);
+    PrintToChat(client, "BLU is fighting for: %s %s", item_debug, attribute_desc);
 	
 	return Plugin_Handled;
     
@@ -122,18 +122,22 @@ Action CmdSpecs(int client, int args) {
             PrintToChat(client, "Unknown weapon. Please put in a valid weapon.");
 	        return Plugin_Handled;
         }
+        char item_name[64];
+        M_Item_GetDebugName(itemId, item_name);
+        
         int attribute_dump[20];
         float value_dump[20];
         int numAttributes = DumpAttributes(itemId, attribute_dump, value_dump, 20);
         int i = 0;
         for (i = 0; i < numAttributes; i++) {
             if (attribute_dump[i] == 0) break;
+            if (i == 0) {
+                PrintToConsole(client, "%s modifications ---------------------------", item_name);
+            }
             char attrib_desc[256];
             M_Attrib_GetDesc(attribute_dump[i], value_dump[i], 0, attrib_desc, client);
-            PrintToConsole(client, "%s", attrib_name, value_dump[i]);
+            PrintToConsole(client, "%s", attrib_desc);
         }
-        char item_name[64];
-        M_Item_GetDebugName(itemId, item_name);
         if (i == 0) {
             PrintToChat(client, "%s is unmodified. For now.", item_name);
         } else {
@@ -286,9 +290,8 @@ public void Reroll() {
     do {
     	int attempts = 0;
     	do {
-	        //1181 is the hot hand, use when performance issues are resolved
 	        //30758 is the prinny machete, use this once skins can be distinguished
-    	    item_id = GetURandomInt() % 300;
+    	    item_id = GetURandomInt() % 1181;
     	    item_id = M_Item_GetParent(item_id);
     	    attempts++;
     	} while (!ValidateItem(item_id, attempts)); //allow pure cosmetics to change VERY rarely.
@@ -366,9 +369,9 @@ public void Reroll() {
 	M_Item_GetDebugName(item_id, item_debug);
 	
 	char attribute_debug[64];
-	M_Attrib_GetDebugName(attribute_id, attribute_debug);
+	M_Attrib_GetDesc(attribute_id, attribute_value, 0, attribute_debug, LANG_SERVER);
 	
-	PrintToChatAll("[ MannCo ] If BLU wins, the following item changes FOR GOOD:\n%s %s %.3f", item_debug, attribute_debug, attribute_value);
+	PrintToChatAll("[ MannCo ] If BLU wins, the following item changes FOR GOOD:\n%s %s", item_debug, attribute_debug);
 	PrintToServer("[ MannCo ] Mod: %s (%d) %s (%d) %.3f", item_debug, item_id, attribute_debug, attribute_id, attribute_value);
 }
 
