@@ -45,11 +45,20 @@
     }
     "C_Attrib_Ash"
     {
-        "en"    "Awakens phlogiston in defeated foes"
+        "en"    "Awakens phlogiston in killed enemies"
     }
     "C_Attrib_Plasma"
     {
-        "en"    "Irradiates defeated foes"
+        "en"    "Irradiates killed enemies"
+    }
+    "C_Attrib_Hard_Crit"
+    {
+        "en"    "Explodes killed enemies. Classic."
+    }
+    
+    "Attrib_Knockback"
+    {
+        "en"    "Knock back foes by %sx1.9 centimeters on hit"
     }
     
 	"Attrib_ClipSize_Positive"
@@ -1082,7 +1091,7 @@
 	}
 	"Attrib_UberchargeRate_ForHealer"
 	{
-		"en"	"+%s%% ÜberCharge rate for the medic healing you\nThis effect does not work in the respawn room"
+		"en"	"+%s%% ÜberCharge rate for the medic healing you"
 	}
 	"Attrib_ReloadTime_Decreased_While_Healed"
 	{

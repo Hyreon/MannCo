@@ -368,7 +368,7 @@ public void Reroll() {
 	char item_debug[64];
 	M_Item_GetDebugName(item_id, item_debug);
 	
-	char attribute_debug[64];
+	char attribute_debug[256];
 	M_Attrib_GetDesc(attribute_id, attribute_value, 0, attribute_debug, LANG_SERVER);
 	
 	PrintToChatAll("[ MannCo ] If BLU wins, the following item changes FOR GOOD:\n%s %s", item_debug, attribute_debug);

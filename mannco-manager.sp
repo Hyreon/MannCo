@@ -230,7 +230,21 @@ int Native_M_Item_GetSlot(Handle plugin, int numParams)
                 buffer = "head";
             } else if (StrEqual(buffer3, "misc")) {
                 buffer = "misc";
+            } else if (StrEqual(buffer3, "grenades")) {
+                buffer = "misc";
+            } else if (StrEqual(buffer3, "valve misc")) {
+                buffer = "misc";
+            } else if (StrEqual(buffer3, "hat decoration")) {
+                buffer = "head";
+            } else if (StrEqual(buffer3, "halloween hat")) {
+                buffer = "head";
+            } else if (StrEqual(buffer3, "valve no_craft hat")) {
+                buffer = "head";
+            } else if (StrEqual(buffer3, "backpack")) {
+                buffer = "misc";
             } else if (StrEqual(buffer3, "tournament_medal")) {
+                buffer = "misc";
+            } else if (StrEqual(buffer3, "halloween misc")) {
                 buffer = "misc";
             }
         }
