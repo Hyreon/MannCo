@@ -246,6 +246,12 @@ int Native_M_Item_GetSlot(Handle plugin, int numParams)
                 buffer = "misc";
             } else if (StrEqual(buffer3, "halloween misc")) {
                 buffer = "misc";
+            } else if (StrEqual(buffer3, "no_craft hat")) {
+                buffer = "head";
+            } else if (StrEqual(buffer3, "score_reward_hat")) {
+                buffer = "head";
+            } else if (StrEqual(buffer3, "beard")) {
+                buffer = "misc";
             }
         }
         

@@ -55,10 +55,83 @@
     {
         "en"    "Explodes killed enemies. Classic."
     }
+    "C_Attrib_Vacc_Bullet"
+    {
+        "en"    "%s%% bullet passive resistance"
+    }
+    "C_Attrib_Vacc_Blast"
+    {
+        "en"    "%s%% blast passive resistance"
+    }
+    "C_Attrib_Vacc_Fire"
+    {
+        "en"    "%s%% fire passive resistance"
+    }
+    "C_Attrib_Vacc_Bullet_Uber"
+    {
+        "en"    "%s%% bullet resistance when ubered"
+    }
+    "C_Attrib_Vacc_Blast_Uber"
+    {
+        "en"    "%s%% blast resistance when ubered"
+    }
+    "C_Attrib_Vacc_Fire_Uber"
+    {
+        "en"    "%s%% fire resistance when ubered"
+    }
+    "C_Attrib_BuffWeakness"
+    {
+        "en"    "%s%% damage taken while buffed"
+    }
+    
+    "C_Attrib_Flame_MaxReflectionCount"
+    {
+        "en"    "%s% max flame reflections"
+    }
+    "C_Attrib_Flame_ReflectionLifetimeBonus"
+    {
+        "en"    "%s% flame reflection lifetime bonus"
+    }
+    "C_Attrib_Flame_ReflectionDamagePenalty"
+    {
+        "en"    "%s% flame reflection penalty"
+    }
+    "C_Attrib_Flame_Lifetime"
+    {
+        "en"    "%s% flame lifetime"
+    }
+    "C_Attrib_Flame_Lifetime_Offset"
+    {
+        "en"    "%s% flame lifetime variation"
+    }
+    "C_Attrib_Flame_Up_Speed"
+    {
+        "en"    "%s% flame updraft"
+    }
+    "C_Attrib_Flame_Dissassociated"
+    {
+        "en"    "Flame particles ignore player velocity"
+    }
+    "C_Attrib_Flame_Drag"
+    {
+        "en"    "%s% flame drag"
+    }
+    "C_Attrib_Flame_Speed"
+    {
+        "en"    "%s% flame speed"
+    }
+    "C_Attrib_Flame_Gravity"
+    {
+        "en"    "%s% flame gravity"
+    }
     
     "Attrib_Knockback"
     {
         "en"    "Knock back foes by %sx1.9 centimeters on hit"
+    }
+    Attrib_Scattergun_NoReloadSingle
+    {
+        "en"    "Scattergun reloads entire clip at once"
     }
     
 	"Attrib_ClipSize_Positive"
@@ -775,7 +848,7 @@
 	}
 	"Attrib_ChargedAirblast"
 	{
-		"en"	"Airblast can now be charged, which will push enemies further"
+		"en"	"Airblast is now held before release"
 	}
 	"Attrib_AirblastDisabled"
 	{
@@ -1155,7 +1228,7 @@
 	}
 	"Attrib_DamageForceIncrease"
 	{
-		"en"	"%s%% increase in push force taken from damage"
+		"en"	"+%s%% increase in push force taken from damage"
 	}
 	"Attrib_DamageForceIncreaseString"
 	{
@@ -1407,7 +1480,7 @@
 	}
 	"Attrib_AirBlastVulnerabilityMultipier"
 	{
-		"en"	"%s%% reduction in airblast vulnerability"
+		"en"	"%s%% affect to airblast vulnerability"
 	}
 	"Attrib_BombinomiconEffectOnDeath"
 	{
@@ -2009,7 +2082,7 @@
 	}
 	"Attrib_FireRateBonusWithReducedHealth"
 	{
-		"en"	"Fire rate increases as health decreases"
+		"en"	"Fire rate approaches %s%% as health decreases"
 	}
 	"Attrib_PanicAttackNegative"
 	{

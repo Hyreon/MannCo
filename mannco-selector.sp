@@ -314,14 +314,16 @@ public void Reroll() {
                 attribute_value = interval * float(RoundToNearest(30.0 * (GetURandomFloat() - 0.5)));
     	    } while (attribute_value < interval && attribute_value > -interval);
     	} else if (attribute_type == 3) {
+            float interval = M_Attrib_GetInterval(attribute_id);
             float epsilon = 0.001;
             do {
-                attribute_value = RoundToNearest(100.0 * (GetURandomFloat() - 0.5)) / 100.0;
+                attribute_value = interval * RoundToNearest(100.0 * (GetURandomFloat() - 0.5)) / 100.0;
     	    } while (attribute_value < epsilon && attribute_value > -epsilon);
     	} else {
+            float interval = M_Attrib_GetInterval(attribute_id);
             float epsilon = 0.001;
             do {
-                attribute_value = RoundToNearest(100.0 * (GetURandomFloat() + 0.5)) / 100.0;
+                attribute_value = interval * RoundToNearest(100.0 * (GetURandomFloat() + 0.5)) / 100.0;
     	    } while (attribute_value - 1.0 < epsilon && attribute_value > -epsilon);
     	}
     	

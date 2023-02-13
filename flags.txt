@@ -70,3 +70,4 @@
 1048576     Weapon can push self (explosive, or melee that can misses, OR weapons that can airblast)
 2097152     Can affect a secondary weapon's clip (not a medic, nor a clipless secondary itself) {MISSING ON MOST ITEMS???}
 4194304     Is wrench (minisentry effect)
+8388608     Charged shots (snipers, miniguns)
