@@ -50,6 +50,11 @@ native int ItemFromNameFragment(char fragment[64]);
  * If there are no changed attributes, the user will be told this instead.
  * */
  native int DumpAttributes(int itemId, int[] attributes, float[] values, int size);
+
+/*
+ * Tries to flip attributes (positive to negative, negative to positive)
+ * */
+native int TryAttributeFlip(int attributeId, int attributeType, float attributeValue);
  
 /*
  *

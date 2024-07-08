@@ -37,7 +37,7 @@
     }
     "C_Attrib_Rage_Scale"
     {
-        "en"    "Provides %s%% of the effect to enemy soldier banners"
+        "en"    "Provides %s%% to enemy soldier banners when hit"
     }
     "C_Attrib_Pipboy"
     {
@@ -124,6 +124,22 @@
     {
         "en"    "%s% flame gravity"
     }
+    "C_Attrib_Holster_Wait"
+    {
+        "en"    "Item takes +%s seconds to holster"
+    }
+    "C_Attrib_AmmoDrain"
+	{
+		"en"	"%s%% ammo drained every 5 seconds on wearer"
+	}
+    "C_Attrib_HealthDrainActive"
+	{
+		"en"	"%s health drained per second while active"
+	}
+    "C_Attrib_HealthRegenActive"
+	{
+		"en"	"+%s health regenerated per second while active"
+	}
     
     "Attrib_Knockback"
     {
@@ -392,7 +408,7 @@
 	}
 	"Attrib_DmgTaken_From_Fire_Increased"
 	{
-		"en"	"%s%% fire damage vulnerability on wearer"
+		"en"	"+%s%% fire damage vulnerability on wearer"
 	}
 	"Attrib_DmgTaken_From_Crit_Reduced"
 	{
@@ -400,7 +416,7 @@
 	}
 	"Attrib_DmgTaken_From_Crit_Increased"
 	{
-		"en"	"%s%% critical hit damage vulnerability on wearer"
+		"en"	"+%s%% critical hit damage vulnerability on wearer"
 	}
 	"Attrib_DmgTaken_From_Blast_Reduced"
 	{
@@ -408,7 +424,7 @@
 	}
 	"Attrib_DmgTaken_From_Blast_Increased"
 	{
-		"en"	"%s%% explosive damage vulnerability on wearer"
+		"en"	"+%s%% explosive damage vulnerability on wearer"
 	}
 	"Attrib_DmgTaken_From_Bullets_Reduced"
 	{
@@ -416,11 +432,11 @@
 	}
 	"Attrib_DmgTaken_From_Bullets_Increased"
 	{
-		"en"	"%s%% bullet damage vulnerability on wearer"
+		"en"	"+%s%% bullet damage vulnerability on wearer"
 	}
 	"Attrib_DmgTaken_Increased"
 	{
-		"en"	"%s%% damage vulnerability on wearer"
+		"en"	"+%s%% damage vulnerability on wearer"
 	}
 	"Attrib_CaptureValue_Increased"
 	{
@@ -1252,7 +1268,7 @@
 	}
 	"Attrib_BootsFallingStomp"
 	{
-		"en"	"Deals 3x falling damage to the player you land on"
+		"en"	"Deals 3x (%s) falling damage to the player you land on"
 	}
 	"Attrib_SaxxyAward"
 	{
@@ -1480,7 +1496,7 @@
 	}
 	"Attrib_AirBlastVulnerabilityMultipier"
 	{
-		"en"	"%s%% affect to airblast vulnerability"
+		"en"	"%s%% effect to airblast vulnerability"
 	}
 	"Attrib_BombinomiconEffectOnDeath"
 	{
@@ -1548,7 +1564,7 @@
 	}
 	"Attrib_StunEnemiesWieldingSameWeapon"
 	{
-		"en"	"Stuns enemies who are also wielding this weapon"
+		"en"	"Stuns enemies for %s who are also wielding this weapon"
 	}
 	"Attrib_TickleEnemiesWieldingSameWeapon"
 	{
@@ -1998,11 +2014,11 @@
 	}
 	"Attrib_AirControl"
 	{
-		"en"	"%s%% increased air control"
+		"en"	"+%s%% increased air control"
 	}
 	"Attrib_AirControlBlastJump"
 	{
-		"en"	"%s%% increased air control when blast jumping"
+		"en"	"+%s%% increased air control when blast jumping"
 	}
 	"Attrib_HypeDecays"
 	{
@@ -2038,19 +2054,19 @@
 	}
 	"Attrib_AiXenoSetBonusPos"
 	{
-		"en"	"Increased Melee damage against Isolated Merc Set"
+		"en"	"+%s% Melee damage against Isolated Merc Set"
 	}
 	"Attrib_AiXenoSetBonusNeg"
 	{
-		"en"	"Increased Nostromo Napalmer damage taken from Isolated Merc Set"
+		"en"	"+%s% Nostromo Napalmer damage taken from Isolated Merc Set"
 	}
 	"Attrib_AiMercSetBonusPos"
 	{
-		"en"	"Increased Nostromo Napalmer damage against Isolationist Pack Set"
+		"en"	"+%s% Nostromo Napalmer damage against Isolationist Pack Set"
 	}
 	"Attrib_AiMercSetBonusNeg"
 	{
-		"en"	"Increased Melee damage taken from Isolationist Pack Set"
+		"en"	"+%s% Melee damage taken from Isolationist Pack Set"
 	}
 	"Attrib_stickybomb_fizzle_time"
 	{
@@ -2090,7 +2106,7 @@
 	}
 	"Attrib_AutoFiresFullClipNegative"
 	{
-		"en"	""
+		"en"	"Auto-fires when clip is full"
 	}
 	"Attrib_AutoFiresWhenFull"
 	{
@@ -2194,7 +2210,7 @@
 	}
 	"Attrib_MaxHealthDrain"
 	{
-		"en"	"Maximum health is drained while item is active"
+		"en"	"Maximum health is drained while item is active (%s)"
 	}
 	"Attrib_ImpactPushback"
 	{
@@ -4110,4 +4126,8 @@
 	{
 		"en"	"Killstreaks Active"
 	}
+    "Attrib_NoCloakFromAmmo"
+    {
+        "en"    "No cloak meter from ammo boxes"
+    }
 }

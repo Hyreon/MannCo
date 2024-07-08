@@ -18,6 +18,13 @@
 #define FLT_MAX 999999999999.9
 #define FLT_MIN -99999999999.9
 
+#define PERCENTAGE 2
+#define INVERTED_PERCENTAGE 4
+#define ADDITIVE 1
+#define ADDITIVE_PERCENTAGE 3
+#define OVERRIDE -1
+#define UNKNOWN_ATTRIBTYPE 0
+
 //#define DEBUG
 
 // ====[ VARIABLES ]===================================================
@@ -321,20 +328,20 @@ int Internal_M_Attrib_GetDatatype(int id) {
         KvGetString(kv_attribs, "description_format", buffer, 64, "value_is_percentage");
         KvGoBack(kv_attribs); //go back to root, or one level up
         if (StrEqual(buffer, "value_is_percentage")) {
-            return 2;
+            return PERCENTAGE;
         } else if (StrEqual(buffer, "value_is_inverted_percentage")) {
-            return 4; //still percentage, just good and bad are reversed
+            return INVERTED_PERCENTAGE; //still percentage, just good and bad are reversed
         } else if (StrEqual(buffer, "value_is_additive")) {
-            return 1;
+            return ADDITIVE;
         } else if (StrEqual(buffer, "value_is_additive_percentage")) {
-            return 3; //still additive, just smaller unit
+            return ADDITIVE_PERCENTAGE; //still additive, just smaller unit
         } else if (StrEqual(buffer, "value_is_or")) {
-            return -1; //override
+            return OVERRIDE; //override
         } else {
-            return 0; //default
+            return UNKNOWN_ATTRIBTYPE; //default
         }
     } else {
-        return 0; //default
+        return UNKNOWN_ATTRIBTYPE; //default
     }
     
 }
@@ -475,21 +482,49 @@ any Native_M_FlagsAgree(Handle plugin, int numParams)
     return ((attrib_flags & ~item_flags) == 0 && (attrib_flags2 & ~item_flags2) == 0); //true if not a single expected flag is missing
 }
 
-int TryAttributeFlip(int attributeId, int attributeType, float attributeValue)
+int Native_TryAttributeFlip(Handle plugin, int numParams)
 {
+
+    int attributeId = GetNativeCell(1);
+    int attributeType = GetNativeCell(2);
+    float attributeValue = GetNativeCell(3);
+    
     char buffer[64], buffer2[64];
     IntToString(attributeId, buffer, 64);
     bool result = KvJumpToKey(kv_attribs, buffer, false);
+    PrintToServer("Trying to flip attribute: %d (%d %f)", attributeId, attributeType, attributeValue);
     if (result) {
         int counterpart = KvGetNum(kv_attribs, "counterpart", attributeId);
+        int counterpart_min = KvGetNum(kv_attribs, "counterpart_min", -1);
+        int counterpart_max = KvGetNum(kv_attribs, "counterpart_max", -1);
+        int inverted = KvGetNum(kv_attribs, "inverted", 0);
         KvGetString(kv_attribs, "effect_type", buffer2, 64, "neutral");
-        if (StrEqual(buffer2, "negative") && ((attribute_type == 2 && attribute_value > 1) || (attribute_type != 2 && attribute_value > 0))) {
-            attributeId = counterpart;
-        } else if (StrEqual(buffer2, "positive") && ((attribute_type == 2 && attribute_value < 1) || (attribute_type != 2 && attribute_value < 0))) {
-            attributeId = counterpart;
+        PrintToServer("Counterpart found: %d (currently %s).", counterpart, buffer2);
+        //if attribute type is inverted %, values must be < 1
+        if (counterpart_min == -1 && counterpart_max == -1) { //make some educated guesses
+            if ((attributeType == INVERTED_PERCENTAGE) && (attributeValue > 1)) {
+                attributeId = counterpart;
+                PrintToServer("Swapped due to >1 value from inverted percentage");
+            } else if ((attributeType == PERCENTAGE) && (attributeValue < 1)) {
+                attributeId = counterpart;
+                PrintToServer("Swapped due to <1 value from percentage");
+            } else if ((StrEqual(buffer2, "negative")) && (attributeType != PERCENTAGE && attributeType != INVERTED_PERCENTAGE) && attributeValue > 0) {
+                attributeId = counterpart;
+                PrintToServer("Swapped to nonnegative counterpart");
+            } else if ((StrEqual(buffer2, "positive")) && (attributeType != PERCENTAGE && attributeType != INVERTED_PERCENTAGE) && attributeValue < 0) {
+                attributeId = counterpart;
+                PrintToServer("Swapped to nonpositive counterpart");
+            }
+        } else { //behavior is complicated enough that it's been manually specified
+            if (counterpart_min != -1 && attributeValue < counterpart_min) {
+                attributeId = counterpart;
+            } else if (counterpart_max != -1 && attributeValue > counterpart_max) {
+                attributeId = counterpart;
+            }
         }
         KvGoBack(kv_attribs);
     }
+    return attributeId;
 }
 
 public APLRes AskPluginLoad2(Handle myself, bool late, char[] error, int err_max)
@@ -499,6 +534,7 @@ public APLRes AskPluginLoad2(Handle myself, bool late, char[] error, int err_max
 	CreateNative("QueryAttributeEffect", Native_QueryAttributeEffect);
 	CreateNative("DumpAttributes", Native_DumpAttributes);
 	CreateNative("ItemFromNameFragment", Native_ItemFromNameFragment);
+    CreateNative("TryAttributeFlip", Native_TryAttributeFlip);
     
 	CreateNative("M_Item_IsKnown", Native_M_Item_IsKnown);
 	CreateNative("M_Attrib_IsKnown", Native_M_Attrib_IsKnown);

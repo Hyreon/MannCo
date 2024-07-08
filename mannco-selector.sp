@@ -61,6 +61,7 @@ int item_id = 0; //the item to change
 int attribute_id = 0; //the attribute to change
 float attribute_value = 0.0; //the final attribute
 int attribute_type = 0; //default
+int attribute_normal_type = 0; //default
 
 ConVar g_hCvarEnabled;
 
@@ -338,34 +339,36 @@ public void Reroll() {
     	}
     	
     	if (attribute_type > 2) {
-    	    attribute_type -= 2;
-    	}
+    	    attribute_normal_type -= 2;
+    	} else {
+            attribute_normal_type = attribute_type;
+        }
     	
     	attempts = 0;
     	float lastIteratedValue;
     	do {
     	    lastIteratedValue = attribute_value;
-    	    newValue = QueryAttributeEffect(item_id, attribute_id, attribute_value, attribute_type);
+    	    newValue = QueryAttributeEffect(item_id, attribute_id, attribute_value, attribute_normal_type);
         	//TODO this does nothing, it needs to affect the attribute_value, not the newValue.
         	float maxValue = M_Attrib_GetMaximum(attribute_id);
         	if (newValue > maxValue) {
-        	    if (attribute_type == 2) attribute_value *= maxValue / newValue;
+        	    if (attribute_normal_type == 2) attribute_value *= maxValue / newValue;
         	    else attribute_value += maxValue - newValue;
         	}
         	float minValue = M_Attrib_GetMinimum(attribute_id);
         	if (newValue < minValue) {
-        	    if (attribute_type == 2) attribute_value *= minValue / newValue;
+        	    if (attribute_normal_type == 2) attribute_value *= minValue / newValue;
         	    else attribute_value += minValue - newValue;
         	}
         	attempts++;
     	} while (attribute_value != lastIteratedValue && attempts < 1);
     	
     	
-    	prevValue = QueryAttributeValue(item_id, attribute_id, attribute_type);
+    	prevValue = QueryAttributeValue(item_id, attribute_id, attribute_normal_type);
     } while (prevValue == newValue);
 	
     //TODO update the attribute sign to match what it ought for display purposes
-    //TryAttributeFlip();
+    attribute_id = TryAttributeFlip(attribute_id, attribute_type, attribute_value);
     
 	char item_debug[64];
 	M_Item_GetDebugName(item_id, item_debug);
