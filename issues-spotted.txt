@@ -1,5 +1,9 @@
 Testing needed ---
 
+Righteous Bison projectiles can't have their range or speed modified.
+Righteous Bison can't have its clip or ammo changed.
+Is this true for all energy weapons?
+
 BLU is fighting for: TF_WEAPON_ROCKETLAUNCHER +-4.0 health restored on kill
  (does this work? can you lose health on kill?)
 
@@ -13,6 +17,11 @@ TF_WEAPON_PIPEBOMBLAUNCHER (20) On Hit: Gain up to +-5.0 health (16) -5.000
 attribute 413
 
 (how does 711 differ from attribute 710?)
+
+Flags need updating ---
+
+Righteous Bison projectiles can't have their range or speed modified.
+Righteous Bison can't have its clip or ammo changed.
 
 Does this item belong on the item pool? ---
 
